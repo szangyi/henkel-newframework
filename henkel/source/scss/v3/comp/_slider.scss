@@ -1,0 +1,147 @@
+// -----------------------------------------------------------------------------
+// Slider Component
+// -----------------------------------------------------------------------------
+@use '../frankly/font';
+@use '../frankly/theme';
+@use '../frankly/comp';
+
+
+@mixin slider {
+    @include comp.create('slider') {
+
+        // Style
+        touch-action: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 1rem;
+        border: 0;
+
+        // State
+        &:disabled {
+            filter: grayscale(1) brightness(2.5);
+        }
+
+        // Output
+        output {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--color-brand);
+            position: absolute;
+            left: -12px;
+            top: -2.5px;
+            width: 64px;
+            text-align: center;
+            pointer-events: none;
+            --rw: calc(var(--wdt) * 1px - 32px - 10px);
+            --tx: calc(var(--pct) * var(--rw));
+            transform: translate(var(--tx), 28px);
+        }
+
+        // Input
+        [type=range] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            -webkit-tap-highlight-color: transparent;
+            cursor: pointer;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            padding: 0;
+            height: 40px;
+            margin: 16px 0;
+            width: 100%;
+        }
+
+        [type=range]::-moz-focus-outer {
+            border: 0;
+        }
+
+        [type=range]:disabled {
+            cursor: not-allowed;
+        }
+
+        [type=range]::-webkit-slider-thumb {
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            appearance: none;
+            background: white;
+            height: 40px;
+            width: 40px;
+            border: 2px solid var(--color-brand);
+            border-radius: 50%;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        [type=range]::-moz-range-thumb {
+            box-sizing: border-box;
+            -moz-appearance: none;
+            appearance: none;
+            background: white;
+            height: 40px;
+            width: 40px;
+            border: 2px solid var(--color-brand);
+            border-radius: 50%;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        [type=range]::-ms-thumb {
+            box-sizing: border-box;
+            appearance: none;
+            background: white;
+            height: 40px;
+            width: 40px;
+            border: 2px solid var(--color-brand);
+            border-radius: 50%;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        [type=range]:not(*:root)::-webkit-slider-thumb {
+            margin-top: -10px;
+        }
+
+        [type=range]::-webkit-slider-runnable-track {
+            height: 20px;
+            border: 0;
+            color: transparent;
+            background-image: linear-gradient(to right, var(--color-brand), 50%, white 0);
+            background-size: 200%;
+            background-position: calc(-100% + var(--pct) * -100%);
+            border-radius: 20px;
+            box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        [type=range]::-moz-range-track {
+            height: 20px;
+            border: 0;
+            color: transparent;
+            background-image: linear-gradient(to right, var(--color-brand), 50%, white 0);
+            background-size: 200%;
+            background-position: calc(-100% + var(--pct) * -100%);
+            border-radius: 20px;
+            box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        [type=range]::-ms-track {
+            height: 20px;
+            border: 0;
+            color: transparent;
+            background-image: linear-gradient(to right, var(--color-brand), 50%, white 0);
+            background-size: 200%;
+            background-position: calc(-100% + var(--pct) * -100%);
+            border-radius: 20px;
+            box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        [type=range]::-ms-fill-lower,
+        [type=range]::-ms-fill-upper,
+        [type=range]::-ms-tooltip {
+            display: none;
+        }
+
+    }
+}

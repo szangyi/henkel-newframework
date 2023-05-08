@@ -1,0 +1,63 @@
+@use 'config' as *;
+
+
+
+@mixin card {
+	.card {
+		background-color: color(white);
+		padding: 2em;
+		box-shadow: .5rem .5rem 2rem rgb(color(dark),0.2);
+	}
+}
+
+
+
+@mixin card-center {
+	.card-center {
+		text-align: center;
+		margin: auto;
+		justify-self: center;
+		align-self: center;
+
+		background-color: color(white);
+		padding: 2em;
+		box-shadow: .5rem .5rem 2rem rgb(color(dark),0.2);
+	}
+}
+
+
+
+
+
+@mixin card-trivia {
+	.card-trivia {
+		text-align: center;
+		background-color: color(white);
+		padding: 2em 2em 4em;
+		box-shadow: .5rem .5rem 2rem rgb(color(dark),0.2);
+
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			right: 2.5em;
+			display: block;
+			background-size: contain; ;
+		}
+
+		//	paper clip
+		&::before {
+			top: -1.5em;
+			width: 1.5em;
+			height: 6em;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='390' viewBox='0 0 160 392'%3E %3Cdefs/%3E %3Cg fill='%235C6670'%3E %3Cpath d='M49.846 78.535c0-5.683-4.608-10.291-10.291-10.291-5.683 0-10.29 4.607-10.29 10.291v81.751h20.58V78.535z'/%3E %3Cpath d='M150.096 68.246c-5.682 0-10.29 4.607-10.289 10.291l-.001 233.079c.001 32.707-26.608 59.316-59.316 59.315-32.707-.001-59.316-26.608-59.316-59.315V65.596C21.174 41 41.185 20.99 65.781 20.99c24.597 0 44.607 20.01 44.607 44.606v94.691h20.579v-94.69c0-35.944-29.242-65.186-65.186-65.186C29.836.411.595 29.654.595 65.597L.594 311.615c0 44.055 35.842 79.896 79.896 79.896 44.055 0 79.897-35.842 79.897-79.897V78.535c0-5.683-4.608-10.29-10.291-10.289z'/%3E %3C/g%3E %3C/svg%3E");
+		}
+
+		//	logo
+		&::after {
+			bottom: 1em;
+			width: 6em;
+			height: 2em;
+			background-image: url($brand-logo);
+		}
+	}
+}

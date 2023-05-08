@@ -1,0 +1,99 @@
+// -----------------------------------------------------------------------------
+// Font Mixins and Functions
+// -----------------------------------------------------------------------------
+@use 'sass:meta';
+@use 'sass:math'; 
+@use 'sass:string';
+@use 'sass:list';
+@use 'sass:map';
+@use './cast' as cast;
+
+
+@mixin scale(
+	$size,
+	$lower: 20rem, // smallest breakpoint (dont scale font below this)
+	$upper: 80rem, // smallest breakpoint (dont scale font above this)
+) {
+
+	
+	$size-map: ();
+    @each $name, $values in $size {
+        $min: null;
+        $max: null;
+        @each $value in $values {
+            @if meta.type-of($value) == 'number' {
+                $value: cast.px($value);
+                $min: math.min($min or $value, $value);
+                $max: math.max($max or $value, $value);
+            }
+        }
+		$size-map: map.set($size-map, $name, (min: cast.rem($min), max: cast.rem($max))); 
+    }
+	
+	
+
+    @at-root html {
+        @each $name, $values in $size-map {
+            $min: map.get($values, min);
+            $max: map.get($values, max);
+            
+            $vp-dif: $upper - $lower;         // 60rem
+            $fs-dif: $max - $min;             // 1.5rem 
+            $div: math.div($vp-dif, $fs-dif); // 40
+            $vw:  math.div(100vw, $div);      // 2.5vw
+            $lo:  math.div($lower, $div);     // - 0.5rem
+            $fs: $min - $lo;                  // 0.5rem
+
+            // round values
+            $vw: math.div(math.round($vw * 10000), 10000);
+            $fs: math.div(math.round($fs * 10000), 10000);
+            
+            // + or - opetator 
+            $op: if($fs < 0rem, '-', '+'); 
+            
+            
+            $mid: if($fs != 0rem,
+                '#{$vw} #{$op} #{math.abs($fs)}',
+                '#{$vw}'            
+            );
+                                
+            --font-size-#{$name}: clamp(#{$min}, #{$mid}, #{$max});           
+        }  
+    }
+}
+
+
+@function name($name: null) { @return if($name,'-#{$name}',''); }
+
+@function size($name: null) { @return var(--font-size#{name($name)}); }
+@mixin size($name: null, $value: null) {
+    @if not $value { font-size: size($name); }
+    @else { --font-size#{name($name)}: #{$value};  }
+}
+
+@function weight($name: null) { @return var(--font-weight#{name($name)}); }
+@mixin weight($name: null, $value: null) {
+    @if not $value { font-weight: weight($name); }
+    @else { --font-weight#{name($name)}: #{$value}; }
+}
+
+@function style($name: null) { @return var(--font-style#{name($name)}); }
+@mixin style($name: null, $value: null) {
+    @if not $value { font-style: style($name); }
+    @else { --font-style#{name($name)}: #{$value}; }
+}
+
+@function transform($name: null) { @return var(--font-transform#{name($name)}); }
+@mixin transform($name: null, $value: null) {
+    @if not $value { font-transform: transform($name); }
+    @else { --font-transform#{name($name)}: #{$value}; }
+}
+
+
+@function align($name: null) { @return var(--font-align#{name($name)}); }
+@mixin align($name: null, $value: null) {
+    @if not $value { font-align: align($name); }
+    @else { --font-align#{name($name)}: #{$value}; }
+}
+
+

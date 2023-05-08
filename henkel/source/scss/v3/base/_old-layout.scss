@@ -1,0 +1,400 @@
+// -----------------------------------------------------------------------------
+// Layout
+// -----------------------------------------------------------------------------
+
+
+$one-px: 0.0625rem; 
+$bp-mobile-start: 0;
+$bp-mobile-end: 40rem - $one-px;
+$bp-tablet-start: 40rem;
+$bp-tablet-end: 60rem - $one-px;
+$bp-desktop-start: 60rem;
+$bp-desktop-end: infinity;
+
+
+
+@mixin base {
+	@at-root html {
+		--on: ;
+		--off: initial;
+
+		// grid states 
+		@media (min-width: $bp-mobile-start) {
+			--is-mobile : var(--on);						
+			--is-tablet : var(--off);						
+			--is-desktop: var(--off);								
+		}
+		@media (min-width: $bp-tablet-start) {
+			--is-mobile: var(--off);
+			--is-tablet : var(--on);						
+			--is-desktop: var(--off);									
+		}
+		@media (min-width: $bp-desktop-start) {
+			--is-mobile : var(--off);
+			--is-tablet : var(--off);						
+			--is-desktop: var(--on);									
+		}
+	}
+
+	@at-root body[data-debug] {
+        &::before {
+
+        	--🐞-if-debug-desktop: var(--is-desktop) 'D';
+            --🐞-if-debug-tablet: var(--is-tablet) 'T';
+            --🐞-if-debug-mobile: var(--is-mobile) 'M';
+            --🐞-debug: var(--🐞-if-debug-desktop, var(--🐞-if-debug-tablet, var(--🐞-if-debug-mobile)));
+            
+			content: var(--🐞-debug, '?') ':  ' var(--debug-w) ' x ' var(--debug-h) ;
+			display: grid;
+			place-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 9;
+            padding-inline: 1em;
+            block-size: 1.2rem;
+
+            font-size: 0.625rem;
+            font-weight: 700;
+            color: white;
+            background-color: #e1000f;
+            text-align: center;
+            
+        }
+    }
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Hidden
+// -----------------------------------------------------------------------------
+@mixin hidden {
+	@media (min-width: $bp-mobile-start) and (max-width: $bp-mobile-end) {
+		:is([data-hidden~="mobile"],[data-hidden-mobile],#bump) { display: none; }
+	}
+	@media (min-width: $bp-tablet-start) and (max-width: $bp-tablet-end) {
+		:is([data-hidden~="tablet"],[data-hidden-tablet],#bump) { display: none; }
+	}
+	@media (min-width: $bp-desktop-start) {
+		:is([data-hidden~="desktop"],[data-hidden-desktop],#bump) { display: none; }
+	}
+}
+
+
+
+
+
+// -----------------------------------------------------------------------------
+// Grid
+// -----------------------------------------------------------------------------
+@mixin grid {
+
+	:is(
+		[data-grid=""],
+		[data-grid="grid"],
+		[data-grid^="1"],
+		[data-grid^="2"],
+		[data-grid^="3"],
+		[data-grid^="4"],
+		[data-grid^="5"],
+		[data-grid^="6"]
+	) {
+		display: grid; 
+		min-block-size: 100vh;
+		pointer-events: none;
+		
+		// ---------------------------------------------------------------------
+        // Column/Row Sizing 
+        // ---------------------------------------------------------------------
+        // default col and row size 
+		--💀-col-size-default: 1fr;
+		--💀-row-size-default: 1fr;
+		// @media (orientation: portrait), (max-height: 30rem) { 
+		@media (max-aspect-ratio: 6/5), (max-height: 30rem) { 			
+			--💀-row-size-default: auto;
+		}
+
+
+		@each $s in a b c d e f {
+			--💀-col-size-#{$s}-desktop: var(--is-desktop) var(--col-size-#{$s}-desktop); // if desktop
+			--💀-col-size-#{$s}-tablet:  var(--is-tablet)  var(--col-size-#{$s}-tablet);  // if tablet
+			--💀-col-size-#{$s}-mobile:  var(--is-mobile)  var(--col-size-#{$s}-mobile);  // if tablet
+			--💀-col-size-#{$s}: var(--💀-col-size-#{$s}-desktop, var(--💀-col-size-#{$s}-tablet, var(--💀-col-size-#{$s}-mobile)));	
+		} 
+		@each $s in 1 2 3 4 5 6 {
+			--💀-row-size-#{$s}-desktop: var(--is-desktop) var(--row-size-#{$s}-desktop); // if desktop
+			--💀-row-size-#{$s}-tablet:  var(--is-tablet)  var(--row-size-#{$s}-tablet);  // if tablet
+			--💀-row-size-#{$s}-mobile:  var(--is-mobile)  var(--row-size-#{$s}-mobile);  // if tablet
+			--💀-row-size-#{$s}: var(--💀-row-size-#{$s}-desktop, var(--💀-row-size-#{$s}-tablet, var(--💀-row-size-#{$s}-mobile)));	
+		} 
+
+
+
+		// ---------------------------------------------------------------------
+        // Grid Templates 
+        // ---------------------------------------------------------------------
+		grid-template-columns: 
+			minmax(0, var(--💀-col-size-a, var(--col-size-a, var(--💀-col-size-default))))
+			minmax(0, var(--💀-col-size-b, var(--col-size-b, var(--💀-col-size-default))))
+			minmax(0, var(--💀-col-size-c, var(--col-size-c, var(--💀-col-size-default))))
+			minmax(0, var(--💀-col-size-d, var(--col-size-d, var(--💀-col-size-default))))
+			minmax(0, var(--💀-col-size-e, var(--col-size-e, var(--💀-col-size-default))))
+			minmax(0, var(--💀-col-size-f, var(--col-size-f, var(--💀-col-size-default))))
+		;
+
+		grid-template-rows: 
+			minmax(0, var(--💀-row-size-1, var(--row-size-1, var(--💀-row-size-default))))
+			minmax(0, var(--💀-row-size-2, var(--row-size-2, var(--💀-row-size-default))))
+			minmax(0, var(--💀-row-size-3, var(--row-size-3, var(--💀-row-size-default))))
+			minmax(0, var(--💀-row-size-4, var(--row-size-4, var(--💀-row-size-default))))
+			minmax(0, var(--💀-row-size-5, var(--row-size-5, var(--💀-row-size-default))))
+			minmax(0, var(--💀-row-size-6, var(--row-size-6, var(--💀-row-size-default))))
+		;		
+
+
+
+		// ---------------------------------------------------------------------
+        // Grid Cell Placement 
+        // ---------------------------------------------------------------------
+        > [data-grid="guide"] > *, 
+		> * {
+			--💀-if-col-start-desktop: var(--is-desktop) var(--col-start-desktop);
+			--💀-if-col-start-tablet: var(--is-tablet) var(--col-start-tablet);
+			--💀-if-col-start-mobile: var(--is-mobile) var(--col-start-mobile);
+			--💀-col-start: var(--💀-if-col-start-desktop, var(--💀-if-col-start-tablet, var(--💀-if-col-start-mobile, var(--col-start))));
+			
+			--💀-if-col-end-desktop: var(--is-desktop) var(--col-end-desktop);
+			--💀-if-col-end-tablet: var(--is-tablet) var(--col-end-tablet);
+			--💀-if-col-end-mobile: var(--is-mobile) var(--col-end-mobile);
+			--💀-col-end: var(--💀-if-col-end-desktop, var(--💀-if-col-end-tablet, var(--💀-if-col-end-mobile, var(--col-end))));
+
+			--💀-if-row-start-desktop: var(--is-desktop) var(--row-start-desktop);
+			--💀-if-row-start-tablet: var(--is-tablet) var(--row-start-tablet);
+			--💀-if-row-start-mobile: var(--is-mobile) var(--row-start-mobile);
+			--💀-row-start: var(--💀-if-row-start-desktop, var(--💀-if-row-start-tablet, var(--💀-if-row-start-mobile, var(--row-start))));
+
+			--💀-if-row-end-desktop: var(--is-desktop) var(--row-end-desktop);
+			--💀-if-row-end-tablet: var(--is-tablet) var(--row-end-tablet);
+			--💀-if-row-end-mobile: var(--is-mobile) var(--row-end-mobile);
+			--💀-row-end: var(--💀-if-row-end-desktop, var(--💀-if-row-end-tablet, var(--💀-if-row-end-mobile, var(--row-end))));
+
+			grid-column-start: var(--💀-col-start, 1);
+			grid-column-end: var(--💀-col-end, 7);
+			grid-row-start: var(--💀-row-start, 1);
+			grid-row-end: var(--💀-row-end, 7);	
+			
+			container-type: inline-size;
+			isolation: isolate;
+			padding-block: .01px;
+			&:not(:empty) { pointer-events: auto; }			
+		}
+	}
+
+	[data-grid^="1"] { 
+		--col-size-b: 0;
+		--col-size-c: 0;
+		--col-size-d: 0;
+		--col-size-e: 0;
+		--col-size-f: 0;
+	}
+	[data-grid^="2"] { 
+		--col-size-c: 0;
+		--col-size-d: 0;
+		--col-size-e: 0;
+		--col-size-f: 0;
+	}
+	[data-grid^="3"] { 
+		--col-size-d: 0;
+		--col-size-e: 0;
+		--col-size-f: 0;
+	}
+	[data-grid^="4"] { 
+		--col-size-e: 0;
+		--col-size-f: 0;
+	}
+	[data-grid^="5"] { 
+		--col-size-f: 0;
+	}
+
+	[data-grid$="x1"] { 
+		--row-size-2: 0;
+		--row-size-3: 0;
+		--row-size-4: 0;
+		--row-size-5: 0;
+		--row-size-6: 0;
+	}
+	[data-grid$="x2"] { 
+		--row-size-3: 0;
+		--row-size-4: 0;
+		--row-size-5: 0;
+		--row-size-6: 0;
+	}
+	[data-grid$="x3"] { 
+		--row-size-4: 0;
+		--row-size-5: 0;
+		--row-size-6: 0;
+	}
+	[data-grid$="x4"] { 
+		--row-size-5: 0;
+		--row-size-6: 0;
+	}
+	[data-grid$="x5"] { 
+		--row-size-6: 0;
+	}	
+
+
+
+    // -------------------------------------------------------------------------
+    // Split-outs (see below)
+    // -------------------------------------------------------------------------
+    @include grid-cells;
+    @include grid-content;
+    @include grid-guide;
+}
+
+
+
+
+// -----------------------------------------------------------------------------
+// Grid Cells
+// -----------------------------------------------------------------------------
+@mixin grid-cells {
+	
+	@each $bp in mobile tablet desktop all {
+		$sel: if($bp == all, data-grid, data-grid-#{$bp});
+		$var: if($bp == all, '', -#{$bp});
+
+		// columns
+		[#{$sel}^="A" i] { --col-start#{$var}: 1; --col-end#{$var}: 2; --inline-start#{$var}: 10vw; }
+		[#{$sel}^="B" i] { --col-start#{$var}: 2; --col-end#{$var}: 3; }
+		[#{$sel}^="C" i] { --col-start#{$var}: 3; --col-end#{$var}: 4; }
+		[#{$sel}^="D" i] { --col-start#{$var}: 4; --col-end#{$var}: 5; }
+		[#{$sel}^="E" i] { --col-start#{$var}: 5; --col-end#{$var}: 6; }
+		[#{$sel}^="F" i] { --col-start#{$var}: 6; --col-end#{$var}: 7; --inline-end#{$var}: 10vw; }
+		[#{$sel}*=":A" i] { --col-end#{$var}: 2; }
+		[#{$sel}*=":B" i] { --col-end#{$var}: 3; }
+		[#{$sel}*=":C" i] { --col-end#{$var}: 4; }
+		[#{$sel}*=":D" i] { --col-end#{$var}: 5; }
+		[#{$sel}*=":E" i] { --col-end#{$var}: 6; }
+		[#{$sel}*=":F" i] { --col-end#{$var}: 7; --inline-end#{$var}: 10vw; }
+
+		// rows
+		// uses vmin to reduce block safe margins on mobile
+		[#{$sel}$="1"] { --row-start#{$var}: 1; --row-end#{$var}: 2; --block-start#{$var}: 10vmin;}
+		[#{$sel}$="2"] { --row-start#{$var}: 2; --row-end#{$var}: 3;}
+		[#{$sel}$="3"] { --row-start#{$var}: 3; --row-end#{$var}: 4;}
+		[#{$sel}$="4"] { --row-start#{$var}: 4; --row-end#{$var}: 5;}
+		[#{$sel}$="5"] { --row-start#{$var}: 5; --row-end#{$var}: 6;}
+		[#{$sel}$="6"] { --row-start#{$var}: 6; --row-end#{$var}: 7; --block-end#{$var}: 10vmin;}		
+		[#{$sel}*="1:"] { --row-start#{$var}: 1; --block-start#{$var}: 10vmin;}
+		[#{$sel}*="2:"] { --row-start#{$var}: 2; }
+		[#{$sel}*="3:"] { --row-start#{$var}: 3; }
+		[#{$sel}*="4:"] { --row-start#{$var}: 4; }
+		[#{$sel}*="5:"] { --row-start#{$var}: 5; }
+		[#{$sel}*="6:"] { --row-start#{$var}: 6; }	
+	}
+	
+	// grid content defaults 
+	[data-grid^="A" i]:not([data-grid-desktop]) { --inline-start-desktop: 10vw; }	
+	[data-grid^="A" i]:not([data-grid-tablet])  { --inline-start-tablet:  10vw; }
+	[data-grid^="A" i]:not([data-grid-mobile])  { --inline-start-mobile:  10vw; }	
+	:is([data-grid*=":F" i],[data-grid^="F" i]):not([data-grid-desktop]) { --inline-end-desktop: 10vw; }	
+	:is([data-grid*=":F" i],[data-grid^="F" i]):not([data-grid-tablet])  { --inline-end-tablet:  10vw; }
+	:is([data-grid*=":F" i],[data-grid^="F" i]):not([data-grid-mobile])  { --inline-end-mobile:  10vw; }		
+
+	// wrapping data-grid added to prevent conflict with X by Y grid 
+	[data-grid] {
+		:is([data-grid$="1"],[data-grid*="1:"]):not([data-grid-desktop]) { --block-start-desktop: 10vmin; }	
+		:is([data-grid$="1"],[data-grid*="1:"]):not([data-grid-tablet])  { --block-start-tablet:  10vmin; }
+		:is([data-grid$="1"],[data-grid*="1:"]):not([data-grid-mobile])  { --block-start-mobile:  10vmin; }		
+		[data-grid$="6"]:not([data-grid-desktop]) { --block-end-desktop: 10vmin; }	
+		[data-grid$="6"]:not([data-grid-tablet])  { --block-end-tablet:  10vmin; }
+		[data-grid$="6"]:not([data-grid-mobile])  { --block-end-mobile:  10vmin; }	
+	}
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Grid Content
+// -----------------------------------------------------------------------------
+@mixin grid-content {
+	[data-grid="content"] {
+		
+		// variables are inherited from the parent grid cell
+		--💀-if-inline-start-desktop: var(--is-desktop) var(--inline-start-desktop);
+		--💀-if-inline-start-tablet: var(--is-tablet) var(--inline-start-tablet);
+		--💀-if-inline-start-mobile: var(--is-mobile) var(--inline-start-mobile);		
+		// --💀-if-inline-start-all: var(--is-all) var(--inline-start);		
+		--💀-inline-start: var(--💀-if-inline-start-desktop, var(--💀-if-inline-start-tablet, var(--💀-if-inline-start-mobile, 0vw)));				
+
+		--💀-if-inline-end-desktop: var(--is-desktop) var(--inline-end-desktop);
+		--💀-if-inline-end-tablet: var(--is-tablet) var(--inline-end-tablet);
+		--💀-if-inline-end-mobile: var(--is-mobile) var(--inline-end-mobile);		
+		--💀-inline-end: var(--💀-if-inline-end-desktop, var(--💀-if-inline-end-tablet, var(--💀-if-inline-end-mobile, 0vw)));				
+		
+		--💀-if-block-start-desktop: var(--is-desktop) var(--block-start-desktop);
+		--💀-if-block-start-tablet: var(--is-tablet) var(--block-start-tablet);
+		--💀-if-block-start-mobile: var(--is-mobile) var(--block-start-mobile);		
+		--💀-block-start: var(--💀-if-block-start-desktop, var(--💀-if-block-start-tablet, var(--💀-if-block-start-mobile, 0vh)));				
+
+		--💀-if-block-end-desktop: var(--is-desktop) var(--block-end-desktop);
+		--💀-if-block-end-tablet: var(--is-tablet) var(--block-end-tablet);
+		--💀-if-block-end-mobile: var(--is-mobile) var(--block-end-mobile);		
+		--💀-block-end: var(--💀-if-block-end-desktop, var(--💀-if-block-end-tablet, var(--💀-if-block-end-mobile, 0vh)));				
+		
+		margin-inline: var(--💀-inline-start) var(--💀-inline-end);
+		margin-block: var(--💀-block-start) var(--💀-block-end);		
+		inline-size: calc(100% - var(--💀-inline-start) - var(--💀-inline-end));
+		block-size:  calc(100% - var(--💀-block-start) - var(--💀-block-end));		
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Grid Guide
+// -----------------------------------------------------------------------------
+@mixin grid-guide {
+	[data-grid="guide"] {
+		display: contents;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		pointer-events: none !important;
+		
+		*,*::before {
+			pointer-events: none !important;
+		}
+
+		> *:not([data-grid="A1:F6"]) {
+			color: inherit;
+			&::before {
+				content: attr(data-grid);
+				position: absolute;
+				inset: 0;
+				display: grid;
+				place-items: center;
+				font-size: .625rem;
+				outline: 1px dotted;
+				outline-offset: -.5px;
+
+				opacity: .5;
+			}
+		}
+
+		[data-grid="content"] {
+			outline: 1px dashed;
+			outline-offset: -.5px;
+			opacity: .5;
+		}
+	}
+	body:not([data-debug]) [data-grid="guide"] { display: none; }
+}
+
+
+
+
+
+
+
+

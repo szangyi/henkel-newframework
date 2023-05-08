@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// Layout Flex
+// -----------------------------------------------------------------------------
+@use './base' as config;
+
+
+@mixin flex {
+
+	// Flex display
+	@include flex-selector;
+	@media (min-width: config.$bp-mobile-start) and (max-width: config.$bp-mobile-end) {
+		@include flex-selector(mobile);
+	}
+	@media (min-width: config.$bp-tablet-start) and (max-width: config.$bp-tablet-end) {
+		@include flex-selector(tablet);
+	}
+	@media (min-width: config.$bp-desktop-start) {
+		@include flex-selector(desktop);
+	}
+
+
+}
+
+
+
+
+@mixin flex-selector($bp: null) {
+	$sel: if($bp, data-flex-#{$bp}, data-flex);
+
+	// Display
+	[#{$sel}] { display: flex; }
+	[#{$sel}] > * { isolation: isolate; }
+
+	// Direction
+	[#{$sel}~="row"] { flex-direction: row; }
+	[#{$sel}~="row-reverse"] { flex-direction: row-reverse; }
+	[#{$sel}~="col"] { flex-direction: column; }
+	[#{$sel}~="col-reverse"],[data-flex~="column-reverse"] { flex-direction: column-reverse; }
+
+	// Gap
+	[#{$sel}~="gap"] { gap: 1.5rem;}
+	[#{$sel}~="col-gap"],[#{$sel}~="column-gap"] {column-gap: 1.5rem; }
+	[#{$sel}~="row-gap"] {row-gap: 1.5rem; }
+
+	// Row direction (not col)
+	// [#{$sel}]:not([#{$sel}*="col "],[#{$sel}*="column "]) {
+	[#{$sel}]:not([#{$sel}~="col"], [#{$sel}~="column"], [#{$sel}~="col-reverse"], [#{$sel}~="column-reverse"]) {		
+		&[#{$sel}~="inline-start"]  { justify-content: start; }
+		&[#{$sel}~="inline-center"] { justify-content: center; }
+		&[#{$sel}~="inline-end"]    { justify-content: end; }
+		
+		&[#{$sel}~="block-start"]   { align-items: start; }
+		&[#{$sel}~="block-center"]  { align-items: center; }
+		&[#{$sel}~="block-end"]     { align-items: end; }	
+
+		&[#{$sel}~="inline-space-between"] { justify-content: space-between; }
+		&[#{$sel}~="inline-space-around"] {  justify-content: space-around; }	
+		&[#{$sel}~="inline-space-evenly"] {  justify-content: space-evenly; }	
+		&[#{$sel}~="inline-space-stretch"] > * { flex-grow: 1 } 
+	}
+
+	// Column direction 
+	// [#{$sel}*="col"] {
+	:is([#{$sel}~="col"], [#{$sel}~="column"], [#{$sel}~="col-reverse"], [#{$sel}~="column-reverse"]) {	
+		&[#{$sel}~="inline-start"]  { align-items: start; }
+		&[#{$sel}~="inline-center"] { align-items: center; }
+		&[#{$sel}~="inline-end"]    { align-items: end; }	
+
+		&[#{$sel}~="block-start"]   { justify-content: start; }
+		&[#{$sel}~="block-center"]  { justify-content: center; }
+		&[#{$sel}~="block-end"]     { justify-content: end; }	
+		
+		&[#{$sel}~="block-space-between"] { justify-content: space-between; }
+		&[#{$sel}~="block-space-around"] {  justify-content: space-around; }	
+		&[#{$sel}~="block-space-evenly"] {  justify-content: space-evenly; }	
+		&[#{$sel}~="block-space-stretch"] > * { flex-grow: 1; }
+	}	
+
+	
+}
+
+
+
+

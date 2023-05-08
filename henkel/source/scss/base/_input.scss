@@ -1,0 +1,377 @@
+@use 'config' as *;
+@use 'typography' as *;
+@use "sass:math";
+
+
+
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Input
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin input {
+	@content;
+}
+
+
+
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Button
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin input-button {
+	.button,
+	button {
+		display: inline-block;
+		appearance: none;
+		border: 0;
+		border-radius: 0;
+		outline: 0;
+		margin: 0;
+		padding: 0;
+		cursor: pointer;
+		font: inherit;
+		background: none;
+		text-align: center;
+		transition: background 300ms;
+		// text-transform: uppercase;
+		padding: .6em 1.2em;
+		text-decoration: none;
+
+		svg {
+			fill: currentColor;
+			pointer-events: none;
+		}
+
+		&.flex {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+
+
+
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Range
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin input-range {
+
+	$width: 100%;
+	$height: 1.5em;
+
+	$thumb-color: color(brand);
+	$thumb-color-disabled: color(brand);
+
+	$track-height: .25em;
+
+	//	support ie10+
+	[type="range"]{
+		appearance: none;							//	remove default styling
+		-webkit-tap-highlight-color: transparent;	//	hide iOS marker (do this in a global reset)
+		cursor: pointer;							//	add hand cursor (do this in a global reset)
+		border: 0;									//	hide border on iOS
+		outline: 0;									//	remove focus outline (maybe use box-shadow)
+		background: transparent;					//	hide background in chrome
+		padding: 0; 								//	remove padding on ie (also fixes thumb crop issue)
+		&::-moz-focus-outer { border: 0; }			//	remove dotted outline on firefox
+
+		height: $height;	//	avoid content crop (include box-shadow etc... will size to track on ie)
+		width:  $width;
+
+		font-size: inherit;
+
+		&:disabled { cursor: not-allowed; }			//	disabled cursor
+
+		//	––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+		//	thumb
+		@include vendor-thumb {
+			box-sizing: border-box; 	//	global reset won't work on ie and firrefox
+			appearance: none;
+			background: $thumb-color;
+			height: $height;
+			width:  $height;
+			border: 2px solid white;
+			border-radius: 50%;
+
+			box-shadow: 1px 1px 3px rgba(black, 0.2);
+		}
+
+		//	align thumb vertically on chrome  (selector hack used to prevent edge from breaking)
+		&:not(*:root)::-webkit-slider-thumb {
+			margin-top: math.div($track-height - $height, 2); // (thumb-height - track-height)/2
+		}
+
+		//	disabled state
+		&:disabled {
+			@include vendor-thumb {
+				background: #dedede;
+				box-shadow: inset 1px 1px 3px rgba(black, 0.2);
+			}
+		}
+
+		//	––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+		//	track
+		@include vendor-track {
+			height: $track-height;
+			border: 0;
+			color: color(none);			//	hide step indicators on ie/edge
+			background: color(white);
+			border-radius: $track-height;
+
+			box-shadow: inset 1px 1px 3px rgba(black, 0.2);
+		}
+
+
+		//	––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+		//	ie only
+		//	lower fill
+		//	upper fill
+		//	tooltip (only display and visibility can be styled)
+		&::-ms-fill-lower, &::-ms-fill-upper, &::-ms-tooltip {
+			display: none;
+		}
+
+
+		&.size-lg  { @include font-size(30px); }
+		&.size-md  { @include font-size(24px);  }
+		&.size-sm  { @include font-size(18px);  }
+
+		&.hide-track {
+			@include vendor-track {
+				background: color(none);
+				box-shadow: none;
+			 }
+		}
+	}
+}
+
+
+
+
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Checkbox
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin input-check {
+	$width: 1.5em;
+	$height: 1.5em;
+
+
+	[type=checkbox]{
+
+		vertical-align: middle;
+		appearance: none;
+		background: none;
+		border: 0;
+		outline: 0;
+		flex-grow: 0;
+		margin: 0;
+
+
+		width: $width;
+		height: $height;
+
+		// border-radius: 50%;
+		background-color: color(white);
+		transition: background 300ms;
+		cursor: pointer;
+
+		//	faux border
+		box-shadow: inset 0 0 0 1.5px rgb(color(dark),0.40);
+
+		//	check
+		@include vendor-check {
+			content: '';
+			color: color(none);
+
+			display: block;
+			width: inherit;
+			height: inherit;
+			border-radius: inherit;
+			border: 0;
+			background-color: transparent;
+			background-size: contain;
+			// box-shadow: inset 0 0 0 2px color(black);
+		}
+
+		&:checked {
+			background-color: currentcolor;
+			box-shadow: inset 0 0 0 1.5px currentcolor;
+		}
+
+		&:disabled {
+			background-color: color(g3);
+			opacity: 0.84;
+			cursor: not-allowed;
+		}
+
+		&:checked {
+			@include vendor-check {
+				box-shadow: none;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
+			}
+		}
+
+	}
+}
+
+
+
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Radiobutton
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin input-radio {
+	$width: 1.5em;
+	$height: 1.5em;
+
+
+	[type=radio]{
+
+		vertical-align: middle;
+		appearance: none;
+		background: none;
+		border: 0;
+		outline: 0;
+		flex-grow: 0;
+		margin: 0;
+
+		width: $width;
+		height: $height;
+
+		border-radius: 50%;
+		background-color: color(white);
+		transition: background 300ms;
+		cursor: pointer;
+
+		//	faux border
+		box-shadow: inset 0 0 0 1.5px rgb(color(dark),0.40);
+
+		//	check
+		@include vendor-check {
+			content: '';
+			color: color(none);
+
+			display: block;
+			width: inherit;
+			height: inherit;
+			border-radius: inherit;
+			border: 0;
+			background-color: transparent;
+			background-size: contain;
+			// box-shadow: inset 0 0 0 1px color(black);
+		}
+
+		&:checked {
+			background-color: currentcolor;
+			box-shadow: inset 0 0 0 1.5px currentcolor;
+		}
+
+		&:disabled {
+			background-color: color(disabled);
+			opacity: 0.84;
+			cursor: not-allowed;
+		}
+
+		&:checked {
+			@include vendor-check {
+				box-shadow: none;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
+			}
+		}
+
+	}
+}
+
+
+
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Select
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin input-select {
+	select {
+		$arrow:  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs/%3E%3Cpath fill='%23E1000F' d='M40 0v40H0V0z'/%3E%3Cpath stroke='%23FFF' stroke-linecap='square' stroke-width='5' d='M19.984 24.516l-8.838-8.84m8.838 8.84l8.84-8.84'/%3E%3C/svg%3E";
+		$arrow-hover:  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs/%3E%3Cpath fill='%23ae000c' d='M40 0v40H0V0z'/%3E%3Cpath stroke='%23FFF' stroke-linecap='square' stroke-width='5' d='M19.984 24.516l-8.838-8.84m8.838 8.84l8.84-8.84'/%3E%3C/svg%3E";
+		$arrow-disabled:  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs/%3E%3Cpath fill='%23ae000c' d='M40 0v40H0V0z'/%3E%3Cpath stroke='%23FFF' stroke-linecap='square' stroke-width='5' d='M19.984 24.516l-8.838-8.84m8.838 8.84l8.84-8.84'/%3E%3C/svg%3E";
+
+		font-family: inherit;
+		appearance: none;
+		display: block;
+		margin: 2px 0;
+		padding: .6em 1.4em .5em .8em;
+
+		width: 100%;
+		max-width: 100%;
+
+		outline: 0;
+		border: 1px solid rgb(color(dark),0.40);
+		border-radius: 0;
+
+		background-color: color(light);
+		color: color(dark);
+		line-height: 1.2;
+
+		background-image: url($arrow);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right center;
+
+		//	hover style
+		&:hover,&:focus {
+			background-image: url($arrow-hover);
+		}
+
+		//	disabled style
+		&:disabled {
+			background-image: url($arrow-disabled);
+			//color: $color-disabled-text;
+			//background-color: $color-disabled-back;
+			cursor: not-allowed;
+		}
+
+		//	focus style
+		&:focus {
+			//box-shadow: $focus-shadow;
+		}
+
+
+		&:-moz-focusring {
+			color: transparent;
+		}
+
+		&::-ms-expand {
+			display: none;
+		}
+
+
+		//	theming
+		// @include input-theme;
+
+	}
+
+
+
+	//	SVGs
+	//	chevron <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+	//	arrow 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#ccc" d="M7 10l5 5 5-5z"/></svg>
+	//	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path fill="#E1000F" d="M40 0v40H0V0z"/><path stroke="#FFF" stroke-linecap="square" stroke-width="5" d="M19.984 24.516l-8.838-8.84m8.838 8.84l8.84-8.84"/></svg>'
+}
+
+
+
+
+//
+//	Vendor helpers
+//
+@mixin vendor-thumb {
+	&::-webkit-slider-thumb { @content; }
+	&::-moz-range-thumb { @content; }
+	&::-ms-thumb { @content; }
+}
+@mixin vendor-track {
+	&::-webkit-slider-runnable-track { @content; }
+	&::-moz-range-track { @content; }
+	&::-ms-track { @content; }
+}
+@mixin vendor-check {
+	&::before{ @content; }
+	&::-ms-check{ @content; }
+}

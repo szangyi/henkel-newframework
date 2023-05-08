@@ -1,0 +1,151 @@
+// -----------------------------------------------------------------------------
+// Button Component
+// -----------------------------------------------------------------------------
+@use '../frankly/font';
+@use '../frankly/theme';
+@use '../frankly/comp';
+
+
+@mixin button {
+    @include comp.create('button') {
+
+        @at-root :where(&) { 
+
+            // default values 
+            --font-size: var(--font-size-text-sm);
+            --font-weight: var(--font-weight-semi-bold);
+            --font-align: var(--font-align-center);
+        }
+        
+        // reset in case we style a button
+        appearance: none;
+        border: 0;
+        border-radius: 0;
+
+        // reset if link
+        text-decoration: none;
+
+        // styling
+        
+        isolation: isolate;
+        display: inline-flex;
+        align-items: center;
+        padding-inline: 2em;
+        padding-block: .7em; 
+        column-gap: .5em;      
+        font-size: 1em;
+        inline-size: fit-content;
+        cursor: pointer;
+
+        // assign variables - color variables added later
+        font-size: var(--🔤-font-size);
+        font-weight: var(--🔤-font-weight);
+        text-transform: var(--🔤-font-transform);
+
+        // nuke background color
+        background-color: var(--color-none);
+
+        // to make background-color dynamic
+        &::before {
+            position: absolute;
+            z-index: -1;
+            content: '';
+            inset: 0;
+            background-color: var(--🎨-color-back);
+
+            // transitions/animations
+            transition: .2s ease-out;
+        }
+
+        // filters
+        --filter-default: brightness(95%);          // darken
+        --lighten: brightness(125%) contrast(75%);  // lighten
+        
+        --filter-if-desktop: var(--is-desktop) var(--filter-desktop);
+        --filter-if-tablet: var(--is-tablet) var(--filter-tablet);
+        --filter-if-mobile: var(--is-mobile) var(--filter-mobile);
+        --filter: var(--filter-if-desktop, var(--filter-if-tablet, var(--filter-if-mobile, var(--filter-default))));
+     
+        // set lighten filter if dark background (per breakpoint)
+        &:is([data-color-desktop*="dark"],[data-color-desktop*="black"]) { --filter-desktop: var(--lighten); }
+        &:is([data-color-tablet*="dark"],[data-color-tablet*="black"])   { --filter-tablet:  var(--lighten); }
+        &:is([data-color-mobile*="dark"],[data-color-mobile*="black"])   { --filter-tablet:  var(--lighten); }
+        &:is([data-color*="dark"],[data-color*="black"]) { --filter-default: var(--lighten) }
+     
+        // use filter
+        &:is(:hover, :focus)::before {
+            filter: var(--filter);    
+        }
+
+        // states
+        &[disabled] {
+            filter: grayscale(100%);
+            pointer-events: none;
+            cursor: inherit;
+        }
+
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// Button Rounded Variation
+// -----------------------------------------------------------------------------
+
+@mixin button--rounded {
+    @include comp.create('button','rounded') {
+
+        &::before {
+        border-radius: 5px;
+        }
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// Button Pill Variation
+// -----------------------------------------------------------------------------
+
+@mixin button--pill {
+    @include comp.create('button','pill') {
+
+        &::before {
+            border-radius: 100vmax;
+        }
+
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// Button Full-width Variation
+// -----------------------------------------------------------------------------
+
+@mixin button--full {
+    @include comp.create('button','full') {
+        inline-size: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Button Page-close
+// -----------------------------------------------------------------------------
+
+@mixin button--page-close {
+    @include comp.create('button','page-close') {
+          --padding-default: .5em;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 4rem;
+            height: 4rem;
+
+            span {
+                margin: auto; 
+            }
+    }
+}
+

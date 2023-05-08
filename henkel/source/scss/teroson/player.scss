@@ -1,0 +1,16 @@
+@use 'teroson' as  *;
+
+
+
+
+
+@include reset;
+@include typography;
+@include theme;
+
+@include player {
+	@include player-main;
+	@include player-nav;
+	@include player-aside;
+	@include player-aside-button;
+}

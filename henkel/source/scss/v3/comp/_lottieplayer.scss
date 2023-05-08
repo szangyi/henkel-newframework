@@ -1,0 +1,41 @@
+
+@use "../base/config" as *;
+
+
+	/* ------------- */
+		/* Lottie-player */
+		/* ------------- */
+
+@mixin lottieplayer {
+
+
+    .quiz {
+
+        .lottie-player {
+			width: 60%;
+			position: absolute;
+			margin: 0 0 -14rem 12%;
+            transition: 0.4s ease-in;
+		}
+
+		.card .text-lot .lottie-player {
+			bottom: 0;
+			margin-bottom: -9rem;
+		}
+
+		.card.slider .lottie-player {
+			width: 80%;
+		}
+
+		.lottie-player svg:last-of-type {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.lottie-player svg:first-of-type {
+			z-index: 1;
+		}
+
+    }
+}

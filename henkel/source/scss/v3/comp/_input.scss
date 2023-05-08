@@ -1,0 +1,74 @@
+// -----------------------------------------------------------------------------
+// Input Components
+// -----------------------------------------------------------------------------
+@use '../frankly/comp';
+@use '../frankly/theme'; 
+
+
+
+
+// -----------------------------------------------------------------------------
+// Check Component
+// -----------------------------------------------------------------------------
+@mixin input-check {
+    @include comp.create('input-check') {
+        
+        appearance: none;
+        cursor: pointer;
+        width: 1.125em;
+        height: 1.125em;
+        flex-shrink: 0;  // prevent distort in flex context
+
+        border: 2px solid currentColor;
+
+
+        &:not(:checked) {
+            color: theme.color('gray');
+        }
+
+        &:checked {
+            color: var(--color-text, currentColor);
+            background-color: var(--color-text, currentColor);
+        }
+
+        &:disabled {
+            color: theme.color('gray');
+            background-color: theme.color('gray-light');
+        }
+
+        &:checked::before {
+            content: '';
+            display: block;
+            inset: .1em;
+            position: absolute;
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' fill='none'%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='M1 3.083 3.947 6 9 1'/%3E%3C/svg%3E");
+                repeat: no-repeat; 
+                size: contain;
+                position: center;
+            }
+        }
+    }
+}
+
+
+@mixin input-check--rounded {
+    @include comp.create('input-check', 'rounded') {
+        border-radius: 50%;
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// Radio Component
+// -----------------------------------------------------------------------------
+@mixin input-radio {
+    // @include comp.create('input-radio') {
+    //     @extend #{comp.selector('input-check')};
+    //     border-radius: 50%;        
+    // }
+}
+
+
+
+

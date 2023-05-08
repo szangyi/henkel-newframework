@@ -1,0 +1,277 @@
+// -----------------------------------------------------------------------------
+// Layout Grid
+// -----------------------------------------------------------------------------
+
+
+
+// -----------------------------------------------------------------------------
+// Grid
+// -----------------------------------------------------------------------------
+@mixin grid {
+
+	:is(
+		[data-grid=""],
+		[data-grid="grid"],
+		[data-grid^="1"],
+		[data-grid^="2"],
+		[data-grid^="3"],
+		[data-grid^="4"],
+		[data-grid^="5"],
+		[data-grid^="6"]
+	) {
+		display: grid; 
+		min-block-size: 100vh;
+		min-block-size: 100svh;
+		pointer-events: none;
+		
+		// ---------------------------------------------------------------------
+        // Column/Row Sizing 
+        // ---------------------------------------------------------------------
+        // default col and row size 
+		--💀-grid-col-size-default: 1fr;
+		--💀-grid-row-size-default: 1fr;
+		// @media (orientation: portrait), (max-height: 30rem) { 
+		@media (max-aspect-ratio: 6/5), (max-height: 30rem) { 			
+			--💀-grid-row-size-default: auto;
+		}
+
+
+		@each $s in a b c d e f {
+			--💀-grid-col-size-#{$s}-desktop: var(--is-desktop) var(--grid-col-size-#{$s}-desktop); // if desktop
+			--💀-grid-col-size-#{$s}-tablet:  var(--is-tablet)  var(--grid-col-size-#{$s}-tablet);  // if tablet
+			--💀-grid-col-size-#{$s}-mobile:  var(--is-mobile)  var(--grid-col-size-#{$s}-mobile);  // if tablet
+			--💀-grid-col-size-#{$s}: var(--💀-grid-col-size-#{$s}-desktop, var(--💀-grid-col-size-#{$s}-tablet, var(--💀-grid-col-size-#{$s}-mobile)));	
+		} 
+		@each $s in 1 2 3 4 5 6 {
+			--💀-grid-row-size-#{$s}-desktop: var(--is-desktop) var(--grid-row-size-#{$s}-desktop); // if desktop
+			--💀-grid-row-size-#{$s}-tablet:  var(--is-tablet)  var(--grid-row-size-#{$s}-tablet);  // if tablet
+			--💀-grid-row-size-#{$s}-mobile:  var(--is-mobile)  var(--grid-row-size-#{$s}-mobile);  // if tablet
+			--💀-grid-row-size-#{$s}: var(--💀-grid-row-size-#{$s}-desktop, var(--💀-grid-row-size-#{$s}-tablet, var(--💀-grid-row-size-#{$s}-mobile)));	
+		} 
+
+
+
+		// ---------------------------------------------------------------------
+        // Grid Templates 
+        // ---------------------------------------------------------------------
+		grid-template-columns: 
+			minmax(0, var(--💀-grid-col-size-a, var(--grid-col-size-a, var(--💀-grid-col-size-default))))
+			minmax(0, var(--💀-grid-col-size-b, var(--grid-col-size-b, var(--💀-grid-col-size-default))))
+			minmax(0, var(--💀-grid-col-size-c, var(--grid-col-size-c, var(--💀-grid-col-size-default))))
+			minmax(0, var(--💀-grid-col-size-d, var(--grid-col-size-d, var(--💀-grid-col-size-default))))
+			minmax(0, var(--💀-grid-col-size-e, var(--grid-col-size-e, var(--💀-grid-col-size-default))))
+			minmax(0, var(--💀-grid-col-size-f, var(--grid-col-size-f, var(--💀-grid-col-size-default))))
+		;
+
+		grid-template-rows: 
+			minmax(0, var(--💀-grid-row-size-1, var(--grid-row-size-1, var(--💀-grid-row-size-default))))
+			minmax(0, var(--💀-grid-row-size-2, var(--grid-row-size-2, var(--💀-grid-row-size-default))))
+			minmax(0, var(--💀-grid-row-size-3, var(--grid-row-size-3, var(--💀-grid-row-size-default))))
+			minmax(0, var(--💀-grid-row-size-4, var(--grid-row-size-4, var(--💀-grid-row-size-default))))
+			minmax(0, var(--💀-grid-row-size-5, var(--grid-row-size-5, var(--💀-grid-row-size-default))))
+			minmax(0, var(--💀-grid-row-size-6, var(--grid-row-size-6, var(--💀-grid-row-size-default))))
+		;		
+
+
+
+		// ---------------------------------------------------------------------
+        // Grid Cell Placement 
+        // ---------------------------------------------------------------------
+        > [data-grid="guide"] > *, 
+		> * {
+			--💀-if-grid-col-start-desktop: var(--is-desktop) var(--grid-col-start-desktop);
+			--💀-if-grid-col-start-tablet: var(--is-tablet) var(--grid-col-start-tablet);
+			--💀-if-grid-col-start-mobile: var(--is-mobile) var(--grid-col-start-mobile);
+			--💀-grid-col-start: var(--💀-if-grid-col-start-desktop, var(--💀-if-grid-col-start-tablet, var(--💀-if-grid-col-start-mobile, var(--grid-col-start))));
+			
+			--💀-if-grid-col-end-desktop: var(--is-desktop) var(--grid-col-end-desktop);
+			--💀-if-grid-col-end-tablet: var(--is-tablet) var(--grid-col-end-tablet);
+			--💀-if-grid-col-end-mobile: var(--is-mobile) var(--grid-col-end-mobile);
+			--💀-grid-col-end: var(--💀-if-grid-col-end-desktop, var(--💀-if-grid-col-end-tablet, var(--💀-if-grid-col-end-mobile, var(--grid-col-end))));
+
+			--💀-if-grid-row-start-desktop: var(--is-desktop) var(--grid-row-start-desktop);
+			--💀-if-grid-row-start-tablet: var(--is-tablet) var(--grid-row-start-tablet);
+			--💀-if-grid-row-start-mobile: var(--is-mobile) var(--grid-row-start-mobile);
+			--💀-grid-row-start: var(--💀-if-grid-row-start-desktop, var(--💀-if-grid-row-start-tablet, var(--💀-if-grid-row-start-mobile, var(--grid-row-start))));
+
+			--💀-if-grid-row-end-desktop: var(--is-desktop) var(--grid-row-end-desktop);
+			--💀-if-grid-row-end-tablet: var(--is-tablet) var(--grid-row-end-tablet);
+			--💀-if-grid-row-end-mobile: var(--is-mobile) var(--grid-row-end-mobile);
+			--💀-grid-row-end: var(--💀-if-grid-row-end-desktop, var(--💀-if-grid-row-end-tablet, var(--💀-if-grid-row-end-mobile, var(--grid-row-end))));
+
+			grid-column-start: var(--💀-grid-col-start, 1);
+			grid-column-end: var(--💀-grid-col-end, 7);
+			grid-row-start: var(--💀-grid-row-start, 1);
+			grid-row-end: var(--💀-grid-row-end, 7);	
+			
+			container-type: inline-size;
+			isolation: isolate;
+			padding-block: .01px;
+			&:not(:empty) { pointer-events: auto; }			
+		}
+	}
+
+	[data-grid^="1"] { 
+		--grid-col-size-b: 0;
+		--grid-col-size-c: 0;
+		--grid-col-size-d: 0;
+		--grid-col-size-e: 0;
+		--grid-col-size-f: 0;
+	}
+	[data-grid^="2"] { 
+		--grid-col-size-c: 0;
+		--grid-col-size-d: 0;
+		--grid-col-size-e: 0;
+		--grid-col-size-f: 0;
+	}
+	[data-grid^="3"] { 
+		--grid-col-size-d: 0;
+		--grid-col-size-e: 0;
+		--grid-col-size-f: 0;
+	}
+	[data-grid^="4"] { 
+		--grid-col-size-e: 0;
+		--grid-col-size-f: 0;
+	}
+	[data-grid^="5"] { 
+		--grid-col-size-f: 0;
+	}
+
+	[data-grid$="x1"] { 
+		--grid-row-size-2: 0;
+		--grid-row-size-3: 0;
+		--grid-row-size-4: 0;
+		--grid-row-size-5: 0;
+		--grid-row-size-6: 0;
+	}
+	[data-grid$="x2"] { 
+		--grid-row-size-3: 0;
+		--grid-row-size-4: 0;
+		--grid-row-size-5: 0;
+		--grid-row-size-6: 0;
+	}
+	[data-grid$="x3"] { 
+		--grid-row-size-4: 0;
+		--grid-row-size-5: 0;
+		--grid-row-size-6: 0;
+	}
+	[data-grid$="x4"] { 
+		--grid-row-size-5: 0;
+		--grid-row-size-6: 0;
+	}
+	[data-grid$="x5"] { 
+		--grid-row-size-6: 0;
+	}	
+
+
+
+    // -------------------------------------------------------------------------
+    // Split-outs (see below)
+    // -------------------------------------------------------------------------
+    @include grid-cells;
+    @include grid-content;
+}
+
+
+
+
+// -----------------------------------------------------------------------------
+// Grid Cells
+// -----------------------------------------------------------------------------
+@mixin grid-cells {
+	
+	@each $bp in mobile tablet desktop all {
+		$sel: if($bp == all, data-grid, data-grid-#{$bp});
+		$var: if($bp == all, '', -#{$bp});
+
+		// columns
+		[#{$sel}^="A" i] { --grid-col-start#{$var}: 1; --grid-col-end#{$var}: 2; --inline-start#{$var}: 10vw; }
+		[#{$sel}^="B" i] { --grid-col-start#{$var}: 2; --grid-col-end#{$var}: 3; }
+		[#{$sel}^="C" i] { --grid-col-start#{$var}: 3; --grid-col-end#{$var}: 4; }
+		[#{$sel}^="D" i] { --grid-col-start#{$var}: 4; --grid-col-end#{$var}: 5; }
+		[#{$sel}^="E" i] { --grid-col-start#{$var}: 5; --grid-col-end#{$var}: 6; }
+		[#{$sel}^="F" i] { --grid-col-start#{$var}: 6; --grid-col-end#{$var}: 7; --inline-end#{$var}: 10vw; }
+		[#{$sel}*=":A" i] { --grid-col-end#{$var}: 2; }
+		[#{$sel}*=":B" i] { --grid-col-end#{$var}: 3; }
+		[#{$sel}*=":C" i] { --grid-col-end#{$var}: 4; }
+		[#{$sel}*=":D" i] { --grid-col-end#{$var}: 5; }
+		[#{$sel}*=":E" i] { --grid-col-end#{$var}: 6; }
+		[#{$sel}*=":F" i] { --grid-col-end#{$var}: 7; --inline-end#{$var}: 10vw; }
+
+		// rows
+		// uses vmin to reduce block safe margins on mobile
+		[#{$sel}$="1"] { --grid-row-start#{$var}: 1; --grid-row-end#{$var}: 2; --block-start#{$var}: 10vmin;}
+		[#{$sel}$="2"] { --grid-row-start#{$var}: 2; --grid-row-end#{$var}: 3;}
+		[#{$sel}$="3"] { --grid-row-start#{$var}: 3; --grid-row-end#{$var}: 4;}
+		[#{$sel}$="4"] { --grid-row-start#{$var}: 4; --grid-row-end#{$var}: 5;}
+		[#{$sel}$="5"] { --grid-row-start#{$var}: 5; --grid-row-end#{$var}: 6;}
+		[#{$sel}$="6"] { --grid-row-start#{$var}: 6; --grid-row-end#{$var}: 7; --block-end#{$var}: 10vmin;}		
+		[#{$sel}*="1:"] { --grid-row-start#{$var}: 1; --block-start#{$var}: 10vmin;}
+		[#{$sel}*="2:"] { --grid-row-start#{$var}: 2; }
+		[#{$sel}*="3:"] { --grid-row-start#{$var}: 3; }
+		[#{$sel}*="4:"] { --grid-row-start#{$var}: 4; }
+		[#{$sel}*="5:"] { --grid-row-start#{$var}: 5; }
+		[#{$sel}*="6:"] { --grid-row-start#{$var}: 6; }	
+	}
+	
+	// grid content defaults 
+	[data-grid^="A" i]:not([data-grid-desktop]) { --inline-start-desktop: 10vw; }	
+	[data-grid^="A" i]:not([data-grid-tablet])  { --inline-start-tablet:  10vw; }
+	[data-grid^="A" i]:not([data-grid-mobile])  { --inline-start-mobile:  5vw; }	
+	:is([data-grid*=":F" i],[data-grid^="F" i]):not([data-grid-desktop]) { --inline-end-desktop: 10vw; }	
+	:is([data-grid*=":F" i],[data-grid^="F" i]):not([data-grid-tablet])  { --inline-end-tablet:  10vw; }
+	:is([data-grid*=":F" i],[data-grid^="F" i]):not([data-grid-mobile])  { --inline-end-mobile:  5vw; }		
+
+	// wrapping data-grid added to prevent conflict with X by Y grid 
+	[data-grid] {
+		:is([data-grid$="1"],[data-grid*="1:"]):not([data-grid-desktop]) { --block-start-desktop: 10vmin; }	
+		:is([data-grid$="1"],[data-grid*="1:"]):not([data-grid-tablet])  { --block-start-tablet:  10vmin; }
+		:is([data-grid$="1"],[data-grid*="1:"]):not([data-grid-mobile])  { --block-start-mobile:  10vmin; }		
+		[data-grid$="6"]:not([data-grid-desktop]) { --block-end-desktop: 10vmin; }	
+		[data-grid$="6"]:not([data-grid-tablet])  { --block-end-tablet:  10vmin; }
+		[data-grid$="6"]:not([data-grid-mobile])  { --block-end-mobile:  10vmin; }	
+	}
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Grid Content
+// -----------------------------------------------------------------------------
+@mixin grid-content {
+	[data-grid="content"] {
+		
+		// variables are inherited from the parent grid cell
+		--💀-if-inline-start-desktop: var(--is-desktop) var(--inline-start-desktop);
+		--💀-if-inline-start-tablet: var(--is-tablet) var(--inline-start-tablet);
+		--💀-if-inline-start-mobile: var(--is-mobile) var(--inline-start-mobile);		
+		// --💀-if-inline-start-all: var(--is-all) var(--inline-start);		
+		--💀-inline-start: var(--💀-if-inline-start-desktop, var(--💀-if-inline-start-tablet, var(--💀-if-inline-start-mobile, 0vw)));				
+
+		--💀-if-inline-end-desktop: var(--is-desktop) var(--inline-end-desktop);
+		--💀-if-inline-end-tablet: var(--is-tablet) var(--inline-end-tablet);
+		--💀-if-inline-end-mobile: var(--is-mobile) var(--inline-end-mobile);		
+		--💀-inline-end: var(--💀-if-inline-end-desktop, var(--💀-if-inline-end-tablet, var(--💀-if-inline-end-mobile, 0vw)));				
+		
+		--💀-if-block-start-desktop: var(--is-desktop) var(--block-start-desktop);
+		--💀-if-block-start-tablet: var(--is-tablet) var(--block-start-tablet);
+		--💀-if-block-start-mobile: var(--is-mobile) var(--block-start-mobile);		
+		--💀-block-start: var(--💀-if-block-start-desktop, var(--💀-if-block-start-tablet, var(--💀-if-block-start-mobile, 0vh)));				
+
+		--💀-if-block-end-desktop: var(--is-desktop) var(--block-end-desktop);
+		--💀-if-block-end-tablet: var(--is-tablet) var(--block-end-tablet);
+		--💀-if-block-end-mobile: var(--is-mobile) var(--block-end-mobile);		
+		--💀-block-end: var(--💀-if-block-end-desktop, var(--💀-if-block-end-tablet, var(--💀-if-block-end-mobile, 0vh)));				
+		
+		margin-inline: var(--💀-inline-start) var(--💀-inline-end);
+		margin-block: var(--💀-block-start) var(--💀-block-end);		
+		inline-size: calc(100% - var(--💀-inline-start) - var(--💀-inline-end));
+		block-size:  calc(100% - var(--💀-block-start) - var(--💀-block-end));		
+	}
+}
+
+
+
+
+
+

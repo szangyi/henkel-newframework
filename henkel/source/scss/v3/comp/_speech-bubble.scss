@@ -1,0 +1,110 @@
+// -----------------------------------------------------------------------------
+//
+//  Speech Bubble Component 
+//
+//
+//  <foreignObject data-comp="speech-bubble" width="100" height="100">
+//      <div class="wrapper">
+//          <div class="content">
+//              ...
+//          </div>
+//      </div>
+//  </foreignObject>
+//
+// -----------------------------------------------------------------------------
+@use "../frankly/comp";
+@use '../frankly/theme';
+
+
+
+
+
+
+// -----------------------------------------------------------------------------
+// Speech Bubble Component
+// -----------------------------------------------------------------------------
+@mixin speech-bubble {
+    @include comp.create('speech-bubble') {
+    
+        --size: 12rem;
+        --margin: 8%;
+        --font-size: .80rem;    
+        --offset: 0;
+
+
+        .wrapper {
+            width: var(--size);
+            height: var(--size);    
+
+            background: {
+                repeat: no-repeat;
+                size: 1.5em;
+                image: url("data:image/svg+xml,%3Csvg viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.03878 2.35074C1.36256 11.7963 5.77796 29.8774 30.6612 30.7826' stroke='black' stroke-width='3.59412' stroke-linecap='round'/%3E%3C/svg%3E");
+                position: 92% 92%;
+            }   
+
+            // shape outside left  
+            &::before {
+                content: '';
+                width: 50%;
+                height: 100%;
+                float: left;
+                shape-outside: polygon(0 0, 98% 0, 50% 6%, 23.4% 17.3%, 6% 32.6%, 0 50%, 6% 65.6%, 23.4% 82.7%, 50% 94%, 98% 100%, 0 100%);
+                shape-margin: var(--margin);
+            }
+        }
+
+
+
+        // content 
+        .content {
+            height: 100%;
+            width: 100%;
+
+
+            text-align: center;
+            background: inherit;
+            background-color: var(--color-white); 
+            color: var(--color-black); 
+
+            font-size: var(--font-size);
+            border-radius: 50%;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+
+            // shape outside right 
+            &::before {
+                content: '';
+                width: 50%;
+                height: 100%;
+                float: right;
+                shape-outside: polygon(2% 0%, 100% 0%, 100% 100%, 2% 100%, 50% 94%, 76.6% 82.7%, 94% 65.6%, 100% 50%, 94% 32.6%, 76.6% 17.3%, 50% 6% );
+                shape-margin: var(--margin);
+            }
+
+            // text content  
+            *:first-child::before {
+                content: '';
+                display: block; 
+                padding-block-start: var(--offset);
+            }
+        }
+
+        @include speech-bubble--start;
+    }
+}
+
+
+
+
+
+@mixin speech-bubble--start {
+    @include comp.create('speech-bubble','start') {
+
+        .wrapper {
+            background: {
+                image: url("data:image/svg+xml,%3Csvg viewBox='0 0 34 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M31.4023 2.35074C32.0785 11.7963 27.6631 29.8774 2.77982 30.7826' stroke='black' stroke-width='3.59412' stroke-linecap='round'/%3E%3C/svg%3E");
+                position: 8% 92%;
+            }   
+        }
+    }
+}

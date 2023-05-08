@@ -1,0 +1,78 @@
+// -----------------------------------------------------------------------------
+// Layout Debug
+// -----------------------------------------------------------------------------
+
+
+@mixin debug {
+
+
+	// -------------------------------------------------------------------------
+	// Viewport Info (requires js)
+	// -------------------------------------------------------------------------
+	@at-root body[data-debug] {
+	    &::before {
+
+	    	--🐞-if-debug-desktop: var(--is-desktop) 'D';
+	        --🐞-if-debug-tablet: var(--is-tablet) 'T';
+	        --🐞-if-debug-mobile: var(--is-mobile) 'M';
+	        --🐞-debug: var(--🐞-if-debug-desktop, var(--🐞-if-debug-tablet, var(--🐞-if-debug-mobile)));
+	        
+			content: var(--🐞-debug, '?') ':  ' var(--debug-w) ' x ' var(--debug-h) ;
+			display: grid;
+			place-items: center;
+	        position: fixed;
+	        top: 0;
+	        right: 0;
+	        z-index: 9;
+	        padding-inline: 1em;
+	        block-size: 1.2rem;
+
+	        font-size: 0.625rem;
+	        font-weight: 700;
+	        color: white;
+	        background-color: #e1000f;
+	        text-align: center;
+	        
+	    }
+	}
+
+	// -------------------------------------------------------------------------
+	// Grid Guide
+	// -------------------------------------------------------------------------
+	[data-grid="guide"] {
+		display: contents;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		pointer-events: none !important;
+		
+		*,*::before {
+			pointer-events: none !important;
+		}
+
+		> *:not([data-grid="A1:F6"]) {
+			color: inherit;
+			&::before {
+				content: attr(data-grid);
+				position: absolute;
+				inset: 0;
+				display: grid;
+				place-items: center;
+				font-size: .625rem;
+				outline: 1px dotted;
+				outline-offset: -.5px;
+
+				opacity: .5;
+			}
+		}
+
+		[data-grid="content"] {
+			outline: 1px dashed;
+			outline-offset: -.5px;
+			opacity: .5;
+		}
+	}
+	body:not([data-debug]) [data-grid="guide"] { display: none; }
+
+
+}

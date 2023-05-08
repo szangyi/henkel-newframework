@@ -1,0 +1,94 @@
+// -----------------------------------------------------------------------------
+// Project config 
+// -----------------------------------------------------------------------------
+$color-config: (
+	'none' : transparent,
+	'white': white,
+	'black': black,
+	'brand': #e1000f,
+
+	'grey-lighter': #f9f9f9, 
+	'grey-light'  : #bfbfbf,  
+	'grey'        : #8c8c8c,  
+	//'grey-dark'   : #7f7f7f,  
+	'grey-dark'   : #666666,  
+	'grey-darker' : #404040, 
+	
+	'gray-lighter': #f9f9f9, 
+	'gray-light'  : #bfbfbf,  
+	'gray'        : #8c8c8c,  
+	// 'gray-dark'   : #7f7f7f,  
+	'gray-dark'   : #666666,  
+	'gray-darker' : #404040,  
+
+
+	'red-lighter': lighten(#e1000f, 15%),
+	'red-light'  : lighten(#e1000f, 5%),
+	'red'        : #e1000f, 
+	'red-dark'   : darken(#e1000f, 5%), 
+	'red-darker' : darken(#e1000f, 15%),
+	
+	'soft-blue-lighter': #eff3f6, 
+	'soft-blue-light'  : #dee5eb, 
+	'soft-blue'        : #bdcdda, 
+	'soft-blue-dark'   : #56729f,
+	'soft-blue-darker' : #343b55,
+	
+	'sage-green-lighter': #f6f8f6,
+	'sage-green-light'  : #e0e7df,
+	'sage-green'        : #bfcfbe,
+	'sage-green-dark'   : #53846a, 
+	'sage-green-darker' : #1d4941, 
+	
+	'warm-grey-lighter': #f2efef,
+	'warm-grey-light'  : #efebea,
+	'warm-grey'        : #ded7d6,
+	'warm-grey-dark'   : #968282,
+	'warm-grey-darker' : #4d3938,
+	
+	'warm-gray-lighter': #f2efef,
+	'warm-gray-light'  : #efebea,
+	'warm-gray'        : #ded7d6,
+	'warm-gray-dark'   : #968282,
+	'warm-gray-darker' : #4d3938,	
+
+	
+	//// Functional colours
+
+	// Correct
+	'correct': #62B056,
+
+	// Incorrect
+	'incorrect': #E1000F,
+
+	// Disabled
+	'disabled': #7F7F7F,
+
+	// Border
+	'border': #8C8C8C,
+
+
+);
+// test
+
+@use '../frankly/config' with ($color-config: $color-config);
+
+
+// TESTING
+// create color classes
+
+// html {
+// 	@each $name, $value in $color-config {
+// 		--color-#{$name}: #{$value};
+// 	}    
+// }
+
+// @each $name, $value in $color-config {
+// 	.#{$name} { background: var(--color-#{$name}); }
+// }   
+
+// @each $name, $value in $color-config {
+// 	.color-#{$name} { color: var(--color-#{$name}); }
+// }    
+
+

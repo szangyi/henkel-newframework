@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// Player CSS Assemble 
+// 
+// compiles player.css to folder:  source > shared > v3 
+// -----------------------------------------------------------------------------
+
+// Imports
+@use './config';
+@use '../base';
+@use '../comp';
+
+
+
+
+// Assemble
+@version(1.0.1);
+@include base.reset;
+@include base.typography;
+
+// ALEX WILL REBUILD PLAYER
+

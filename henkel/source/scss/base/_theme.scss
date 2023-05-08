@@ -1,0 +1,177 @@
+@use 'config' as *;
+
+
+@mixin theme {
+
+
+
+
+
+	//	light theme (default)
+	.theme-light, .page {
+		color: color(dark);
+		.kicker { color: color(brand) }
+	}
+	.theme-light-secondary  {
+		color: color(dark);
+		.kicker { color: color(brand-secondary) }
+	}	
+
+	//	dark theme
+	.theme-dark {
+		color: color(light);
+		.kicker { color: color(brand) }
+	}
+	//	dark theme
+	.theme-dark-secondary {
+		color: color(light);
+		.kicker { color: color(brand-secondary) }
+	}	
+
+	//	breaker theme
+	.theme-breaker {
+		color: color(light);
+		.kicker { color: color(kicker) }
+	}
+
+	//	brand theme
+	.theme-brand {
+		color: color(dark);
+		h1,h2,h3,h4,h5,h6 { color: color(brand)}
+		.kicker { color: color(kicker) }
+	}
+
+	//	brand theme
+	.theme-brand-secondary {
+		color: color(dark);
+		h1,h2,h3,h4,h5,h6 { color: color(brand-secondary)}
+		.kicker { color: color(kicker) }
+	}	
+
+	//	page added to gain specificity (avoid !important)
+	.page {
+		.fill-light {
+			fill: color(light)
+		}
+		.fill-dark {
+			fill: color(dark)
+		}
+		.fill-brand {
+			fill: color(brand)
+		}
+		.fill-brand-secondary {
+			fill: color(brand-secondary)
+		}
+
+
+
+		.color-light {
+			color: color(light) 
+		}
+		.color-dark {
+			color: color(dark)
+		}
+		.color-brand {
+			color: color(brand)
+		}
+		.color-brand-secondary {
+			color: color(brand-secondary)
+		}
+
+
+
+		.back-light {
+			background-color: color(light)
+		}
+		.back-dark {
+			background-color: color(dark)
+		}
+		.back-brand {
+			background-color: color(brand)
+		}
+		.back-brand-secondary {
+			background-color: color(brand-secondary)
+		}	
+
+		.back-light-hover:hover {
+			background-color: color(light)
+		}
+		.back-dark-hover:hover {
+			background-color: color(dark)
+		}
+		
+		.back-brand-hover:hover {
+			background-color: darken(color(brand), 10%)
+		}
+
+		.back-brand-secondary-hover:hover {
+			background-color: darken(color(brand-secondary), 10%)
+		}
+	}
+
+
+	.card.brand {
+		color: color(light);
+		background-color: color(brand)
+	}
+	.card.brand-secondary {
+		color: color(light);
+		background-color: color(brand-secondary)
+	}	
+
+
+
+	.button.theme-brand,
+	button.theme-brand {
+		color: color(light);
+		background-color: color(brand);
+		&:hover {
+			background-color: color(brand-dark);
+		}
+
+		svg { fill: color(light) }
+	}
+
+
+	.button.theme-brand-secondary,
+	button.theme-brand-secondary {
+		color: color(light);
+		background-color: color(brand-secondary);
+		&:hover {
+			background-color: color(brand-secondary-dark);
+		}
+
+		svg { fill: color(light) }
+	}	
+
+
+
+	//
+	.theme-w { background-color: white; color: black; }
+	.theme-b { background-color: black; color: white; }
+
+	.theme-g1 { background-color: whitesmoke; color: black; }
+	.theme-g2 { background-color: #D8D8D8; color: black; }
+	.theme-g3 { background-color: #AEB4B8; color: black; }
+	.theme-g4 { background-color: #666666; color: white; }
+	.theme-g5 { background-color: #333333; color: white; }
+
+	.theme-r1 { background-color: #E1000F; color: white; }
+	.theme-r2 { background-color: darken(#E1000F, 10%); color: white; }
+	.theme-y1 { background-color: #F9D42E; color: white; }
+	.theme-y2 { background-color: darken(#F9D42E, 10%); color: white; }
+
+
+	.text-w { color: white;  }
+	.text-b { color:black;  }
+	.text-r1 { color: #E1000F;  }
+	.text-r2 { color: darken(#E1000F, 10%);  }
+
+	.text-y1 { color: #F9D42E;  }
+	.text-y2 { color: darken(#F9D42E, 10%);  }
+	@content;
+}
+
+
+
+

@@ -1,0 +1,38 @@
+@forward '../base/*' with(
+	$brand: teroson-collision,
+	$colors:(
+		none: transparent,
+		dark: #282828,
+		light: #fff,
+
+		//	light gray 
+		kicker: #979797,
+
+		//	dusty red
+		brand: #CF2E2E,
+		brand-dark: darken(#CF2E2E, 10%),		
+		
+		//	green
+		brand-secondary: #3BB151,
+		brand-secondary-dark: darken(#3BB151, 10%),		
+		
+		
+		//	dusty red player colors 
+		player: #CF2E2E,
+		player-hover: darken(#CF2E2E, 10%),
+
+
+
+
+
+		black: #000,
+		white: #fff,
+		gray: #AEB4B8,
+		light-gray: #D8D8D8,
+		red: #D32A27,
+
+
+		border  : #D8D8D8,
+		disabled: #EDEDED
+	)
+);

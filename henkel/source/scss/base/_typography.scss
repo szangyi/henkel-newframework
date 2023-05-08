@@ -1,0 +1,639 @@
+@use "sass:math";
+
+@use 'config' as *;
+
+
+@mixin typography {
+
+	$scale: 0.2;
+
+	@at-root {
+		// temporary fonts
+		@font-face {
+            font-family: "HenkelGTFlexa";
+            src: url(path(font, "HenkelGTFlexa-300.woff2")) format("woff2");
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "HenkelGTFlexa";
+            src: url(path(font, "HenkelGTFlexa-400.woff2")) format("woff2");
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "HenkelGTFlexa";
+            src: url(path(font, "HenkelGTFlexa-500.woff2")) format("woff2");
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "HenkelGTFlexa";
+            src: url(path(font, "HenkelGTFlexa-700.woff2")) format("woff2");
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "HenkelGTFlexa";
+            src: url(path(font, "HenkelGTFlexa-900.woff2")) format("woff2");
+            font-weight: 900;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "HenkelGTFlexa";
+            src: url(path(font, "HenkelGTFlexa-300i.woff2")) format("woff2");
+            font-weight: 300;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: "HenkelGTFlexa";
+            src: url(path(font, "HenkelGTFlexa-700i.woff2")) format("woff2");
+            font-weight: 700;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: "HenkelGTFlexa";
+            src: url(path(font, "HenkelGTFlexa-900i.woff2")) format("woff2");
+            font-weight: 900;
+            font-style: italic;
+        }
+
+
+
+		@font-face {
+			font-family: "HenkelMilo";
+			src: url(path(font, 'HenkelMilo-400.woff2')) format("woff2"),
+				url(path(font, 'HenkelMilo-400.woff')) format("woff");
+			font-weight: 400;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: "Industry";
+			src: url(path(font, 'Industry-600.woff2')) format("woff2"),
+				url(path(font,  'Industry-600.woff')) format("woff");
+				font-weight: 600;
+				font-style: normal;
+		}
+		@font-face {
+			font-family: "Industry";
+			src: url(path(font, 'Industry-900.woff2')) format("woff2"),
+				url(path(font, 'Industry-900.woff')) format("woff");
+				font-weight: 900;
+				font-style: normal;
+		}
+		@font-face {
+			font-family: "Industry-outline";
+			src: url(path(font, 'Industry-outline-600.woff2')) format("woff2"),
+				url(path(font, 'Industry-outline-600.woff')) format("woff");
+				font-weight: 600;
+				font-style: normal;
+		}
+
+
+		// teroson-collision (Collision Repair)
+		// uses roboto as body font
+		@font-face {
+			font-family: "Gotham-Black-Italic";
+			src: url(path(font, 'Gotham-Black-Italic-900.woff2')) format("woff2"),
+				url(path(font, 'Gotham-Black-Italic-900.woff')) format("woff");
+				font-weight: 600;
+				font-style: normal;
+		}
+
+
+		// For Russian versions
+		// Industry and HenkelMilo doesn't include Cyrillic Script
+		@font-face {
+			font-family: "Roboto";
+			src: url(path(font, 'Roboto-400.woff2')) format("woff2"),
+				url(path(font, 'Roboto-400.woff')) format("woff");
+			font-weight: 400;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: "Roboto";
+			src: url(path(font, 'Roboto-500.woff2')) format("woff2"),
+				url(path(font,  'Roboto-500.woff')) format("woff");
+				font-weight: 600;
+				font-style: normal;
+		}
+		@font-face {
+			font-family: "Roboto";
+			src: url(path(font, 'Roboto-900.woff2')) format("woff2"),
+				url(path(font, 'Roboto-900.woff')) format("woff");
+				font-weight: 900;
+				font-style: normal;
+		}
+		@font-face {
+			font-family: "RobotoUnicode";
+			src: url(path(font, 'HenkelMilo.woff2')) format("woff2"),
+				url(path(font, 'HenkelMilo.woff')) format("woff");
+			font-weight: 600;
+			font-style: normal;
+			unicode-range: U+2014;
+		}
+		// For Thai versions
+		// Industry and HenkelMilo doesn't include Thai
+		@font-face {
+			font-family: "Pridi";
+			src: url(path(font, 'Pridi-400.woff2')) format("woff2"),
+				url(path(font, 'Pridi-400.woff')) format("woff");
+			font-weight: 400;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: "Pridi";
+			src: url(path(font, 'Pridi-400.woff2')) format("woff2"),
+				url(path(font,  'Pridi-400.woff')) format("woff");
+			font-weight: 600;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: "Pridi";
+			src: url(path(font, 'Pridi-600.woff2')) format("woff2"),
+				url(path(font, 'Pridi-600.woff')) format("woff");
+			font-weight: 900;
+			font-style: normal;
+		}
+
+		// Pridi does not contain a U+00B0 (degree symbol)
+		@font-face {
+			font-family: "PridiUnicode";
+			src: url(path(font, 'HenkelMilo-400.woff2')) format("woff2"),
+				url(path(font, 'HenkelMilo-400.woff')) format("woff");
+			font-weight: 400;
+			font-style: normal;
+			unicode-range: U+00B0;
+		}
+
+		// used in 4.1 Bonding (font only in shared/loctite)
+		@font-face {
+			font-family: 'AdamGorry-Lights';
+			src: url(path(font, 'AdamGorry-Lights.woff2')) format('woff2'),
+				url(path(font, 'AdamGorry-Lights.woff')) format('woff');
+			font-weight: 400;
+			font-style: normal;
+			font-display: swap;
+		}
+		
+		
+	
+
+	body {
+		color: color(dark);
+		
+		@if $brand == teroson {
+			font-family: 'HenkelMilo';
+			font-weight: 400;
+		} @else if $brand == teroson-collision{
+			font-family: 'Roboto';
+			font-weight: 400;
+		} @else if $brand == temporary{
+			font-family: 'HenkelGTFlexa';
+			font-weight: 400;
+		} @else {
+			font-family: 'Industry';
+			font-weight: 600;
+		}
+	}
+	html[lang|=ru] body {
+		font-family: 'RobotoUnicode', 'Roboto';
+		font-weight: 400;
+	}
+	html[lang|=th] body {
+		font-family: 'PridiUnicode', 'Pridi';
+		font-weight: 400;
+	}
+
+
+	//
+	//	headings
+	//
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Industry';
+		font-weight: 900;
+		margin: 0;
+		line-height: 1;
+	}
+	@if $brand == teroson-collision {
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Gotham-Black-Italic';
+		}
+	}
+
+	html[lang|=ru] {
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'RobotoUnicode', 'Roboto';
+		}
+	}
+	html[lang|=th] {
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'PridiUnicode', 'Pridi';
+		}
+	}
+
+	
+	h1, h2, h3 {
+		letter-spacing: rem(-1px);
+	}
+
+
+	.font-adam-gorry {
+		font-family: 'AdamGorry-Lights';
+		font-weight: 400;
+	}
+
+	//	responsive font sizing
+	//  on small screens sizing is based on locks
+	//	on medium screns size is based on a width height mix*
+	//	* approx size at 1600x900
+	.header-xl  { @include font-size(140px); }
+	.header-lg  { @include font-size(120px); }
+	.header-md  { @include font-size(90px);  }
+	.header-sm  { @include font-size(60px);  }
+	.header-xs  { @include font-size(30px);  }
+
+		//  heading defaults
+	h1  { @include font-size(140px); }
+	h2  { @include font-size(90px); }
+	h3  { @include font-size(60px); }
+	h4  { @include font-size(30px); }
+
+	@if $brand == teroson {
+		// 	body text milo
+		.text-xl  { @include font-size(54px); }
+		.text-lg  { @include font-size(32px); }
+		.text-md  { @include font-size(26px); }
+		.text-sm  { @include font-size(20px); }
+		p { @include font-size(26px); }
+	} @else {
+
+		// 	body text industry
+		.text-xl  { @include font-size(50px); }
+		.text-lg  { @include font-size(30px); }
+		.text-md  { @include font-size(24px); }
+		.text-sm  { @include font-size(18px); }
+		p { @include font-size(24px); }	
+
+	}
+
+
+	//	--------------------------------------
+	//	
+	//	Reduce lengthy headers 
+	//
+	//	--------------------------------------
+	html[lang|=br],
+	html[lang|=ru],
+	html[lang|=de],
+	html[lang|=es],
+	html[lang|=tr],
+	html[lang|=pl],
+	html[lang|=fr],
+	html[lang|=pt],
+	html[lang|=it],
+	html[lang|=nl]{
+		$scale: .8;
+
+		.header-xl  { @include font-size(140px * $scale); }
+		.header-lg  { @include font-size(120px * $scale); }
+		.header-md  { @include font-size(90px  * $scale);  }
+		.header-sm  { @include font-size(60px  * $scale);  }
+		.header-xs  { @include font-size(30px);  }
+	
+			//  heading defaults
+		h1  { @include font-size(140px * $scale); }
+		h2  { @include font-size(90px  * $scale); }
+		h3  { @include font-size(60px  * $scale); }
+		h4  { @include font-size(30px); }
+	
+		@if $brand == teroson {
+			// 	body text milo
+			.text-xl  { @include font-size(54px * $scale); }
+			.text-lg  { @include font-size(32px); }
+			.text-md  { @include font-size(26px); }
+			.text-sm  { @include font-size(20px); }
+			p { @include font-size(26px); }
+		} @else {
+	
+			// 	body text industry
+			.text-xl  { @include font-size(50px * $scale); }
+			.text-lg  { @include font-size(30px); }
+			.text-md  { @include font-size(24px); }
+			.text-sm  { @include font-size(18px); }
+			p { @include font-size(24px); }	
+	
+		}
+
+	}
+	html[lang|=th]{
+		$scale: .9;
+
+		.header-xl  { @include font-size(140px * $scale); }
+		.header-lg  { @include font-size(120px * $scale); }
+		.header-md  { @include font-size(90px  * $scale);  }
+		.header-sm  { @include font-size(60px  * $scale);  }
+		.header-xs  { @include font-size(30px);  }
+	
+			//  heading defaults
+		h1  { @include font-size(140px * $scale); }
+		h2  { @include font-size(90px  * $scale); }
+		h3  { @include font-size(60px  * $scale); }
+		h4  { @include font-size(30px); }
+	
+		@if $brand == teroson {
+			// 	body text milo
+			.text-xl  { @include font-size(54px * $scale); }
+			.text-lg  { @include font-size(32px); }
+			// Corrected small texts as they appear quite small in thai
+			// 26 --> 28
+			.text-md  { @include font-size(28px); }
+			// 20 --> 22
+			.text-sm  { @include font-size(22px); }
+		} @else {
+			// 	body text industry
+			.text-xl  { @include font-size(50px * $scale); }
+			.text-lg  { @include font-size(30px); }
+			// Corrected small texts as they appear quite small in thai
+			// 24 --> 28
+			.text-md  { @include font-size(28px); }
+			// 18 --> 22
+			.text-sm  { @include font-size(22px); }
+		}
+
+	}
+
+
+
+
+
+
+
+	.font-industry {  font-family: 'Industry'; }
+	.font-milo     {  font-family: 'HenkelMilo'; }
+	html[lang|=ru] {
+		.font-industry {  font-family: 'RobotoUnicode', 'Roboto'; }
+		.font-milo     {  font-family: 'RobotoUnicode', 'Roboto'; }
+	}
+	html[lang|=th] {
+		.font-industry {  font-family: 'PridiUnicode', 'Pridi'; }
+		.font-milo     {  font-family: 'PridiUnicode', 'Pridi'; }
+	}
+
+	//	em based elements
+	.size-lg  { @include font-size(130px); }
+	.size-md  { @include font-size(24px);  }
+	.size-sm  { @include font-size(18px);  }
+
+
+	//
+	//	subheadings
+	//
+	.kicker {
+
+		@include font-size(50px);
+		font-family: 'Industry';
+		text-transform: uppercase;
+		padding-top: .5em;
+		margin-top: 0;
+		line-height: 1;
+		font-weight: 900;
+
+		@if $brand == teroson-collision {
+			& {
+				font-family: 'Gotham-Black-Italic';
+			}
+		}
+
+		html[lang|=ru] & {
+			font-family: 'RobotoUnicode', 'Roboto';
+		}
+		&::before {
+			position: absolute;
+			top: 0;
+			content: '';
+			display: block;
+			height: .25em;
+			width:  4.25em;
+			background-color: currentColor;
+		}
+
+		
+		&:empty { display: none;}
+
+
+		&.center,
+		&.centered {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			
+			&::before {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+
+	.header-line {
+		text-transform: uppercase;
+		padding-top: .5em;
+		margin-top: 0;
+		line-height: .9;
+		font-weight: 900;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			content: '';
+			display: block;
+			height: .25em;
+			width:  2.25em;
+			background-color: currentColor;
+		}
+	}
+
+	.text-left   { text-align: left; }
+	.text-center { text-align: center; }
+	.text-right  { text-align: right; }
+	.text-caps   { text-transform: uppercase;}
+	.text-bold   { font-weight: 900;}
+
+
+	//	media queries
+	@include media(sm){
+		.header-xl  { @include font-size(90px); }
+		h1          { @include font-size(90px); }
+		.kicker {
+			@include font-size(36px);
+		}
+	}
+	@include media(md){
+		.header-xl  { @include font-size(140px); }
+		h1          { @include font-size(140px); }
+		.kicker {
+			@include font-size(50px);
+		}
+	}
+
+
+
+	html[lang|=br],
+	html[lang|=ru],
+	html[lang|=de],
+	html[lang|=es],
+	html[lang|=tr],
+	html[lang|=pl],
+	html[lang|=fr],
+	html[lang|=pt],
+	html[lang|=it],
+	html[lang|=nl] {
+		$scale-kicker: .9;
+		$scale-h1: .8;
+
+		//	media queries
+		@include media(sm){
+			.header-xl  { @include font-size(90px * $scale-h1); }
+			h1          { @include font-size(90px * $scale-h1); }
+			.kicker {
+				@include font-size(36px * $scale-kicker);
+			}
+		}
+		@include media(md){
+			.header-xl  { @include font-size(140px * $scale-h1); }
+			h1          { @include font-size(140px * $scale-h1); }
+			.kicker {
+				@include font-size(50px * $scale-kicker);
+			}
+		}
+	}
+	html[lang|=th] {
+		$scale-kicker: .9;
+		$scale-h1: .85;
+
+		//	media queries
+		@include media(sm){
+			.header-xl  { @include font-size(90px * $scale-h1); }
+			h1          { @include font-size(90px * $scale-h1); }
+			.kicker {
+				@include font-size(36px * $scale-kicker);
+			}
+		}
+		@include media(md){
+			.header-xl  { @include font-size(140px * $scale-h1); }
+			h1          { @include font-size(140px * $scale-h1); }
+			.kicker {
+				@include font-size(50px * $scale-kicker);
+			}
+		}
+	}
+
+
+	// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+	//	
+	//	Version 2 font-sizes
+	// 
+	// ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+	// bump  specificity to override language tweaks at 
+	// tag level e.g html[lang|=tr] h1
+	html[lang] {
+		.fs-12 { font-size: calc(((1vw + 1vh + .5vmin) * 5.0)); }
+		.fs-11 { font-size: calc(((1vw + 1vh + .5vmin) * 4.5)); }
+		.fs-10 { font-size: calc(((1vw + 1vh + .5vmin) * 4.0)); }
+		.fs-9  { font-size: calc(((1vw + 1vh + .5vmin) * 3.5)); }
+		.fs-8  { font-size: calc(((1vw + 1vh + .5vmin) * 3.0)); }
+		.fs-7  { font-size: calc(((1vw + 1vh + .5vmin) * 2.5)); }
+		.fs-6  { font-size: calc(((1vw + 1vh + .5vmin) * 2.0)); }
+		.fs-5  { font-size: calc(((1vw + 1vh + .5vmin) * 1.5)); }
+		.fs-4  { font-size: calc(((1vw + 1vh + .5vmin) * 1.0)); }
+		.fs-3  { font-size: calc(((1vw + 1vh + .5vmin) * 0.8)); }
+		.fs-2  { font-size: calc(((1vw + 1vh + .5vmin) * 0.7)); }
+		.fs-1  { font-size: calc(((1vw + 1vh + .5vmin) * 0.6)); }
+		.fs-0  { font-size: calc(((1vw + 1vh + .5vmin) * 0.5)); }
+	}
+	//
+	@content;
+	}
+}
+
+
+
+
+
+
+
+
+//  default font scale bounding
+$font-lock-min:   20rem !default;
+$font-lock-max:  100rem !default;
+
+
+@mixin font-size(
+	$min,                         // font-size
+	$max: null,                   // optional maximum font size
+	$lock-min: $font-lock-min,  // optional minimum viewport width
+	$lock-max: $font-lock-max   // optional maximum viewport width
+	){
+		$px: $min;
+
+		$min: rem($min);
+		$max: $min;
+
+		$min: $max * 0.5;
+		$min: max($min, 1rem);
+
+		& { font-size: $min; }
+		@if $max {
+			@media (min-width: $lock-min) {
+				& {
+					font-size: calc(#{$min} + #{num($max) - num($min)} * (100vw - #{$lock-min}) / #{num($lock-max) - num($lock-min)});
+				}
+			}
+			// @media (min-width: $lock-max){
+			// 	& { font-size: $max; }
+			// }
+
+			@include media(md){
+				@include font-size-mix($px)
+			}
+		}
+}
+
+
+@function font-size-mix($px){
+	$scale: math.div(round(math.div(num($px), 29.5) * 100), 100);
+	@return calc(((1vw + 1vh + .5vmin)  * #{$scale}));
+}
+@mixin font-size-mix($px){
+	font-size: font-size-mix($px)
+}
+
+
+@mixin font-size-fluid(
+	$min,                         // font-size
+	$max: null,                   // optional maximum font size
+	$lock-min: $font-lock-min,  // optional minimum viewport width
+	$lock-max: $font-lock-max   // optional maximum viewport width
+	){
+
+		$min: rem($min);
+		@if($max) { $max: rem($max); }
+	//	$px: $min;
+
+	//	$min: rem($min);
+	//	$max: $min;
+
+		// $min: $max * 0.5;
+		// $min: max($min, 1rem);
+
+		& { font-size: $min; }
+		@if $max {
+			@media (min-width: $lock-min) {
+				& {
+					font-size: calc(#{$min} + #{num($max) - num($min)} * (100vw - #{$lock-min}) / #{num($lock-max) - num($lock-min)});
+				}
+			}
+		}
+
+}

@@ -1,0 +1,37 @@
+@use 'config' as *;
+
+
+
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Debug
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin debug {
+	article { outline: 1px solid red; }
+	header  { outline: 1px dashed orange; }
+	section { outline: 1px dashed gold; }
+	footer  { outline: 1px dashed yellow; }
+	main    { outline: 1px dotted dodgerblue; }
+
+
+	// .todo {
+	// 	background-color: rgba(yellow, .5);
+	// 	&::before {
+	// 		content: 'TODO'  attr(todo);
+	// 		padding: 1em;
+	// 		color: color(red);
+	// 		font-size: 2em;
+	// 	}
+	// }
+
+	@include media(sm,md,lg){
+		body:before {
+			content: '#{media-context()}';
+			position: fixed;
+			bottom:0; left: 0;
+			color: white;
+			background: black;;
+			z-index: 9;
+			padding: .5em;
+		}
+	}
+}

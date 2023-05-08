@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// Embed Component
+//
+// Markup examples:
+// <div class="embed">
+//      <img />
+//      <video />
+//      <iframe />
+// </div>
+//
+// -----------------------------------------------------------------------------
+@use '../frankly/comp';
+
+
+@mixin embed {
+    @include comp.create('embed') {
+
+
+        inset: 0;	          // wallpaper fit to parent 	
+        object-fit: cover;    // forgiving size  
+        
+        max-inline-size: inherit;  // in case parent is using max sizing 
+        max-block-size: inherit;   // in case parent is using max sizing      
+
+        overflow: hidden;          // crop off overflow 
+        z-index: -1; 
+
+        
+        // nested children e.g img inside picture
+        // use inherit to allow targeting parent
+        > * {
+            border: 0;              // iframe
+            object-fit: inherit;		
+            object-position: inherit;
+            inline-size: 100%;
+            block-size: 100%;
+        }
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// 
+// -----------------------------------------------------------------------------
+@mixin embed--background {
+    @include comp.create('embed','background') {
+        position: absolute; 
+    }
+}
+
+@mixin embed--foreground {
+    @include comp.create('embed','foreground') {
+        position: absolute; 
+        z-index: 1;
+    }
+}
+
+
+@mixin embed--wallpaper {
+    @include comp.create('embed','wallpaper') {
+        position: fixed; 
+    }
+}

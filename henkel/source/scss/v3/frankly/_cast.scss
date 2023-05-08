@@ -1,0 +1,256 @@
+// ------------------------------------------------------------
+//
+//  Cast Functions 
+// 
+// ------------------------------------------------------------
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:string';
+
+
+
+// ------------------------------------------------------------
+// Absolute lengths
+// ------------------------------------------------------------
+@function px($value) { @return to($value, px); }
+@function pt($value) { @return to($value, pt); }
+@function pc($value) { @return to($value, pc); }
+@function in($value) { @return to($value, in); }
+@function mm($value) { @return to($value, mm); }
+@function cm($value) { @return to($value, cm); }
+@function q($value)  { @return to($value, q);  }
+
+
+// ------------------------------------------------------------
+// Relative Lengths
+// ------------------------------------------------------------
+@function em($value)  { @return to($value, em); }
+@function rem($value) { @return to($value, rem);  }
+
+
+// ------------------------------------------------------------
+// Angles
+// ------------------------------------------------------------
+@function deg($value)  { @return to($value, deg);  }
+@function rad($value)  { @return to($value, rad);  }
+@function grad($value) { @return to($value, grad); }
+@function turn($value) { @return to($value, turn); }
+
+
+// ------------------------------------------------------------
+// Resolution
+// ------------------------------------------------------------
+@function dpi($value)  { @return to($value, dpi);  }
+@function dpcm($value) { @return to($value, dpcm); }
+@function dppx($value) { @return to($value, dppx); }
+
+
+// ------------------------------------------------------------
+// Time
+// ------------------------------------------------------------
+@function ms($value) { @return to($value, ms); }
+@function s($value)  { @return to($value, s);  }
+
+
+// ------------------------------------------------------------
+// Frequencies
+// ------------------------------------------------------------
+@function hz($value)  { @return to($value, Hz); }
+@function khz($value) { @return to($value, kHz); }
+
+
+// ------------------------------------------------------------
+// String and numbers
+// ------------------------------------------------------------
+@function string($value){ @return string.unquote($value+''); }
+@function str($value){ @return string($value); }
+
+@function number($value) {  
+	@if meta.type-of($value) == number { @return math.div($value, ($value * 0 + 1)); }
+	//	if string contains units units are preserved
+	//	to remove run twice  num(num('-24px'))	
+	@if meta.type-of($value) == string { @return to($value, null); }
+}
+@function num($value) { @return number($value); }
+
+@function int($value) {
+    $num: num($value);
+    @return if($num < 0, math.ceil($num), math.floor($num));
+}
+
+@function uint($value) {
+    @return math.abs(int($value));
+}
+
+
+// ------------------------------------------------------------
+// CSS units 
+// ------------------------------------------------------------
+@function units($value, $number: 0){
+	$list: (
+		0px 0pt 0pc 0in 0mm 0cm 0q 
+		0em 0rem 
+		0ch 0ex		
+		0deg 0rad 0grad 0turn 
+		0dpi 0dpcm 0dppx 
+		0ms 0s 
+		0Hz 0kHz
+		0vw 0vh 0vmin 0vmax
+		0%
+	);
+	@each $unit in $list { 
+		@if string.to-lower-case(unit($unit)) == string.to-lower-case($value) { 
+			@return $number + $unit; 
+		}
+	}
+	@error('⚠️ `#{$value}` is not a valid CSS unit. 👉 #{&}');
+	@return null;
+}
+
+
+
+// ------------------------------------------------------------
+// Cast To
+// ------------------------------------------------------------
+@function to($value, $to-unit: null) {
+
+	//	value type
+	$type: meta.type-of($value);
+	
+
+	//	exit if null value
+	@if list.index('null',$type) { @return null; }
+
+	//  cast string to number
+    @if list.index('string', $type) {    
+		//	lowercase and remove whitespaces
+		@while (string.index($value, ' ') != null) {
+			$i: string.index($value, ' ');
+			$value: string.to-lower-case(
+				string.slice($value, 0, $i - 1) + 
+				string.slice($value, $i + 1)
+			);
+		}
+
+        $numbers: '0123456789';
+        $len: string.length($value);
+        $neg: if(string.index($value, '-'),-1,1);
+        $sep: 0; $int: 0; $dec: 0;
+		$csr: 0;
+        @for $i from 1 through $len {
+            $char: string.slice($value, $i, $i);
+            $num : string.index($numbers, $char);
+            $sep: if($char == '.', 1, if($num,$sep * 10, $sep));
+            @if $num {
+                $int: if($sep > 0, $int, $int * 10 + $num - 1);
+                $dec: if($sep > 0, $dec * 10 + $num - 1, $dec);
+            }       
+        }
+		
+		//  - calculate number value
+		//  - locate unit
+        $num : ($int + if($sep > 0, math.div($dec, $sep), 0)) * $neg; 
+		$unit: null;
+		@each $item in q s Hz ch cm em ex in mm ms pc pt px vh vw deg dpi kHz rad rem dpcm dppx grad turn vmax vmin string.unquote('%') {
+			$unit: if(string.index($value, $item), $item, $unit);
+		}
+
+		//	- cast to located unit 
+		//	- cast to to-unit
+		$num:   if($unit, to($num, $unit), $num);
+        @return if($to-unit, to($num, $to-unit), $num);
+    }
+	
+    
+    //  cast list and map values
+	@if list.index('list' 'map', $type) {
+	    
+	    $col: ();
+		@each $a, $b in $value {
+		    $col: if( 
+				list.index('list', $type),
+				list.append($col, to($a, $to-unit)),
+				map.merge($col, ($a : to($b, $to-unit)))
+			)
+		}
+		@return $col;
+	}
+
+
+
+	//	from unit
+	$from-unit: math.unit($value);
+	@if $from-unit == $to-unit { @return $value; }
+
+
+
+    //  em and rem handling using 16px as base
+    @if not math.is-unitless($value){   
+        @if index(em rem, $to-unit) {
+            $value: num(math.div(px($value), 16));
+        } 
+        @else if list.index(em rem, $from-unit) {
+            $value: num($value * 16);
+        }
+    }
+ 
+
+	//	frequencies are case sensitive
+	@if string.to-lower-case($from-unit) == hz  { $value: hz(num($value)); }
+	@if string.to-lower-case($from-unit) == khz { $value: khz(num($value)); }	
+
+	
+	//	cast to unit 
+	@return units($to-unit) + $value;
+}
+
+
+
+// ------------------------------------------------------------
+//  Ratio
+//  Convert number to ratio (fraction)
+//  ratio(1.7777778) =>   16/9
+// ------------------------------------------------------------
+@function ratio($x, $y: null) {
+    @if not $y {
+        $n: $x;
+		$y: 1;
+
+        @while $y < 10 {
+            $x: $n * 10 - ((10 - $y) * $n);
+            @if $x == math.round($x) { @return #{$x}/#{$y}; }
+            @else { $y: $y + 1; }
+        }
+
+
+        $x: math.round($n * 1000000);
+        $y: 1000000;
+
+        @while $x % 10 == 0 {
+            $x: math.div($x, 10);
+            $y: math.div($y, 10);
+        }
+
+        @while $x % 5 == 0 {
+            $x: math.div($x, 5);
+            $y: math.div($y, 5);
+        }
+
+        @while $x % 2 == 0 {
+            $x: math.div($x, 2);
+            $y: math.div($y, 2);
+        }
+
+        @return #{$x}/#{$y};
+    }
+
+
+    @else if $x == math.round($x) and $y == math.round($y) {
+        @return #{$x}/#{$y};
+    }
+
+    @warn 'X and Y must be integers';
+    @return false;
+}

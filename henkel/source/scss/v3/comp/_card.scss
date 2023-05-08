@@ -1,0 +1,309 @@
+// -----------------------------------------------------------------------------
+// Card Component
+//
+// Markup examples:
+// <div data-comp="card">
+//     <picture data-comp="embed">
+//          <img src="" />
+//     </picture>
+//     <div class="content">
+//         <div class="text-container">
+//              <h4></h4>
+//              <p></p>
+//         </div>
+//         <button></button>
+//     </div>
+// </div>
+//
+// -----------------------------------------------------------------------------
+
+@use "../base/config" as *;
+
+@use "../frankly/comp";
+@use '../frankly/theme';
+@use '../frankly/font';
+
+
+
+// -----------------------------------------------------------------------------
+// Card Component
+// -----------------------------------------------------------------------------
+
+@mixin card {
+    @include comp.create(card) {
+
+        @at-root :where(&) {
+
+            // Default values 
+            --font-size: var(--font-size-text-sm);
+            --font-align: var(--font-align-center);
+            --color-back: var(--color-white);
+            --color-text: var(--color-black);
+            --padding-default: 1.5em;
+
+            @media (min-width: 60rem) {
+                --padding-default: 2em;
+            }
+
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        // Assign variables - color variables added later
+        font-size: var(--🔤-font-size);
+        text-align: var(--🔤-font-align);
+        background-color: var(--🎨-color-back);
+        color: var(--🎨-color-text);
+
+        // Styling
+        box-shadow:0.5rem 0.5rem 2rem rgb(40 40 40 / 20%);
+        // overflow: hidden; // to cut off images when card is rounded
+        inline-size: 100%;
+        block-size: 100%;
+        transition: transform 600ms;
+
+        // States
+        &.discarded {
+            transform: translate(120vw, 4%) rotate(15deg);
+        }
+
+        // Children
+        &[data-flex*="col"],
+        &[data-flex-desktop*="col"],
+        &[data-flex-tablet*="col"],
+        &[data-flex-mobile*="col"] {
+            [data-comp="embed"] {
+                inline-size: 100%;
+                block-size: 40%;
+            }
+        }
+
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Rounded Card Component
+// -----------------------------------------------------------------------------
+
+@mixin card--rounded {
+    @include comp.create('card', 'rounded') {
+        border-radius: 15px;
+        overflow: hidden; // to cut off images when card is rounded
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Quiz Card Component
+// -----------------------------------------------------------------------------
+
+@mixin card--quiz {
+
+    [data-quiz="regular"],
+    [data-quiz="multiple"] {
+
+        &[data-correct="true"] [data-correct="false"],
+        &[data-correct="false"] [data-correct="true"] {
+            display: none;
+            pointer-events: none;
+        }
+    }
+
+    [data-quiz="multiple"] {}
+
+    [data-quiz="swipe"] {
+        // Transition
+
+        transition: transform;
+        will-change: transform;
+        transform: scale(var(--scale, 1)) translate(var(--tx, 0), var(--ty, 0)) rotate(var(--rotate, 0)) rotateY(var(--rotatey, 0));
+        transition: transform var(--transition, 1s);
+
+        // Interactivity
+
+        touch-action: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &[data-correct="true"]+.swipe-answer div[data-correct="false"],
+        &[data-correct="false"]+.swipe-answer div[data-correct="true"] {
+            display: none;
+            pointer-events: none;
+        }
+    }
+
+}
+
+// -----------------------------------------------------------------------------
+// Flip Card Component
+// -----------------------------------------------------------------------------
+
+@mixin card--flip {
+    @include comp.create('card', 'flip') {
+        perspective: 2000px;
+        background: none;
+        overflow: visible;
+        box-shadow: none;
+
+        // Inner
+        .inner {
+            block-size: 100%;
+            inline-size: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            box-shadow: 0 0 1rem rgba(black, 0.25);
+            border-radius: inherit;
+        }
+
+
+        // Front and back
+        .front, &.flipped .back {
+            z-index:1; // to allow the card to be scrollable
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            inset: 0;
+            block-size: inherit;
+            backface-visibility: hidden;
+            overflow: hidden auto;
+            border-radius: inherit;
+
+            background-color: white; // test
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            background: white;
+            // pointer-events: none;
+        }
+
+
+        // // States
+        // &.discarded {
+        //     transition: transform 600ms;
+        //     transform: translate(120vw, 4%) rotate(15deg);
+        // }
+
+        &.flipped .inner {
+            transform: rotateY(180deg);
+
+            .back {
+                transform: rotateY(180deg) translateZ(1px); // Safari 💀 hack - make stuff clickable 
+            }
+        }
+
+        // &.flipped .back {
+        //     pointer-events: auto !important;
+        // }
+
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Card Container Component
+// -----------------------------------------------------------------------------
+
+@mixin card-container {
+    @include comp.create('card-container') {
+        display: grid;
+        grid-gap: 1rem;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Flex Card Container Component
+// -----------------------------------------------------------------------------
+
+@mixin card-container--flex {
+    @include comp.create('card-container', 'flex') {
+        display: flex;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Grid Card Container Component
+// -----------------------------------------------------------------------------
+
+@mixin card-container--grid {
+    @include comp.create('card-container', 'grid') {
+        --min-width: 280px;
+
+        grid-template-columns: repeat(auto-fill, minmax(var(--min-width), 1fr));
+        grid-auto-rows: minmax(200px, auto);
+
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Stack Card Container Component
+// -----------------------------------------------------------------------------
+
+@mixin card-container--stack {
+    @include comp.create('card-container', 'stack') {
+        [data-comp*="card"] {
+            grid-area: 1/1;
+            z-index: var(--z, 0); // To stack the cards
+        }
+
+        [data-comp*="card"]:not(.discarded)+[data-comp*="card"] {
+            transform: translateY(4%) scale(0.96);
+        }
+
+        [data-comp*="card"]:not(.discarded)+[data-comp*="card"]+[data-comp*="card"] {
+            transform: translateY(8%) scale(0.92);
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Stack Rotate Card Container Component
+// -----------------------------------------------------------------------------
+
+@mixin card-container--stack-rotate {
+
+    @include comp.create('card-container', 'stack-rotate') {
+
+        [data-comp*="card "] {
+            block-size: 100%;
+            --tx: calc(var(--swipe-pct) * 220%); // To rotate the cards
+            --rotate: calc(var(--swipe-pct) * 0.2turn); // To rotate the cards
+        }
+
+        .card-box {
+            transform: rotate(var(--rotate, 0));
+            z-index: var(--z, 0);
+            grid-area: 1/1;
+
+            &:nth-of-type(2),
+            &:nth-of-type(5),
+            &:nth-of-type(8) {
+                --rotate: 3.38deg;
+            }
+
+            &:nth-of-type(3),
+            &:nth-of-type(6),
+            &:nth-of-type(9) {
+                --rotate: -1.5deg;
+            }
+
+            &:nth-of-type(4),
+            &:nth-of-type(7),
+            &:nth-of-type(10) {
+                --rotate: 0;
+            }
+
+            &:nth-of-type(5),
+            &:nth-of-type(8),
+            &:nth-of-type(11) {
+                --rotate:2.7deg;
+            }
+        }
+
+    }
+}

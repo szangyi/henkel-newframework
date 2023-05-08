@@ -1,0 +1,189 @@
+// -----------------------------------------------------------------------------
+// Layout Box
+// -----------------------------------------------------------------------------
+@use './base' as config;
+
+
+@mixin padding {
+	$breakpoint-list: config.$breakpoint-list;
+	$box-map: config.$box-map;
+
+	* {
+		--padding-default: 1.5rem;	
+		
+		--padding-inline-start-desktop: var(--padding-inline-start);
+		--padding-inline-end-desktop:   var(--padding-inline-end);
+		--padding-block-start-desktop:  var(--padding-block-start);
+		--padding-block-end-desktop:    var(--padding-block-end);
+
+		--padding-inline-start-tablet: var(--padding-inline-start);
+		--padding-inline-end-tablet:   var(--padding-inline-end);
+		--padding-block-start-tablet:  var(--padding-block-start);
+		--padding-block-end-tablet:    var(--padding-block-end);
+
+		--padding-inline-start-mobile: var(--padding-inline-start);
+		--padding-inline-end-mobile:   var(--padding-inline-end);
+		--padding-block-start-mobile:  var(--padding-block-start);
+		--padding-block-end-mobile:    var(--padding-block-end);
+
+		--padding-inline-start: 0rem;
+		--padding-inline-end:   0rem;
+		--padding-block-start:  0rem;
+		--padding-block-end:    0rem;	
+
+
+
+
+		--📦-padding-inline-start-desktop: var(--is-desktop) var(--padding-inline-start-desktop, var(--padding-inline-desktop, var(--padding-desktop)));
+		--📦-padding-inline-start-tablet: var(--is-tablet) var(--padding-inline-start-tablet, var(--padding-inline-tablet, var(--padding-tablet)));
+		--📦-padding-inline-start-mobile: var(--is-mobile) var(--padding-inline-start-mobile, var(--padding-inline-mobile, var(--padding-mobile)));
+		--📦-padding-inline-start: var(--📦-padding-inline-start-desktop, var(--📦-padding-inline-start-tablet, var(--📦-padding-inline-start-mobile, var(--padding-inline-start))));
+		
+		--📦-padding-inline-end-desktop: var(--is-desktop) var(--padding-inline-end-desktop, var(--padding-inline-desktop, var(--padding-desktop)));
+		--📦-padding-inline-end-tablet: var(--is-tablet) var(--padding-inline-end-tablet, var(--padding-inline-tablet, var(--padding-tablet)));
+		--📦-padding-inline-end-mobile: var(--is-mobile) var(--padding-inline-end-mobile, var(--padding-inline-mobile, var(--padding-mobile)));
+		--📦-padding-inline-end: var(--📦-padding-inline-end-desktop, var(--📦-padding-inline-end-tablet, var(--📦-padding-inline-end-mobile, var(--padding-inline-end))));
+		
+		--📦-padding-block-start-desktop: var(--is-desktop) var(--padding-block-start-desktop, var(--padding-block-desktop, var(--padding-desktop)));
+		--📦-padding-block-start-tablet: var(--is-tablet) var(--padding-block-start-tablet, var(--padding-block-tablet, var(--padding-tablet)));
+		--📦-padding-block-start-mobile: var(--is-mobile) var(--padding-block-start-mobile, var(--padding-block-mobile, var(--padding-mobile)));
+		--📦-padding-block-start: var(--📦-padding-block-start-desktop, var(--📦-padding-block-start-tablet, var(--📦-padding-block-start-mobile, var(--padding-block-start))));
+
+		--📦-padding-block-end-desktop: var(--is-desktop) var(--padding-block-end-desktop, var(--padding-block-desktop, var(--padding-desktop)));
+		--📦-padding-block-end-tablet: var(--is-tablet) var(--padding-block-end-tablet, var(--padding-block-tablet, var(--padding-tablet)));
+		--📦-padding-block-end-mobile: var(--is-mobile) var(--padding-block-end-mobile, var(--padding-block-mobile, var(--padding-mobile)));
+		--📦-padding-block-end: var(--📦-padding-block-end-desktop, var(--📦-padding-block-end-tablet, var(--📦-padding-block-end-mobile, var(--padding-block-end))));
+	}
+
+
+	// clear collapsing margins
+	:is(body, nav, header, main, footer, aside, article, section, figure) {
+		--padding-block-start: 0.01px;
+		--padding-block-end:   0.01px;	
+	}
+
+
+	:is(
+		[data-box*=pad],
+		[data-box-mobile*=pad],
+		[data-box-tablet*=pad],
+		[data-box-desktop*=pad],
+		.add.specificity
+	){
+
+
+		// assign padding variables 
+		// 
+		// note! we can't assign to * because this would 
+		// lead to inherit issues on child elements
+		// 
+		// tip! to enable css variables without defaults
+		// use data-box="padding" 
+		padding-inline-start: var(--📦-padding-inline-start);
+		padding-inline-end:   var(--📦-padding-inline-end);
+		padding-block-start:  var(--📦-padding-block-start);
+		padding-block-end:    var(--📦-padding-block-end);
+	}
+
+
+	// print selectors and variables
+	@each $bp in $breakpoint-list {
+		$bp: if($bp, '-#{$bp}', '');
+		@each $name, $list in $box-map {
+			$val: if($name, pad-#{$name}, pad);	
+			[data-box#{$bp}~="#{$val}"] {
+				@each $item in $list {
+					--padding-#{$item}#{$bp}: var(--padding-default);
+				}
+			}
+		}
+	}
+}
+
+
+
+@mixin margin {
+	$breakpoint-list: config.$breakpoint-list;
+	$box-map: config.$box-map;
+
+
+	* {
+		--margin-default: 1.5rem;	
+		
+		--margin-inline-start-desktop: var(--margin-inline-start);
+		--margin-inline-end-desktop:   var(--margin-inline-end);
+		--margin-block-start-desktop:  var(--margin-block-start);
+		--margin-block-end-desktop:    var(--margin-block-end);
+
+		--margin-inline-start-tablet: var(--margin-inline-start);
+		--margin-inline-end-tablet:   var(--margin-inline-end);
+		--margin-block-start-tablet:  var(--margin-block-start);
+		--margin-block-end-tablet:    var(--margin-block-end);
+
+		--margin-inline-start-mobile: var(--margin-inline-start);
+		--margin-inline-end-mobile:   var(--margin-inline-end);
+		--margin-block-start-mobile:  var(--margin-block-start);
+		--margin-block-end-mobile:    var(--margin-block-end);
+
+		--margin-inline-start: 0rem;
+		--margin-inline-end:   0rem;
+		--margin-block-start:  0rem;
+		--margin-block-end:    0rem;	
+
+
+		--📦-margin-inline-start-desktop: var(--is-desktop) var(--margin-inline-start-desktop, var(--margin-inline-desktop, var(--margin-desktop)));
+		--📦-margin-inline-start-tablet: var(--is-tablet) var(--margin-inline-start-tablet, var(--margin-inline-tablet, var(--margin-tablet)));
+		--📦-margin-inline-start-mobile: var(--is-mobile) var(--margin-inline-start-mobile, var(--margin-inline-mobile, var(--margin-mobile)));
+		--📦-margin-inline-start: var(--📦-margin-inline-start-desktop, var(--📦-margin-inline-start-tablet, var(--📦-margin-inline-start-mobile, var(--margin-inline-start))));
+		
+		--📦-margin-inline-end-desktop: var(--is-desktop) var(--margin-inline-end-desktop, var(--margin-inline-desktop, var(--margin-desktop)));
+		--📦-margin-inline-end-tablet: var(--is-tablet) var(--margin-inline-end-tablet, var(--margin-inline-tablet, var(--margin-tablet)));
+		--📦-margin-inline-end-mobile: var(--is-mobile) var(--margin-inline-end-mobile, var(--margin-inline-mobile, var(--margin-mobile)));
+		--📦-margin-inline-end: var(--📦-margin-inline-end-desktop, var(--📦-margin-inline-end-tablet, var(--📦-margin-inline-end-mobile, var(--margin-inline-end))));
+		
+		--📦-margin-block-start-desktop: var(--is-desktop) var(--margin-block-start-desktop, var(--margin-block-desktop, var(--margin-desktop)));
+		--📦-margin-block-start-tablet: var(--is-tablet) var(--margin-block-start-tablet, var(--margin-block-tablet, var(--margin-tablet)));
+		--📦-margin-block-start-mobile: var(--is-mobile) var(--margin-block-start-mobile, var(--margin-block-mobile, var(--margin-mobile)));
+		--📦-margin-block-start: var(--📦-margin-block-start-desktop, var(--📦-margin-block-start-tablet, var(--📦-margin-block-start-mobile, var(--margin-block-start))));
+
+		--📦-margin-block-end-desktop: var(--is-desktop) var(--margin-block-end-desktop, var(--margin-block-desktop, var(--margin-desktop)));
+		--📦-margin-block-end-tablet: var(--is-tablet) var(--margin-block-end-tablet, var(--margin-block-tablet, var(--margin-tablet)));
+		--📦-margin-block-end-mobile: var(--is-mobile) var(--margin-block-end-mobile, var(--margin-block-mobile, var(--margin-mobile)));
+		--📦-margin-block-end: var(--📦-margin-block-end-desktop, var(--📦-margin-block-end-tablet, var(--📦-margin-block-end-mobile, var(--margin-block-end))));
+	}
+
+	:is(
+		[data-box*=marg],
+		[data-box-mobile*=marg],
+		[data-box-tablet*=marg],
+		[data-box-desktop*=marg],
+		.add.specificity
+	){
+		// assign margin variables 
+		// 
+		// note! we can't assign to * because this would 
+		// lead to inherit issues on child elements
+		// 
+		// tip! to enable css variables without defaults
+		// use data-box="margin" 
+		margin-inline-start: var(--📦-margin-inline-start);
+		margin-inline-end:   var(--📦-margin-inline-end);
+		margin-block-start:  var(--📦-margin-block-start);
+		margin-block-end:    var(--📦-margin-block-end);
+	}
+
+
+	// print selectors and variables
+	@each $bp in $breakpoint-list {
+		$bp: if($bp, '-#{$bp}', '');
+		@each $name, $list in $box-map {
+			$val: if($name, marg-#{$name}, marg);	
+			[data-box#{$bp}~="#{$val}"] {
+				@each $item in $list {
+					--margin-#{$item}#{$bp}: var(--margin-default);
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Henkel Learning</title>
+    <style>
+        * { box-sizing: border-box; position: relative;}
+        body { padding: 0 2rem 6rem; font-family: sans-serif; margin:  0; }
+        html { scroll-behavior: smooth;  }
+        a { display: block; font-size: .8rem; color: #E1000F; white-space: nowrap;}
+        a:not(:hover){ text-decoration: none; }
+        h2,h3 { margin: 0;  color: #666; }
+        h2 { font-size: 1.5rem; padding: .5rem 0;}
+        h3 { font-size: 1rem;  margin: 1em 0;}
+        h3 span { font-size: .7rem;  vertical-align: top}
+        
+        a:hover svg { fill: #E1000F; }
+        img { width: 0; height:0; display: block; }
+        .error  a { display: none; }
+        .disabled a { pointer-events:  none; color: #ccc; }
+        table { width: 100%; text-align: left; border-collapse: collapse; margin-top: 6rem; }
+        table {  border-top: 1px solid #ccc;}
+
+        th { font-size: .8rem;}
+        th,td {  padding: .5rem; white-space: nowrap; }
+        .tbody th, .tbody td { border: 1px solid #ccc; }
+        a[href*="zip"], .tbody th:last-of-type { text-align: center; }
+        a[href*="zip"] span { display: block; font-size: .5rem; float: left;}
+        .tbody th:first-of-type, .tbody td:first-of-type { width: 66%; }
+        .tbody th:last-of-type, .tbody td:last-of-type { width: 10%; }
+         .tbody th { background: whitesmoke; color: #999; }
+
+         a[id]{ outline: 0; top: 0; left: -.75rem; position: absolute; opacity: .5; padding-top: 1.7rem; }
+
+         nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+            padding: 1rem 2rem;
+            background-color: #E1000F;
+            z-index: 1;;
+            margin-inline:  -2rem;
+            box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+         }
+         nav a {
+            padding: .5rem;
+            margin-right: 1rem;
+            color: white;
+            text-transform: uppercase;
+         }
+         
+         html {
+            scroll-padding-top: 8rem;;
+         }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div id="renderBlock"></div>
+    </div>
+    <script src="./config.js"></script>
+    <script>
+
+        //  Fake API's
+        window.API = {
+            LMSInitialize(element, value){ console.log('1.2 LMSInitialize', element, value)},
+            LMSFinish(element, value){ console.log('1.2 LMSFinish', element, value)},
+            LMSGetValue(element, value){ console.log('1.2 LMSGetValue', element, value)},
+            LMSSetValue(element, value){ console.log('1.2 LMSSetValue', element, value)},
+            LMSCommit(element, value){ console.log('1.2 LMSCommit', element, value)},
+            LMSGetLastError(element, value){ console.log('1.2 LMSGetLastError', element, value)},
+            LMSGetErrorString(element, value){ console.log('1.2 LMSGetErrorString', element, value)},
+            LMSGetDiagnostic(element, value){ console.log('1.2 LMSGetDiagnostic', element, value)}
+        }
+        window.API_1484_11 = {
+            Initialize(element, value){ console.log('2004.3 Initialize', element, value)},
+            Terminate(element, value){ console.log('2004.3 Terminate', element, value)},
+            GetValue(element, value){ console.log('2004.3 GetValue', element, value)},
+            SetValue(element, value){ console.log('2004.3 SetValue', element, value)},
+            Commit(element, value){ console.log('2004.3 Commit', element, value)},
+            GetLastError(element, value){ console.log('2004.3 GetLastError', element, value)},
+            GetErrorString(arelement, values){ console.log('2004.3 GetErrorString', element, value)},
+            GetDiagnostic(element, value){ console.log('2004.3 GetDiagnostic', element, value)},
+        }        
+
+
+
+        const struct = {};
+        
+        console.log(exports.config.length)
+        exports.config
+            .sort(function(a, b){
+                if(a.lang < b.lang) { return -1; }
+                if(a.lang > b.lang) { return 1; }
+                return 0;
+            })
+            .forEach(item => {
+                let lang = item.lang;
+                let course = item.course;
+                if(!struct[lang]) struct[lang] = {};
+                if(!struct[lang][course]) struct[lang][course]= [];
+                struct[lang][course].push(item);
+            });
+
+
+        
+
+        let str = ''
+        
+        
+        
+        
+        str += `<nav>`
+        str += `
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 433.91 244.84" width="100" height="50">
+          <path fill="#fff" d="M9.01 122.43C9.01 57.35 105.52 8.9 216.93 8.9c111.41 0 207.97 48.45 207.97 113.53 0 65.09-96.56 113.42-207.97 113.42-111.4 0-207.92-48.33-207.92-113.42"/>
+          <path fill="#ec1b23" fill-rule="evenodd" d="M216.93 3.54c117.81 0 213.43 53.27 213.43 118.89S334.74 241.3 216.93 241.3C99.17 241.3 3.55 188.05 3.55 122.43S99.17 3.53 216.93 3.53zm0 10.72c-111.8 0-202.6 48.56-202.6 108.17 0 59.63 90.8 108.07 202.6 108.07s202.61-48.44 202.61-108.07c0-59.61-90.8-108.17-202.6-108.17zm-37.48 119.58h-42c.5 10.34 6.3 15.13 14.99 15.13 6.45 0 10.87-3.64 12.01-7.3h13.76c-3.53 12.51-13.76 18.3-26.37 18.3-17.87 0-28.99-12.3-28.99-29.86 0-17.02 11.77-29.98 29-29.98 19.36 0 28.7 16.25 27.6 33.71zm-28-23c-8.74 0-13.2 5.82-13.9 13.26h27.25c-1.04-7.94-4.37-13.25-13.35-13.25zm209.86 23h-42c.44 10.34 6.3 15.13 14.94 15.13 6.5 0 10.92-3.64 12.06-7.3h13.75c-3.52 12.51-13.75 18.3-26.36 18.3-17.92 0-29-12.3-29-29.86 0-17.02 11.77-29.98 29-29.98 19.36 0 28.7 16.25 27.6 33.71zm-28.06-23c-8.68 0-13.15 5.82-13.9 13.26h27.31c-1.04-7.94-4.37-13.25-13.4-13.25zM49.37 158.44h15.6v-33.81h33.65v33.81h15.6V79.89h-15.6v32.16H64.96V79.89H49.37v78.54zm138.67 0h14.7v-30.7c0-11.53 4.06-16.25 12.5-16.25 7.25 0 10.53 4.61 10.53 13.94v33.01h14.64v-34.91c0-14.05-4.17-23.39-20.8-23.39-6.55 0-13.4 3.08-17.32 9.45h-.35v-7.9h-13.9v56.75zm64.89 0h14.64v-30.74l21.65 30.74h18.22l-23.83-31.85 21.1-24.9h-17.48l-19.66 24.46V79.9h-14.64v78.54zm116.96 0h14.65V79.89h-14.65v78.54"/>
+        </svg>
+        `
+        
+        Object.entries(struct).forEach(([lang, courses]) => {
+            str += `
+                <a href="#${lang}">
+                    ${lang}
+                </a>
+            `                
+        })    
+        str += `</nav>`
+
+        str += `<main>`
+        Object.entries(struct).forEach(([lang, courses]) => {
+            str+=  `<article id="${lang}"><table>`
+
+            str += `
+                <tr>
+                    <th colspan="3" class="lang"><h2>${lang}</h2></th>
+                </tr>`;
+
+            str += Object.entries(courses)
+                .reduce((str, [course, items])=> {
+                    str+=`
+                        <tr>
+                            <th colspan="3">
+                                <a id="${lang}-${course}" href="#${lang}-${course}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="12" height="12">
+                                        <path fill="#010101" d="M459.65 233.37l-90.53 90.5c-49.97 50-131.03 50-181 0-7.87-7.84-14.03-16.69-19.44-25.81L210.75 256c2-2.02 4.47-3.17 6.83-4.53 2.9 9.93 7.98 19.34 15.8 27.15 24.95 24.97 65.56 24.94 90.5 0l90.5-90.5a64.05 64.05 0 000-90.51c-24.95-24.96-65.54-24.96-90.5 0l-32.2 32.22c-26.1-10.18-54.25-12.91-81.64-8.9l68.58-68.57c50-49.99 131.03-49.99 181.03 0 49.97 49.98 49.97 131.03 0 181.01zM220.33 382.2l-32.2 32.21a64.1 64.1 0 01-90.52 0 64.1 64.1 0 010-90.53l90.51-90.5a64.03 64.03 0 0190.5 0c7.8 7.8 12.88 17.2 15.82 27.13 2.37-1.38 4.8-2.5 6.8-4.5l42.07-42.05c-5.37-9.15-11.56-17.97-19.44-25.83-49.97-49.98-131.03-49.98-181.01 0l-90.5 90.5c-49.99 50-49.99 131.03 0 181.03 49.98 49.97 131.03 49.97 181.01 0l68.6-68.59c-27.4 4.03-55.55 1.28-81.64-8.87z"/>
+                                    </svg>
+                                </a>
+                                <h3>${course}  <span>(${lang})</span></h3>                              
+                            </th>
+                        </tr>
+                    `      
+
+                    
+                    str+= `                        
+                        <tr class="tbody">
+                            <th>Dev Course</th>
+                            <th>Build Preview</th>
+                            <th>SCORM Zip</th>
+                        </tr>                            
+                    ` 
+                    
+                    str+= items.reduce((str, item) => str+=`
+                        <tr class="tbody">
+                            <td>
+                                <!-- resource detect - look for known file and add error class if preload fails- fails in FF -->
+                                <link rel="preload"as="script" href="./courses/${lang}/${item.source}/shared/page.js" onerror="this.parentNode.classList.add('disabled')" />
+                                <a href="./courses/${lang}/${item.source}/" class="preview">${item.no} ${item.module}</a>
+                            </td>
+                            <td>
+                                <!-- resource detect - look for known file and add error class if preload fails -->
+                                <link rel="preload" as="script"  href="./build/${lang}/${course}/${item.module}/resources/shared/page.js" onerror="this.parentNode.classList.add('error')" />
+                                
+                                <a href="./build/${lang}/${course}/${item.module}/resources/" class="preview">${item.module}</a>
+                            </td>       
+                            <td>
+                                <!-- resource detect - look for known file and add error class if preload fails -->
+                                <link rel="preload" as="script"  href="./build/${lang}/${course}/${item.module}/resources/shared/page.js" onerror="this.parentNode.classList.add('error')" />
+
+                                <a href="./build/${lang}/${course}/${item.module}.zip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="none" d="M0 0h24v24H0z"/><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                    <span>SCORM ${item.scorm}</span>
+                                </a>
+                            </td>                                                        
+                        </tr>    
+                    
+                    `,'')
+
+                    return str;
+                },'')
+
+                str+= `</tbody>`;
+            str += '</table></article>';
+        });
+        str += `</main>`
+
+        // Object.entries(struct).forEach(([lang, courses]) => {
+        //     str += `<table>`
+        //     str += `
+                
+        //         <tr>
+        //             <th colspan="3"><h2>${lang}</h2></th>
+        //         </tr>`;
+
+        //     str += Object.entries(courses)
+        //         .reduce((str, [course, items])=> {
+        //             str+=`
+        //                 <tr>
+        //                     <th colspan="3">
+        //                      <a id="${lang}-${course}" href="#${lang}-${course}">
+        //                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="12" height="12">
+        //                              <path fill="#010101" d="M459.65 233.37l-90.53 90.5c-49.97 50-131.03 50-181 0-7.87-7.84-14.03-16.69-19.44-25.81L210.75 256c2-2.02 4.47-3.17 6.83-4.53 2.9 9.93 7.98 19.34 15.8 27.15 24.95 24.97 65.56 24.94 90.5 0l90.5-90.5a64.05 64.05 0 000-90.51c-24.95-24.96-65.54-24.96-90.5 0l-32.2 32.22c-26.1-10.18-54.25-12.91-81.64-8.9l68.58-68.57c50-49.99 131.03-49.99 181.03 0 49.97 49.98 49.97 131.03 0 181.01zM220.33 382.2l-32.2 32.21a64.1 64.1 0 01-90.52 0 64.1 64.1 0 010-90.53l90.51-90.5a64.03 64.03 0 0190.5 0c7.8 7.8 12.88 17.2 15.82 27.13 2.37-1.38 4.8-2.5 6.8-4.5l42.07-42.05c-5.37-9.15-11.56-17.97-19.44-25.83-49.97-49.98-131.03-49.98-181.01 0l-90.5 90.5c-49.99 50-49.99 131.03 0 181.03 49.98 49.97 131.03 49.97 181.01 0l68.6-68.59c-27.4 4.03-55.55 1.28-81.64-8.87z"/>
+        //                          </svg>
+        //                      </a>
+        //                      <h3>${course}  <span>(${lang})</span></h3>                              
+        //                  </th>
+        //                 </tr>
+        //             `      
+
+                    
+        //             str+= `                        
+        //                 <tr class="tbody">
+        //                     <th>Dev Course</th>
+        //                     <th>Build Preview</th>
+        //                     <th>SCORM Zip</th>
+        //                 </tr>                            
+        //             ` 
+                    
+        //             str+= items.reduce((str, item) => str+=`
+        //                 <tr class="tbody">
+        //                     <td>
+        //                      <!-- resource detect - look for known file and add error class if preload fails- fails in FF -->
+        //                      <link rel="preload"as="script" href="./courses/${lang}/${item.source}/shared/page.js" onerror="this.parentNode.classList.add('disabled')" />
+        //                         <a href="./courses/${lang}/${item.source}/" class="preview">${item.no} ${item.module}</a>
+        //                     </td>
+        //                     <td>
+        //                      <!-- resource detect - look for known file and add error class if preload fails -->
+        //                         <link rel="preload" as="script"  href="./build/${lang}/${course}/${item.module}/resources/shared/page.js" onerror="this.parentNode.classList.add('error')" />
+                                
+        //                         <a href="./build/${lang}/${course}/${item.module}/resources/" class="preview">${item.module}</a>
+        //                     </td>       
+        //                     <td>
+        //                      <!-- resource detect - look for known file and add error class if preload fails -->
+        //                      <link rel="preload" as="script"  href="./build/${lang}/${course}/${item.module}/resources/shared/page.js" onerror="this.parentNode.classList.add('error')" />
+
+        //                         <a href="./build/${lang}/${course}/${item.module}.zip">
+        //                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="none" d="M0 0h24v24H0z"/><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        //                             <span>SCORM ${item.scorm}</span>
+        //                         </a>
+        //                     </td>                                                        
+        //                 </tr>    
+                    
+        //             `,'')
+
+        //             return str;
+        //         },'')
+
+        //         str+= `</tbody>`;
+        //     str += '</table>';
+        // });
+
+
+
+
+
+
+
+        // Object.entries(struct).forEach(([lang, courses]) => {
+            
+        //     str += `<h2>${lang}</h2>`;
+        //     str += Object.entries(courses)
+        //         .reduce((str, [course, modules])=> {
+        //             str+=`<h3>${course}</h3>` 
+        //             str+= modules.reduce((str, module) => str+=`
+        //                 <div class="item">
+        //                     <img src="./build/${lang}/${course}/${module}/resources/shared/thumb-default.jpg" onerror="this.classList.add('error')"/>
+        //                     <a href="./build/${lang}/${course}/${module}.zip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" title="${course.scorm}"><path fill="none" d="M0 0h24v24H0z"/><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></a>
+        //                     <a href="./build/${lang}/${course}/${module}/resources/" class="preview">${module}</a>
+        //                 </div>    
+        //             `,'');
+        //             return str;
+        //         }, '');
+
+
+        // })
+
+        renderBlock.innerHTML = str;  
+
+
+
+
+        [].slice.call(document.querySelectorAll('.preview')).forEach(function(link){
+            //
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+
+
+                var n = 80;
+                var w = 1600;
+                var h =  900;
+
+                    h += n;
+                var r = h/w;
+                var sw = screen.availWidth;
+                var sh = screen.availHeight;
+
+                //  Save as global to allow localStorage bookmarking
+                var course = link.href;
+
+                //  Save as global to allow close()
+                var popup = window.open(
+                    course + '/index.html', 'Course',
+                    'height='+h+',width='+w+',left='+(sw-w)/2+',top='+(sh-h)/2
+                );
+                if (window.focus) {popup.focus()}
+                return false;
+                });
+        })
+        
+    </script>
+</body>
+</html>

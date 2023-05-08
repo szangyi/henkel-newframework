@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// Reset
+// -----------------------------------------------------------------------------
+
+@mixin reset {
+    
+    *, *::before, *::after {
+        box-sizing: border-box;
+        position: relative;
+        background-repeat: no-repeat;
+    }
+
+    html, body {
+        min-block-size: 100vh;
+        min-block-size: 100svh;
+
+        // -webkit-overflow-x-scrolling: touch; // to prevent horizontal scrolling on Safari iphone
+
+        -moz-osx-font-smoothing: grayscale;
+         -webkit-font-smoothing: antialiased;
+
+        -webkit-tap-highlight-color: transparent;   
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body, nav, header, main, footer, aside, article, section, figure {
+        display: block;
+        margin: 0;
+        padding-block: .01px;
+        isolation: isolate;
+    }
+
+    picture, video, img, svg, canvas {
+        display: block;
+    }
+
+    a, button, label, select {
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+
+    :where(button, input, a) {
+        font: inherit;
+        color: inherit;
+    }
+
+    :is(a, button) * {
+        pointer-events: none;
+    }
+
+
+
+}
+
+
+

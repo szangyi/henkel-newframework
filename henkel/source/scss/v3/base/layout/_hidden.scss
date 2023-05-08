@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// Layout Hidden
+// -----------------------------------------------------------------------------
+@use './base' as config;
+
+
+
+@mixin hidden {
+	[hidden] { display: none; }
+	@media (min-width: config.$bp-mobile-start) and (max-width: config.$bp-mobile-end) {
+		:is([data-hidden~="mobile"],[data-hidden-mobile], .add.specificity) { display: none; }
+	}
+	@media (min-width: config.$bp-tablet-start) and (max-width: config.$bp-tablet-end) {
+		:is([data-hidden~="tablet"],[data-hidden-tablet], .add.specificity) { display: none; }
+	}
+	@media (min-width: config.$bp-desktop-start) {
+		:is([data-hidden~="desktop"],[data-hidden-desktop], .add.specificity) { display: none; }
+	}
+}

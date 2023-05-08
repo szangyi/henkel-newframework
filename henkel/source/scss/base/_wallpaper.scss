@@ -1,0 +1,118 @@
+@use 'config' as *;
+
+
+
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Wallpaper
+//	–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin wallpaper {
+
+	.video,
+	.wallpaper {
+		background-color: color(dark); ;
+		overflow: hidden;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	svg.wallpaper {
+		overflow: visible;
+	}
+
+	[class*=area] .wallpaper {
+		background-color: color(none);
+		position: absolute;
+	}	
+
+
+	.video > *,
+	.wallpaper > *:not(image) {
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% center;
+		outline: 0;
+	}
+
+	.video,
+	.wallpaper {
+
+		&.focus-top-left > * { object-position: 0%; }
+		&.focus-top > * { object-position: 50% 0%; }
+		&.focus-top-right > * { object-position: 100% 0%; }
+		&.focus-left > * { object-position: 0% 50%; }
+		&.focus-center > * { object-position: 50%; }
+		&.focus-right > * { object-position: 100% 50%; }
+		&.focus-bottom-left > * { object-position: 0% 100%; }
+		&.focus-bottom > * { object-position: 50% 100%; }
+		&.focus-bottom-right > * { object-position: 100%; }
+
+		&.contain > * {
+			object-fit: contain;
+		}
+
+
+		&.grad-left-dark,
+		&.grad-right-dark {
+			&::before {
+				@include z(above);
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+
+			}
+		}
+		&.grad-left-dark::before {
+			background-image: linear-gradient(to right, color(dark), 30%, color(none)) ;
+		}
+		&.grad-right-dark::before {
+			background-image: linear-gradient(to left, color(dark), 30%, color(none)) ;
+		}
+		&.grad-left-light::before {
+			background-image: linear-gradient(to right, color(light), 30%, color(none)) ;
+		}
+		&.grad-right-light::before {
+			background-image: linear-gradient(to left, color(light), 30%, color(none)) ;
+		}
+
+		@media (max-width: 50rem){
+			&.mobile-cover-light::before,
+			&.mobile-cover-dark::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0.7; 
+				z-index: 1;			
+			}
+			&.mobile-cover-light::before {
+				background-color: color(light);
+			}
+			&.mobile-cover-dark::before {
+				background-color: color(dark);
+			}
+		}
+
+
+
+
+	}
+
+
+}

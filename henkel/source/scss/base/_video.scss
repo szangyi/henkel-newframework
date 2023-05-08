@@ -1,0 +1,64 @@
+@use "sass:math";
+
+@use 'config' as *;
+
+
+
+@mixin video {
+
+	.video {
+		//
+		//	note! video is sharing base style with the wallpaper
+		//
+		@include z(modal);
+
+		opacity: 0;
+		transform: scale(.96);
+		transition:
+			opacity 300ms,
+			transform 600ms
+		;
+
+		&.open {
+			transition:
+				opacity 300ms,
+				transform 600ms
+			;
+		}
+	}
+}
+
+
+
+@mixin video-open {
+	.video-open {
+		width: 100%;
+		max-width: 20vmin;
+		font-size: 0;
+		&::before, &::after { content: ''; display: table; clear: both; }
+		&::before { padding-bottom: percentage(math.div(120, 180)); float: left;}
+
+
+		//	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120"><path fill="none" stroke="#FFF" stroke-width="12" d="M6 6h168v108H6z"/><path fill="#FFF" d="M111 60.75L70.5 87V34.5z"/></svg>
+		background-repeat: no-repeat;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 120'%3E%3Cpath fill='none' stroke='%23FFF' stroke-width='12' d='M6 6h168v108H6z'/%3E%3Cpath fill='%23FFF' d='M111 60.75L70.5 87V34.5z'/%3E%3C/svg%3E");
+	}
+}
+
+
+
+@mixin video-close {
+	.video-close {
+		@include z(above);
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: auto;
+		width:  4rem;
+		height: 4rem;
+		font-size: 0;
+		//	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><defs/><g fill="none" fill-rule="evenodd"><path fill="#E1000F" d="M0 0h80v80H0z"/><path stroke="#FFF" stroke-width="6" d="M22.322 22.322l35.356 35.356m-35.356 0l35.356-35.356"/></g></svg>
+		// 	fill='%23E1000F'
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cdefs/%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h80v80H0z'/%3E%3Cpath stroke='%23FFF' stroke-width='6' d='M22.322 22.322l35.356 35.356m-35.356 0l35.356-35.356'/%3E%3C/g%3E%3C/svg%3E");
+	}
+}

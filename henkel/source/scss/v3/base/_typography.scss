@@ -1,0 +1,363 @@
+// -----------------------------------------------------------------------------
+// Base typography
+// -----------------------------------------------------------------------------
+@use 'sass:math';
+@use 'sass:string';
+@use '../frankly/font';
+@use '../frankly/cast';
+@use '../base/theme';
+
+
+
+@mixin typography {
+
+
+    // ------------------------------------------------------------------------
+    // Font Config
+    // ------------------------------------------------------------------------
+    $base-path: './';
+    // $base-path: 'https://maria.franklyone.com/henkel-new-styling/source/shared/v3/';
+
+    $size-map: (
+        heading-1: from 30px to 70px,
+        heading-2: from 20px to 50px,
+        heading-3: from 16px to 40px,
+        heading-4: from 14px to 30px,
+        heading-5: from 12px to 20px,
+        base:      from 16px to 20px, 
+
+        display-xxl: from 50px to 140px,
+        display-xl:  from 45px to 120px,
+        display-lg:  from 40px to 100px,
+        display-md:  from 35px to 80px,
+        display-sm:  from 30px to 70px,
+        display-xs:  from 25px to 60px,
+        display-xxs: from 20px to 50px,
+
+        text-xxl: from 28px to 36px,
+        text-xl:  from 24px to 30px,
+        text-lg:  from 20px to 24px,
+        text-md:  from 16px to 20px,
+        text-sm:  from 14px to 16px,
+        text-xs:  from 12px to 14px,
+        text-xxs: from 10px to 12px,
+    );
+
+    $weight-map: (
+        'extra-bold': 800,
+        'bold': 700,
+        'semi-bold': 500,
+        'regular': 400,
+        'light': 300 
+    );
+    
+    
+    $style-map: (
+        'italic': italic,
+        'normal': normal
+    );
+
+    $transform-map: (
+        'uppercase' : uppercase,
+        'upper-case': uppercase,
+        'lowercase' : lowercase,
+        'lower-case': lowercase,
+        'capitalize': capitalize,
+        'normalcase': none,
+        'normal-case': none
+    );    
+
+    $align-map: (
+        'start' : start,
+        'center': center,
+        'end'   : end,
+        'left'  : start,
+        'right' : end
+    );  
+
+
+
+    @at-root {
+
+        // ------------------------------------------------------------------------
+        // Font Face
+        // ------------------------------------------------------------------------
+        
+        @font-face {
+            font-family: 'HenkelGTFlexa';
+            src: url($base-path + 'HenkelGTFlexa-300.woff2') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'HenkelGTFlexa';
+            src: url($base-path + 'HenkelGTFlexa-400.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'HenkelGTFlexa';
+            src: url($base-path + 'HenkelGTFlexa-500.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'HenkelGTFlexa';
+            src: url($base-path + 'HenkelGTFlexa-700.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'HenkelGTFlexa';
+            src: url($base-path + 'HenkelGTFlexa-800.woff2') format('woff2');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'HenkelGTFlexa';
+            src: url($base-path + 'HenkelGTFlexa-300i.woff2') format('woff2');
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'HenkelGTFlexa';
+            src: url($base-path + 'HenkelGTFlexa-700i.woff2') format('woff2');
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'HenkelGTFlexa';
+            src: url($base-path + 'HenkelGTFlexa-800i.woff2') format('woff2');
+            font-weight: 800;
+            font-style: italic;
+        }
+
+    
+    
+        // -------------------------------------------------------------------------
+        // Font Scale
+        // -------------------------------------------------------------------------
+        @include font.scale(
+            $size: $size-map,
+            $lower:  20rem,
+            $upper: 100rem
+        );   
+        
+
+
+        html {
+            // ---------------------------------------------------------------------
+            // Font Weight
+            // ---------------------------------------------------------------------
+            @each $name, $weight in $weight-map {
+                --font-weight-#{$name}: #{$weight};
+            }
+        
+
+
+            // ---------------------------------------------------------------------
+            // Font Style
+            // ---------------------------------------------------------------------
+            @each $name, $style in $style-map {
+                --font-style-#{$name}: #{$style};
+            }
+          
+
+            // ---------------------------------------------------------------------
+            // Font Transform
+            // ---------------------------------------------------------------------
+            @each $name, $transform in $transform-map {
+                --font-transform-#{$name}: #{$transform};
+            }    
+
+
+            // ---------------------------------------------------------------------
+            // Font Align
+            // ---------------------------------------------------------------------
+            @each $name, $align in $align-map {
+                --font-align-#{$name}: #{$align};
+            }    
+        }
+        
+
+
+        // -------------------------------------------------------------------------
+        // Font variables
+        // -------------------------------------------------------------------------
+        * {
+           
+            // set breakpoint specific font sizes, weight,...
+            --🔤-if-font-size-desktop: var(--is-desktop) var(--font-size-desktop);
+            --🔤-if-font-size-tablet: var(--is-tablet) var(--font-size-tablet);
+            --🔤-if-font-size-mobile: var(--is-mobile) var(--font-size-mobile);
+            --🔤-font-size:  var(--🔤-if-font-size-desktop, var(--🔤-if-font-size-tablet, var(--🔤-if-font-size-mobile, var(--font-size))));   
+
+            --🔤-if-font-weight-desktop: var(--is-desktop) var(--font-weight-desktop);
+            --🔤-if-font-weight-tablet: var(--is-tablet) var(--font-weight-tablet);
+            --🔤-if-font-weight-mobile: var(--is-mobile) var(--font-weight-mobile);
+            --🔤-font-weight:  var(--🔤-if-font-weight-desktop, var(--🔤-if-font-weight-tablet, var(--🔤-if-font-weight-mobile, var(--font-weight))));           
+
+            --🔤-if-font-style-desktop: var(--is-desktop) var(--font-style-desktop);
+            --🔤-if-font-style-tablet: var(--is-tablet) var(--font-style-tablet);
+            --🔤-if-font-style-mobile: var(--is-mobile) var(--font-style-mobile);
+            --🔤-font-style:  var(--🔤-if-font-style-desktop, var(--🔤-if-font-style-tablet, var(--🔤-if-font-style-mobile, var(--font-style))));                   
+
+            --🔤-if-font-transform-desktop: var(--is-desktop) var(--font-transform-desktop);
+            --🔤-if-font-transform-tablet: var(--is-tablet) var(--font-transform-tablet);
+            --🔤-if-font-transform-mobile: var(--is-mobile) var(--font-transform-mobile);
+            --🔤-font-transform:  var(--🔤-if-font-transform-desktop, var(--🔤-if-font-transform-tablet, var(--🔤-if-font-transform-mobile, var(--font-transform))));                           
+
+            --🔤-if-font-align-desktop: var(--is-desktop) var(--font-align-desktop);
+            --🔤-if-font-align-tablet: var(--is-tablet) var(--font-align-tablet);
+            --🔤-if-font-align-mobile: var(--is-mobile) var(--font-align-mobile);
+            --🔤-font-align:  var(--🔤-if-font-align-desktop, var(--🔤-if-font-align-tablet, var(--🔤-if-font-align-mobile, var(--font-align))));            
+
+
+
+            // assignment 
+            font-size: var(--🔤-font-size);
+            font-weight: var(--🔤-font-weight);
+            font-style: var(--🔤-font-style);
+            text-transform: var(--🔤-font-transform);
+            text-align: var(--🔤-font-align);
+
+
+
+            // inherit defaults
+            --font-size: inherit;
+            --font-weight: inherit;
+            --font-style: inherit;
+            --font-transform: inherit;
+            --font-align: inherit;
+
+
+            
+            // reinstate defaults "broken" by assigning css variables
+            // (does not get skipped like regular unresolvable rules)
+            @at-root { 
+                :is(h1,h2,h3,h4,h5,h6) { --font-weight: var(--font-weight-extra-bold); } 
+                :is(strong, b) { --font-weight: var(--font-weight-bold);  }
+                :is(em, i) {  --font-style: var(--font-style-italic); }
+            }
+        }
+
+
+
+        
+        // ------------------------------------------------------------------------
+        // Base Typography
+        // ------------------------------------------------------------------------
+
+        // Base
+        body {
+            font-family: 'HenkelGTFlexa', sans-serif;
+            line-height: 1.275;
+            --font-size: var(--font-size-base);
+        }
+
+
+
+        // Headings
+        :is(h1,h2,h3,h4,h5, 
+            [data-font~="heading-1" i],
+            [data-font~="heading-2" i],
+            [data-font~="heading-3" i],
+            [data-font~="heading-4" i],
+            [data-font~="heading-5" i]                        
+        ) { 
+            line-height: calc(1em + .25rem);
+            margin-block-start: 0;
+            margin-block-end: .25em;
+        }
+
+
+        h1 { --font-size: var(--font-size-heading-1); }
+        h2 { --font-size: var(--font-size-heading-2); }
+        h3 { --font-size: var(--font-size-heading-3); }
+        h4 { --font-size: var(--font-size-heading-4); }
+        h5 { --font-size: var(--font-size-heading-5); }
+
+        p { 
+            margin-block-start: 0;
+        }
+
+        
+        :is(
+            [data-font*="heading-" i],
+            [data-font-mobile*="heading-" i],
+            [data-font-tablet*="heading-" i],
+            [data-font-desktop*="heading-" i]
+        ) {
+            --font-weight: var(--font-weight-extra-bold);
+        }
+
+
+        :is(
+            [data-font*="display-" i],
+            [data-font-mobile*="display-" i],
+            [data-font-tablet*="display-" i],
+            [data-font-desktop*="display-" i]
+        ) {
+            --font-style: var(--font-style-italic);
+            --font-weight: var(--font-weight-extra-bold);
+            --font-transform: var(--font-transform-uppercase);
+
+            line-height: 1;
+            margin-block-start: 0;
+            margin-block-end: .25em;      
+        }
+
+
+        // TODO - add individual line height based on language (when needed)
+        // :is([lang|=tr] [data-font*="display-"], [lang|=tr][data-font*="display-"]) {
+        //     line-height: 1.15;
+        // } 
+
+
+
+
+        // -------------------------------------------------------------------------
+        // Font variables [data-font]
+        // ⚠️ Warning! this produces a lot of rules - be careful 
+        // -------------------------------------------------------------------------
+        // create individual font size variables for each breakpoint
+        @each $bp in mobile tablet desktop null {
+            
+            // selector name 
+            $sel: if($bp, data-font-#{$bp}, data-font);
+
+            // render [data-font] selectors 
+            // note! $value is not used - just there for the each loop  
+            @each $name, $value in $size-map {
+                [#{$sel}~=#{$name} i] { @include font.size($bp, font.size($name)); }
+            }
+
+            @each $name, $value in $weight-map{
+                [#{$sel}~=#{$name} i] { @include font.weight($bp, font.weight($name)); }
+            }
+
+            @each $name, $value in $style-map{
+                [#{$sel}~=#{$name} i] { @include font.style($bp, font.style($name)); }
+            }
+
+            @each $name, $value in $transform-map{
+                [#{$sel}~=#{$name} i] { @include font.transform($bp, font.transform($name)); }
+            }
+
+            @each $name, $value in $align-map {
+                [#{$sel}~=#{$name} i] { @include font.align($bp, font.align($name)); }
+            }
+        }
+
+    }
+
+}
+
+

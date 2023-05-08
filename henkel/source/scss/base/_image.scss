@@ -1,0 +1,43 @@
+@use 'config' as *;
+
+
+
+@mixin image {
+
+
+
+	img {
+
+		max-width: 100%;
+		height: auto;
+		display: block;
+		margin: auto;
+
+
+		&.contain {
+			display: block;
+			object-fit: contain;
+			object-position: center;
+			width: 100%;
+			height: 100%;
+		}
+		&.focus-top-left > * { object-position: 0%; }
+		&.focus-top > * { object-position: 50% 0%; }
+		&.focus-top-right > * { object-position: 100% 0%; }
+		&.focus-left > * { object-position: 0% 50%; }
+		&.focus-center > * { object-position: 50%; }
+		&.focus-right > * { object-position: 100% 50%; }
+		&.focus-bottom-left > * { object-position: 0% 100%; }
+		&.focus-bottom > * { object-position: 50% 100%; }
+		&.focus-bottom-right > * { object-position: 100%; }
+
+		&.align-left  { margin: initial; margin-right: auto }
+		&.align-right { margin: initial; margin-left: auto }
+
+
+		&.shadow {
+			box-shadow: .5rem .5rem 2rem rgb(color(dark),0.2);
+		}
+
+	}
+}

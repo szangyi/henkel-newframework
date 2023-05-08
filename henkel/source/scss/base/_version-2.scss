@@ -1,0 +1,688 @@
+@use 'config' as *;
+
+@mixin version-2 {
+    [data-version="2"] {
+        // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+        //
+        //	Layout version 2
+        //
+        // ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+    
+
+        [class*=layout-a],
+        [class*=layout-b],
+        [class*=layout-c],
+        [class*=layout-d],
+        [class*=layout-e],
+        [class*=layout-f],
+        [class*=layout-g],
+        [class*=layout-h],
+        [class*=layout-i] {
+            
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            margin:  auto;
+            padding: size(gap-half);
+
+            width: 100%;
+            min-height: 80vh;
+
+
+            --offset-x: calc(-10vw - .5rem);
+            --offset-y: calc(-10vh - .5rem);
+            @include media(md) {
+                --offset-x: calc(-10vw / 2 - .5rem);
+            }
+            @include media(lg) {
+                --offset-x: calc(-10vw - .5rem);
+            }
+            
+
+        }	
+
+        .layout-offset {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            max-height: 50vh; 
+            &:not([class*=theme-]){
+                background-color: inherit;
+            }
+        }
+        
+        //	–––––––––––––––––––––––––––––
+        //	1 Area
+        //	–––––––––––––––––––––––––––––
+        .layout-a1 {
+            .area-a { 
+                grid-column: 1 / -1; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); bottom: var(--offset-y); left: var(--offset-x);  max-height: 100vh; ;}
+            }
+            .area-b,.area-c,.area-d,.area-e,.area-f { display: none; }
+        }
+
+        //	–––––––––––––––––––––––––––––
+        //	2 Areas
+        //	–––––––––––––––––––––––––––––
+        .layout-a2 {
+            .area-a { 
+                grid-column: 1 / span 3; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); bottom: var(--offset-y); left: var(--offset-x); max-height: 100vh; }
+            }
+            .area-b { 
+                grid-column: 4 / span 3; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); bottom: var(--offset-y); max-height: 100vh; ;}
+            }
+
+            .area-c,.area-d,.area-e,.area-f { display: none; }
+
+        }
+        .layout-b2 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); bottom: var(--offset-y); left: var(--offset-x); max-height: 100vh; }
+            }
+            .area-b { 
+                grid-column: 3 / span 4; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); bottom: var(--offset-y); max-height: 100vh; ;}
+            }
+            .area-c,.area-d,.area-e,.area-f { display: none; }
+        }
+        .layout-c2 {
+            .area-a { 
+                grid-column: 1 / span 4; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); bottom: var(--offset-y); left: var(--offset-x); max-height: 100vh; }
+            }
+            .area-b { 
+                grid-column: 5 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); bottom: var(--offset-y); max-height: 100vh; }
+            }
+            .area-c,.area-d,.area-e,.area-f { display: none; }
+        }
+        .layout-d2 {
+            .area-a { 
+                grid-column: 1 / -1; 
+                grid-row: 1;
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); left: var(--offset-x); }
+            }
+            .area-b { 
+                grid-column: 1 / -1;
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); right: var(--offset-x); left: var(--offset-x); }
+            }
+            .area-c,.area-d,.area-e,.area-f { display: none; }
+        }
+
+        //	–––––––––––––––––––––––––––––
+        //	3 Areas
+        //	–––––––––––––––––––––––––––––
+        .layout-a3 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); bottom: var(--offset-y); max-height: 100vh; }
+            }
+            .area-b { 
+                grid-column: 3 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); bottom: var(--offset-y); max-height: 100vh; }
+            }
+            .area-c { 
+                grid-column: 5 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); bottom: var(--offset-y); max-height: 100vh; }
+            }
+            .area-d,.area-e,.area-f { display: none; }
+        }
+
+        .layout-b3 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x);  }
+            }
+            .area-b { 
+                grid-column: 3 / span 4; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); bottom: var(--offset-y); max-height: 100vh; }			
+            }
+            .area-c { 
+                grid-column: 1 / span 2; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); left: var(--offset-x); }
+            }
+            .area-d,.area-e,.area-f { display: none; }
+        }
+        .layout-c3 {
+            .area-a { 
+                grid-column: 1 / span 4; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); bottom: var(--offset-y); max-height: 100vh; }	
+            }
+            .area-b { 
+                grid-column: 5 / span 2; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x);}
+            }
+            .area-c { 
+                grid-column: 5 / span 2; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); right: var(--offset-x);}
+            }
+            .area-d,.area-e,.area-f { display: none; }
+        }
+        .layout-d3 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); bottom: var(--offset-y); max-height: 100vh; }	
+            }
+            .area-b { 
+                grid-column: 3 / span 4; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x);}
+            }
+            .area-c { 
+                grid-column: 3 / span 4; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); right: var(--offset-x);}
+            }
+            .area-d,.area-e,.area-f { display: none; }
+        }
+        .layout-e3 {
+            .area-a { 
+                grid-column: 1 / span 4; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); }	
+            }
+            .area-b { 
+                grid-column: 5 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); bottom: var(--offset-y); right: var(--offset-x); max-height: 100vh; }	
+            }
+            .area-c { 
+                grid-column: 1 / span 4; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); left: var(--offset-x); }	
+            }
+            .area-d,.area-e,.area-f { display: none; }
+        }
+        .layout-f3 {
+            .area-a { 
+                grid-column: 1 / span 3; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); bottom: var(--offset-y); max-height: 100vh; }	
+            }
+            .area-b { 
+                grid-column: 4 / span 3; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x);}
+            }
+            .area-c { 
+                grid-column: 4 / span 3; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); right: var(--offset-x);}
+            }
+            .area-d,.area-e,.area-f { display: none; }
+        }
+        .layout-g3 {
+            .area-a { 
+                grid-column: 1 / span 3; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); }	
+            }
+            .area-b { 
+                grid-column: 4 / span 3; 
+                grid-row: 1 / -1; 
+                .layout-offset { top: var(--offset-y); bottom: var(--offset-y); right: var(--offset-x); max-height: 100vh; }	
+            }
+            .area-c { 
+                grid-column: 1 / span 3; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); left: var(--offset-x); }	
+            }
+            .area-d,.area-e,.area-f { display: none; }
+        }	
+        .layout-h3 {
+            .area-a { 
+                grid-column: 1 / -1; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); right: var(--offset-x);  }	
+            }
+            .area-b { 
+                grid-column: 1 / span 3; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); left: var(--offset-x);}
+            }
+            .area-c { 
+                grid-column: 4 / span 3; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); right: var(--offset-x);}
+            }
+            .area-d,.area-e,.area-f { display: none; }
+        }
+        .layout-i3 {
+            .area-a { 
+                grid-column: 1 / span 3; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x);  }	
+            }
+            .area-b { 
+                grid-column: 4 / span 3; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x);}
+            }
+            .area-c { 
+                grid-column: 1 / -1; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y);left: var(--offset-x); right: var(--offset-x);  }
+            }
+            .area-d,.area-e,.area-f { display: none; }
+        }	
+        
+
+        //	–––––––––––––––––––––––––––––
+        //	4 Areas
+        //	–––––––––––––––––––––––––––––
+        .layout-a4 {
+            .area-a { 
+                grid-column: 1 / span 3; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); }	
+            }
+            .area-b { 
+                grid-column: 4 / span 3; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); }	
+            }
+            .area-c { 
+                grid-column: 1 / span 3; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); left: var(--offset-x); }	
+            }
+            .area-d { 
+                grid-column: 4 / span 3; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); right: var(--offset-x); }	
+            }		
+            .area-e,.area-f { display: none; }
+        }	
+
+        .layout-b4 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); }	
+            }
+            .area-b { 
+                grid-column: 3 / span 4; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); }
+            }
+            .area-c { 
+                grid-column: 1 / span 2; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); left: var(--offset-x); }
+            }
+            .area-d { 
+                grid-column: 3 / span 4; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); right: var(--offset-x); }	
+            }		
+            .area-e,.area-f { display: none; }
+        }	
+        
+        .layout-c4 {
+            .area-a { 
+                grid-column: 1 / span 4; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); }	
+            }
+            .area-b { 
+                grid-column: 5 / span 2; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); }
+            }
+            .area-c { 
+                grid-column: 1 / span 4; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); left: var(--offset-x); }
+            }
+            .area-d { 
+                grid-column: 5 / span 2; 
+                grid-row: 2;
+                .layout-offset { bottom: var(--offset-y); right: var(--offset-x); }	
+            }	
+            .area-e,.area-f { display: none; }	
+        }	
+        .layout-d4 {
+            .area-a { 
+                grid-column: 1 / -1; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); right: var(--offset-x); }
+            }
+            .area-b { 
+                grid-column: 1 / span 2; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); left: var(--offset-x);   }
+            }
+            .area-c { 
+                grid-column: 3 / span 2; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y);  }
+            }
+            .area-d { 
+                grid-column: 5 / span 2; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); right: var(--offset-x); }
+            }	
+            .area-e,.area-f { display: none; }	
+        }	
+        .layout-e4 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); left: var(--offset-x); }
+            }
+            .area-b { 
+                grid-column: 3 / span 2; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); }
+            }
+            .area-c { 
+                grid-column: 5 / span 2; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); right: var(--offset-x); }
+            }
+            .area-d { 
+                grid-column: 1 / -1; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); left: var(--offset-x); right: var(--offset-x); }
+            }	
+            .area-e,.area-f { display: none; }	
+        }				
+
+        //	–––––––––––––––––––––––––––––
+        //	5 Areas
+        //	–––––––––––––––––––––––––––––
+        .layout-a5 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { left: var(--offset-x); top: var(--offset-y); bottom: var(--offset-y); max-height: 100vh; }
+            }
+            .area-b { 
+                grid-column: 3 / span 2; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); }
+            }
+            .area-c { 
+                grid-column: 5 / span 2; 
+                grid-row: 1; 
+                .layout-offset { right: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-d { 
+                grid-column: 3 / span 2; 
+                grid-row: 2; 
+                .layout-offset { bottom: var(--offset-y); }
+            }	
+            .area-e { 
+                grid-column: 5 / span 2; 
+                grid-row: 2; 
+                .layout-offset { right: var(--offset-x); bottom: var(--offset-y); }
+            }	
+            .area-f { display: none; }			
+        }	
+        .layout-b5 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1; 
+                .layout-offset { left: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-b { 
+                grid-column: 3 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { top:var(--offset-y); bottom: var(--offset-y);  max-height: 100vh; }
+            }
+            .area-c { 
+                grid-column: 5 / span 2; 
+                grid-row: 1; 
+                .layout-offset { right: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-d { 
+                grid-column: 1 / span 2; 
+                grid-row: 2; 
+                .layout-offset { left: var(--offset-x); bottom:var(--offset-y);; }
+            }	
+            .area-e { 
+                grid-column: 5 / span 2; 
+                grid-row: 2; 
+                .layout-offset { right: var(--offset-x); bottom: var(--offset-y); }
+            }				
+        }	
+        .layout-c5 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1; 
+                .layout-offset { left: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-b { 
+                grid-column: 3 / span 2; 
+                grid-row: 1; 
+                .layout-offset {   top: var(--offset-y);}
+            }
+            .area-c { 
+                grid-column: 5 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { right: var(--offset-x); top: var(--offset-y); bottom: var(--offset-y); max-height: 100vh; }
+            }
+            .area-d { 
+                grid-column: 1 / span 2; 
+                grid-row: 2; 
+                .layout-offset { left: var(--offset-x); bottom: var(--offset-y); }
+            }	
+            .area-e { 
+                grid-column: 3 / span 2; 
+                grid-row: 2; 
+                .layout-offset {   bottom: var(--offset-y);}
+            }	
+            .area-f { display: none; }						
+        }	
+        .layout-d5 {
+            .area-a { 
+                grid-column: 1 / span 4; 
+                grid-row: 1; 
+                .layout-offset { left: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-b { 
+                grid-column: 5 / span 2; 
+                grid-row: 1; 
+                .layout-offset {   top: var(--offset-y);  right: var(--offset-x);}
+            }
+            .area-c { 
+                grid-column: 1 / span 2; 
+                grid-row: 2; 
+                .layout-offset { left: var(--offset-x);   bottom: var(--offset-y); }
+            }
+            .area-d { 
+                grid-column: 3 / span 2; 
+                grid-row: 2; 
+                .layout-offset {  bottom: var(--offset-y); }
+            }	
+            .area-e { 
+                grid-column: 5 / span 2;  
+                grid-row: 2; 
+                .layout-offset {   right: var(--offset-x); bottom: var(--offset-y);}
+            }
+            .area-f { display: none; }							
+        }	
+        .layout-e5 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1; 
+                .layout-offset { left: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-b { 
+                grid-column: 3 / span 4; 
+                grid-row: 1; 
+                .layout-offset {   top: var(--offset-y);  right: var(--offset-x);}
+            }
+            .area-c { 
+                grid-column: 1 / span 2; 
+                grid-row: 2; 
+                .layout-offset { left: var(--offset-x);   bottom: var(--offset-y); }
+            }
+            .area-d { 
+                grid-column: 3 / span 2; 
+                grid-row: 2; 
+                .layout-offset {  bottom: var(--offset-y); }
+            }	
+            .area-e { 
+                grid-column: 5 / span 2;  
+                grid-row: 2; 
+                .layout-offset {   right: var(--offset-x); bottom: var(--offset-y);}
+            }
+            .area-f { display: none; }							
+        }	
+        .layout-f5 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1; 
+                .layout-offset { left: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-b { 
+                grid-column: 3 / span 2; 
+                grid-row: 1; 
+                .layout-offset {   top: var(--offset-y);  right: var(--offset-x);}
+            }
+            .area-c { 
+                grid-column: 5 / span 2; 
+                grid-row: 1; 
+                .layout-offset { right: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-d { 
+                grid-column: 1 / span 4; 
+                grid-row: 2; 
+                .layout-offset {  left: var(--offset-x);  bottom: var(--offset-y); }
+            }	
+            .area-e { 
+                grid-column: 5 / span 2;  
+                grid-row: 2; 
+                .layout-offset {  right: var(--offset-x); bottom: var(--offset-y);}
+            }
+            .area-f { display: none; }							
+        }	
+        .layout-g5 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1; 
+                .layout-offset { left: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-b { 
+                grid-column: 3 / span 2; 
+                grid-row: 1; 
+                .layout-offset {   top: var(--offset-y);  right: var(--offset-x);}
+            }
+            .area-c { 
+                grid-column: 5 / span 2; 
+                grid-row: 1; 
+                .layout-offset { right: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-d { 
+                grid-column: 1 / span 2; 
+                grid-row: 2; 
+                .layout-offset {  left: var(--offset-x);  bottom: var(--offset-y); }
+            }	
+            .area-e { 
+                grid-column: 3 / span 4;  
+                grid-row: 2; 
+                .layout-offset {  right: var(--offset-x); bottom: var(--offset-y);}
+            }
+            .area-f { display: none; }							
+        }		
+
+
+        //	–––––––––––––––––––––––––––––
+        //	6 Areas
+        //	–––––––––––––––––––––––––––––
+        .layout-a6 {
+            .area-a { 
+                grid-column: 1 / span 2; 
+                grid-row: 1 / -1; 
+                .layout-offset { left: var(--offset-x); top: var(--offset-y);  }
+            }
+            .area-b { 
+                grid-column: 3 / span 2; 
+                grid-row: 1; 
+                .layout-offset { top: var(--offset-y); }
+            }
+            .area-c { 
+                grid-column: 5 / span 2; 
+                grid-row: 1; 
+                .layout-offset { right: var(--offset-x); top: var(--offset-y); }
+            }
+            .area-d { 
+                grid-column: 1 / span 2; 
+                grid-row: 2; 
+                .layout-offset { left: var(--offset-x); bottom: var(--offset-y); }
+            }	
+            .area-e { 
+                grid-column: 3 / span 2; 
+                grid-row: 2; 
+                .layout-offset {  bottom: var(--offset-y); }
+            }	
+            .area-f { 
+                grid-column: 5 / span 2; 
+                grid-row: 2; 
+                .layout-offset { right: var(--offset-x); bottom: var(--offset-y); }
+            }	
+        }	
+
+
+        [class*=flex] { display: flex; }
+        [class*=flex][class*=col] { 
+            flex-direction: column;
+        }
+        [class*=flex][class*=col][class*=top]{ 
+            justify-content: flex-start;
+        }
+        [class*=flex][class*=col][class*=mid]{ 
+            justify-content: center;
+        }	
+        [class*=flex][class*=col][class*=bot]{ 
+            justify-content:  flex-end;
+        }		
+        [class*=flex][class*=col][class*=center]{ 
+            align-items: center;
+        }	
+
+
+        [class*=layout-] {
+            //	override old layout widths
+            .area-a, .area-b, .area-c,
+            .area-d, .area-e, .area-f { width: initial; margin: 0;  }
+
+
+            .area-a, .area-b, .area-c,
+            .area-d, .area-e, .area-f { &.top { align-self: start; } }
+            .area-a, .area-b, .area-c,
+            .area-d, .area-e, .area-f { &.mid { align-self: center; } }
+            .area-a, .area-b, .area-c,
+            .area-d, .area-e, .area-f { &.bot { align-self: end; } }
+
+        }
+    }
+}

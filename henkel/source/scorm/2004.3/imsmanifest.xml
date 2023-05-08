@@ -1,0 +1,180 @@
+<?xml version="1.0" standalone="no" ?>
+<!--
+Single SCO with basic runtime calls. SCORM 2004 3rd Edition.
+
+Provided by Rustici Software - http://www.scorm.com
+
+This example demonstrates the use of basic runtime calls in a multi-page SCO. It
+includes a demonstration of bookmarking, status reporting (completion and success), 
+score and time. It also includes the addition of a basic "controller" for providing
+intra-SCO navigation.
+-->
+
+<manifest identifier="com.maersk.stay.ahead.manifest.03" version="1"
+          xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
+          xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3"
+          xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3"
+          xmlns:imsss="http://www.imsglobal.org/xsd/imsss"
+          xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+                              http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+                              http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+                              http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd
+                              http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd">
+  
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>2004 3rd Edition</schemaversion>
+  </metadata>
+
+
+
+  <organizations default="com_maersk_stay_ahead">
+    <organization identifier="com_maersk_stay_ahead" adlseq:objectivesGlobalToSystem="false">
+      <title>Stay Ahead</title>
+      <item identifier="item_1" identifierref="resource_1">
+        <title>Stay Ahead Course 03 – Our Organisation</title>
+        <!-- Include some basic sequencing information that overrides the defaults-->
+        <imsss:sequencing>
+          <imsss:deliveryControls completionSetByContent="true" objectiveSetByContent="false" />
+        </imsss:sequencing>
+      </item>
+      <imsss:sequencing>
+        <imsss:controlMode choice="true" flow="true" />
+      </imsss:sequencing>
+    </organization>
+  </organizations>
+
+
+  <resources>
+    <resource identifier="resource_1" type="webcontent" adlcp:scormType="sco" href="resources/index.html">
+    
+    <file href="resources/page001/index.html" />
+    <file href="resources/page001/sound.mp3" />
+    <file href="resources/page001/wallpaper.svg" />
+    <file href="resources/page002/image-01.jpg" />
+    <file href="resources/page002/image-02.jpg" />
+    <file href="resources/page002/index.html" />
+    <file href="resources/page003/3C6A5F0B20502BC9.jpg" />
+    <file href="resources/page003/3C6A5F0B20502BCE.jpg" />
+    <file href="resources/page003/5B942C150EB60F03.jpg" />
+    <file href="resources/page003/5B942C150EB60F03.png" />
+    <file href="resources/page003/5B942C150EB60F05.jpg" />
+    <file href="resources/page003/5B942C150EB60F05.png" />
+    <file href="resources/page003/5B942C150EB60F06.jpg" />
+    <file href="resources/page003/5B942C150EB60F07.png" />
+    <file href="resources/page003/5B942C150EB60F0D.jpg" />
+    <file href="resources/page003/5B942C150EB60F0D.png" />
+    <file href="resources/page003/5B942C150EB60F0F.png" />
+    <file href="resources/page003/index.html" />
+    <file href="resources/page003/wallpaper.svg" />
+    <file href="resources/page004/index.html" />
+    <file href="resources/page004/wallpaper.jpg" />
+    <file href="resources/page005/index.html" />
+    <file href="resources/page005/wallpaper.jpg" />
+    <file href="resources/page006/186E601C2EA659F7.jpg" />
+    <file href="resources/page006/186E601C2EA659F8.jpg" />
+    <file href="resources/page006/186E601C2EA65A08.jpg" />
+    <file href="resources/page006/186E601C2EA65A0B.jpg" />
+    <file href="resources/page006/87F3E412BE0B0120.jpg" />
+    <file href="resources/page006/87F3E412BE0B0121.jpg" />
+    <file href="resources/page006/87F3E412BE0B0122.jpg" />
+    <file href="resources/page006/87F3E412BE0B0123.jpg" />
+    <file href="resources/page006/87F3E412BE0B0125.jpg" />
+    <file href="resources/page006/87F3E412BE0B0126.jpg" />
+    <file href="resources/page006/87F3E412BE0B0127.jpg" />
+    <file href="resources/page006/87F3E412BE0B012E.jpg" />
+    <file href="resources/page006/87F3E412BE0B013D.jpg" />
+    <file href="resources/page006/87F3E412BE0B013F.jpg" />
+    <file href="resources/page006/87F3E412BE0B0142.jpg" />
+    <file href="resources/page006/87F3E412BE0B0142.png" />
+    <file href="resources/page006/87F3E412BE0B0144.jpg" />
+    <file href="resources/page006/87F3E412BE0B0145.jpg" />
+    <file href="resources/page006/87F3E412BE0B0146.jpg" />
+    <file href="resources/page006/87F3E412BE0B014C.jpg" />
+    <file href="resources/page006/87F3E412BE0B014D.jpg" />
+    <file href="resources/page006/87F3E412BE0B014E.jpg" />
+    <file href="resources/page006/index.html" />
+    <file href="resources/page006/wallpaper.svg" />
+    <file href="resources/page007/index.html" />
+    <file href="resources/page007/wallpaper.svg" />
+    <file href="resources/page008/index.html" />
+    <file href="resources/page008/wallpaper.jpg" />
+    <file href="resources/page009/image-01.png" />
+    <file href="resources/page009/index.html" />
+    <file href="resources/page009/wallpaper.svg" />
+    <file href="resources/page010/index.html" />
+    <file href="resources/page010/wallpaper.jpg" />
+    <file href="resources/page011/image-01.png" />
+    <file href="resources/page011/index.html" />
+    <file href="resources/page012/index.html" />
+    <file href="resources/page012/wallpaper.jpg" />
+    <file href="resources/page013/index.html" />
+    <file href="resources/page013/wallpaper.jpg" />
+    <file href="resources/page014/index.html" />
+    <file href="resources/page014/wallpaper.jpg" />
+    <file href="resources/page015/index.html" />
+    <file href="resources/page015/wallpaper.jpg" />
+    <file href="resources/page016/index.html" />
+    <file href="resources/page016/wallpaper.jpg" />
+    <file href="resources/page017/index.html" />
+    <file href="resources/page017/wallpaper.jpg" />
+    <file href="resources/page018/index.html" />
+    <file href="resources/page018/video.mp4" />
+    <file href="resources/page018/wallpaper.jpg" />
+    <file href="resources/page019/index.html" />
+    <file href="resources/page019/wallpaper.svg" />
+    <file href="resources/page020/image-01.svg" />
+    <file href="resources/page020/index.html" />
+    <file href="resources/page021/image-01.png" />
+    <file href="resources/page021/index.html" />
+    <file href="resources/page021/wallpaper.svg" />
+    <file href="resources/page022/index.html" />
+    <file href="resources/page022/video.mp4" />
+    <file href="resources/page022/wallpaper.jpg" />
+    <file href="resources/page023/CA5C598613ADD1A9.png" />
+    <file href="resources/page023/CA5C598613ADD1AA.png" />
+    <file href="resources/page023/CA5C598613ADD1AB.png" />
+    <file href="resources/page023/CA5C598613ADD1AF.png" />
+    <file href="resources/page023/CA5C598613ADD1B5.png" />
+    <file href="resources/page023/CA5C598613ADD1B6.png" />
+    <file href="resources/page023/CA5C598613ADD1B7.png" />
+    <file href="resources/page023/CA5C598613ADD1B9.png" />
+    <file href="resources/page023/index.html" />
+    <file href="resources/page023/wallpaper.svg" />
+    <file href="resources/page024/index.html" />
+    <file href="resources/page024/wallpaper.jpg" />
+    <file href="resources/page025/image-01.png" />
+    <file href="resources/page025/index.html" />
+    <file href="resources/page026/index.html" />
+    <file href="resources/page026/wallpaper.jpg" />
+    <file href="resources/page027/image-01.png" />
+    <file href="resources/page027/image-02.jpg" />
+    <file href="resources/page027/index.html" />
+    <file href="resources/page028/index.html" />
+    <file href="resources/page028/wallpaper.jpg" />
+    <file href="resources/page029/index.html" />
+    <file href="resources/page029/wallpaper.jpg" />
+    <file href="resources/page030/image-01.jpg" />
+    <file href="resources/page030/image-02.jpg" />
+    <file href="resources/page030/image-03.jpg" />
+    <file href="resources/page030/index.html" />
+    <file href="resources/page031/image-01.png" />
+    <file href="resources/page031/image-02.png" />
+    <file href="resources/page031/image-03.png" />
+    <file href="resources/page031/image-04.png" />
+    <file href="resources/page031/image-05.png" />
+    <file href="resources/page031/index.html" />
+    <file href="resources/page031/sound.mp3" />
+    <file href="resources/shared/MaerskText-400.woff" />
+    <file href="resources/shared/MaerskText-400.woff2" />
+    <file href="resources/shared/MaerskText-700.woff" />
+    <file href="resources/shared/MaerskText-700.woff2" />
+    <file href="resources/shared/content.js" />
+    <file href="resources/shared/logo-nav.png" />
+    <file href="resources/shared/scormdriver.js" />
+    <file href="resources/shared/styles.css" />
+    </resource>
+  </resources>
+</manifest>
