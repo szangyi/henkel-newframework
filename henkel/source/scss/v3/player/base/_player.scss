@@ -42,6 +42,13 @@ body {
 		display: block;
 		outline: 0;
 		cursor: pointer;
+
+
+		&#reload {
+			font-weight: 300;
+			font-size: 12px;
+		}
+
 	}
 
 	.visually-hidden {
@@ -334,35 +341,23 @@ body {
 				width: size(player-nav-height);
 				height: size(player-nav-height);
 
-				svg {
-					width: 100%;
-					height: 100%;
-					transition: fill 100ms;
-				}
+				transition: background-color 100ms;
 
 				&[id="prev"],
 				&.prev {
-					svg {
-						fill: var(--color-grey-light)
-					}
+					background-color: var(--color-grey-light);
 
 					&:hover {
-						svg {
-							fill: var(--color-grey)
-						}
+						background-color: var(--color-grey)
 					}
 				}
 
 				&[id="next"],
 				&.next {
-					svg {
-						fill: var(--color-brand)
-					}
+					background-color: var(--color-brand);
 
 					&:hover {
-						svg {
-							fill: var(--color-brand-dark);
-						}
+						background-color: var(--color-brand-dark)
 					}
 				}
 			}
@@ -437,6 +432,19 @@ body {
 
 
 
+		[data-comp*="icon"] {
+			font-size: 2rem;
+			margin: 0;
+		}
+
+		[data-comp*="close"] {
+			display: none;
+		}
+
+		[data-comp*="menu"] {
+			display: block;
+		}
+
 		//	aside is open
 		.player-aside-open & {
 			transform: none;
@@ -455,6 +463,17 @@ body {
 				opacity: 0;
 				transform: translateX(100%)
 			}
+
+			[data-comp*="menu"] {
+				display: none;
+			}
+
+			[data-comp*="close"] {
+				display: block;
+			}
+	
+
+
 		}
 
 
@@ -490,7 +509,7 @@ body {
 		overflow: hidden;
 		overflow-y: auto;
 
-		color: var(--color-grey-lighter); 
+		color: var(--color-grey-lighter);
 		font-size: .75rem;
 
 
@@ -518,9 +537,8 @@ body {
 					display: block;
 				}
 
-
 				transition: outline 300ms;
-				outline: .1875rem solid none;
+				outline: .1875rem solid var(--color-none);
 
 				&:focus,
 				&:active {

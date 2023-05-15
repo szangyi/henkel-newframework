@@ -7,7 +7,7 @@
 // Imports
 @use './config';
 @use '../base';
-// @use '../comp';
+@use '../comp';
 
 // ALEX WILL REBUILD PLAYER
 
@@ -17,7 +17,6 @@
 @include base.reset;
 @include base.typography;
 @include base.theme;
-
 @include base.player {
     @include base.player-main;
     @include base.player-nav;
@@ -25,11 +24,19 @@
     @include base.player-aside-button;
 }
 
-
+@include comp.icon;
+@include comp.icon--sizes;
+@include comp.icon--white;
+@include comp.icon--red;
+@include comp.icon--arrow;
+@include comp.icon--close;
+@include comp.icon--menu;
 
 // -----------------------------------------------------------------------------
 // Change log (add to top)
 // -----------------------------------------------------------------------------
+// 1.0.4	icon component added
+// 1.0.3	player variables are fixed
 // 1.0.2	theme narrowed down to only essentials, data-color attributes removed
 // 1.0.1	typography narrowed down to only essentials
 // 1.0.0	setting up folder structure and creating necessary files & imports

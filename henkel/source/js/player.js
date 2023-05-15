@@ -248,9 +248,11 @@
 		//	Sidebar Toggle
 		//  –––––––––––––––––––––––––––––––––––––––––––––
 		function asideToggle() {
+			console.log({menu});
 			var state = document.documentElement.classList.contains('player-aside-open') ? 'remove' : 'add'
 			document.documentElement.classList[state]('player-aside-open');
 		}
+
 		function asideClose() {
 			document.documentElement.classList.remove('player-aside-open');
 		}

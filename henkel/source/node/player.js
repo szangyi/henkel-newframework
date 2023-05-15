@@ -13,7 +13,7 @@ exports.write = course => {
 	const { title, lang, pages, path, navigation, sidebar, brand, playerTranslations } = course;
 	// const script = fs.readFileSync('./source/js/dist/player.js', 'utf-8');
 
-	
+
 	//	dev players are identyfied by not having any pages
 	//	this is done to allow thumbs to be generated on the fly
 	//	directly from the course module config.js
@@ -45,7 +45,7 @@ exports.write = course => {
 
 
 	const thumbs = pages.reduce((acc, page, index) => {
-		return acc += `\n				<li data-index="${ index }"]><button onclick="pageGo(${index})"><img src="${pageName(index)}/${page.thumb || 'thumb.jpg'}" onerror="this.src = './shared/thumb-default.jpg'"/></button>${ page.title }</li>`
+		return acc += `\n				<li data-index="${index}"]><button onclick="pageGo(${index})"><img src="${pageName(index)}/${page.thumb || 'thumb.jpg'}" onerror="this.src = './shared/thumb-default.jpg'"/></button>${page.title}</li>`
 	}, '');
 
 	let prerender = pages.reduce((acc, page, index) => {
@@ -59,7 +59,7 @@ exports.write = course => {
 
 
 	function pageName(index) {
-		return 'page' + ('000' + (index + 1)).substr(( (index + 1) + '').length)
+		return 'page' + ('000' + (index + 1)).substr(((index + 1) + '').length)
 	}
 
 
@@ -96,11 +96,10 @@ exports.write = course => {
 
 		<button class="menu alex">
 		    ${playerTranslations.CLOSE}
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
-				<path stroke="#fff" stroke-width="6"  d="M20 25h40" class="t" />
-				<path stroke="#fff" stroke-width="6"  d="M20 40h40" class="c" />
-				<path stroke="#fff" stroke-width="6"  d="M20 55h40" class="b"/>
-			</svg>
+
+			<span data-comp="icon menu white lg"></span>
+			<span data-comp="icon close white lg"></span>
+
 		</button>
 
 		<aside id="aside">
@@ -117,16 +116,11 @@ exports.write = course => {
 
 			<div class="buttons">
 				<button class="prev">
-					<svg  viewBox="0 0 80 80" width="80" height="80" aria-hidden="true" focusable="false">
-						<use xlink:href="#svg-arrow-left" />
-					</svg>
-					<span class="visually-hidden">Previous</span>
+					<span data-comp="icon arrow-left white lg"></span>
 				</button>
+
 				<button class="next">
-					<svg  viewBox="0 0 80 80" width="80" height="80" aria-hidden="true"  focusable="false">
-						<use xlink:href="#svg-arrow-right" />
-					</svg>
-					<span class="visually-hidden">Next</span>
+					<span data-comp="icon arrow-right white lg"></span>
 				</button>
 				${devNav}
 			</div>
