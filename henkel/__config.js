@@ -72,6 +72,12 @@ exports.playerTranslations = {
 
 exports.config = [
 
+  //  ==========================================================
+  //
+  //				6.3 OEM Seams as a System
+  //
+  //  ==========================================================
+
   //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
   //	1. The Big Recap Quiz
   //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -81,7 +87,7 @@ exports.config = [
 
     version: "1.0.0",
     lang: "en",
-    brand: "v3",
+    brand: "teroson-collision",
     title: "The Big Recap Quiz",
 
     no: 1,

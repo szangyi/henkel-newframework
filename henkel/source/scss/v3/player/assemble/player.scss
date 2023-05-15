@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// Player CSS Assemble 
+// 
+// compiles player.css to folder:  source > shared > v3 
+// -----------------------------------------------------------------------------
+
+// Imports
+@use './config';
+@use '../base';
+// @use '../comp';
+
+// ALEX WILL REBUILD PLAYER
+
+
+// Assemble
+@version(1.0.3);
+@include base.reset;
+@include base.typography;
+@include base.theme;
+
+@include base.player {
+    @include base.player-main;
+    @include base.player-nav;
+    @include base.player-aside;
+    @include base.player-aside-button;
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Change log (add to top)
+// -----------------------------------------------------------------------------
+// 1.0.2	theme narrowed down to only essentials, data-color attributes removed
+// 1.0.1	typography narrowed down to only essentials
+// 1.0.0	setting up folder structure and creating necessary files & imports

@@ -1,0 +1,59 @@
+// -----------------------------------------------------------------------------
+// Base typography
+// -----------------------------------------------------------------------------
+@use 'sass:math';
+@use 'sass:string';
+// @use '../frankly/font';
+// @use '../frankly/cast';
+@use '../base/theme';
+
+
+
+@mixin typography {
+
+
+    // ------------------------------------------------------------------------
+    // Font Config
+    // ------------------------------------------------------------------------
+    $base-path: './';
+    // $base-path: 'https://maria.franklyone.com/henkel-new-styling/source/shared/v3/';
+
+    @at-root {
+
+        // ------------------------------------------------------------------------
+        // Font Face
+        // ------------------------------------------------------------------------
+
+        @font-face {
+            font-family: 'HenkelGTFlexa';
+            src: url($base-path + 'HenkelGTFlexa-700.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        // ------------------------------------------------------------------------
+        // Base Typography
+        // ------------------------------------------------------------------------
+
+        // Base
+        body {
+            font-family: 'HenkelGTFlexa', sans-serif;
+            font-weight: 600;
+        }
+
+        [data-font="player-thumbnailtitle"] {
+            font-size: 12px;
+        }
+
+        [data-font="player-sidebarheading"] {
+            font-size: 16px;
+        }
+
+        [data-font="player-progressbar"] {
+            font-size: 16px;
+        }
+
+
+    }
+
+}

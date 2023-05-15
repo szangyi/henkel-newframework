@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// Theme
+// 
+// -----------------------------------------------------------------------------
+// @use 'sass:math';
+// @use 'sass:string';
+// @use '../frankly/font';
+// @use '../frankly/cast';
+// @use '../frankly/theme';
+
+@use '../assemble/config';
+
+@mixin theme {
+
+
+    $color-config: config.$color-config;
+    @at-root {
+        // ------------------------------------------------------------------------
+        // Colors 🎨
+        // ------------------------------------------------------------------------
+
+        html {
+            @each $name, $color in $color-config {
+                --color-#{$name}: #{$color};
+            }
+        }
+        
+    }
+
+}
+
+
+@function color($name) {
+    @return var(--color-#{$name});
+}
