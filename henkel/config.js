@@ -81,7 +81,7 @@ exports.config = [
 
     version: "1.0.0",
     lang: "en",
-    brand: "v3",
+    brand: "v3-loctite",
     title: "The Big Recap Quiz",
 
     no: 1,

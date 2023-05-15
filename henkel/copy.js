@@ -48,8 +48,14 @@ config.forEach(course => {
 
 
 	//	copy shared 
-	folder.copy(`./source/shared/${course.brand}`, `${sharedPath}`, '_');
-
+	//	changed (15.05.2023)
+	//	all new brands (v3-loctite, v3-teroson) 
+	//	should share same styling - folder v3
+	if (course.brand.includes('v3')) {
+		folder.copy(`./source/shared/v3`, `${sharedPath}`, '_');
+	} else {
+		folder.copy(`./source/shared/${course.brand}`, `${sharedPath}`, '_');
+	}
 
 	
 	//

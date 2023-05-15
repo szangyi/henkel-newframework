@@ -13,6 +13,21 @@ body {
   background-repeat: no-repeat;
 }
 
+html {
+  --safe-area-inset-top: 0;
+  --safe-area-inset-right: 0;
+  --safe-area-inset-bottom: 0;
+  --safe-area-inset-left: 0;
+  --safe-area-inset-top: constant(safe-area-inset-top);
+  --safe-area-inset-right: constant(safe-area-inset-right);
+  --safe-area-inset-bottom: constant(safe-area-inset-bottom);
+  --safe-area-inset-left: constant(safe-area-inset-left);
+  --safe-area-inset-top: env(safe-area-inset-top);
+  --safe-area-inset-right: env(safe-area-inset-right);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+  --safe-area-inset-left: env(safe-area-inset-left);
+}
+
 html, body {
   min-block-size: 100vh;
   min-block-size: 100svh;
@@ -51,6 +66,12 @@ a, button, label, select {
   pointer-events: none;
 }
 
+ul.reset, ol.reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "HenkelGTFlexa";
   src: url("./HenkelGTFlexa-700.woff2") format("woff2");
@@ -81,6 +102,8 @@ html {
   --color-brand: #e1000f;
   --color-brand-light: #f00010;
   --color-brand-lighter: #ff2f3c;
+  --color-brand-dark: #c8000d;
+  --color-brand-darker: #95000a;
   --color-grey-lighter: #f9f9f9;
   --color-grey-light: #bfbfbf;
   --color-grey: #8c8c8c;
@@ -335,23 +358,19 @@ html {
 .player > nav .buttons button {
   width: 4rem;
   height: 4rem;
+  transition: background-color 100ms;
 }
-.player > nav .buttons button svg {
-  width: 100%;
-  height: 100%;
-  transition: fill 100ms;
+.player > nav .buttons button[id=prev], .player > nav .buttons button.prev {
+  background-color: var(--color-grey-light);
 }
-.player > nav .buttons button[id=prev] svg, .player > nav .buttons button.prev svg {
-  fill: var(--color-grey-light);
+.player > nav .buttons button[id=prev]:hover, .player > nav .buttons button.prev:hover {
+  background-color: var(--color-grey);
 }
-.player > nav .buttons button[id=prev]:hover svg, .player > nav .buttons button.prev:hover svg {
-  fill: var(--color-grey);
+.player > nav .buttons button[id=next], .player > nav .buttons button.next {
+  background-color: var(--color-brand);
 }
-.player > nav .buttons button[id=next] svg, .player > nav .buttons button.next svg {
-  fill: var(--color-brand);
-}
-.player > nav .buttons button[id=next]:hover svg, .player > nav .buttons button.next:hover svg {
-  fill: var(--color-brand-light);
+.player > nav .buttons button[id=next]:hover, .player > nav .buttons button.next:hover {
+  background-color: var(--color-brand-dark);
 }
 .player-nav-hide .player > nav {
   display: none;
@@ -390,7 +409,7 @@ html {
   font: inherit;
   margin: 0.5rem 0;
   transition: outline 300ms;
-  outline: 0.1875rem solid none;
+  outline: 0.1875rem solid var(--color-none);
 }
 .player > aside ol button img {
   width: 100%;
@@ -439,7 +458,7 @@ html {
   position: fixed;
   z-index: 4;
   bottom: 0;
-  bottom: var(--color-safe-area-inset-bottom);
+  bottom: var(--safe-area-inset-bottom);
   left: 0;
   margin: 0;
   padding: 0;
@@ -481,7 +500,20 @@ html[lang=ru] .player .menu {
 }
 .player [id=toggle]:hover,
 .player .menu:hover {
-  background-color: var(--color-brand-light);
+  background-color: var(--color-brand-dark);
+}
+.player [id=toggle] [data-comp*=icon],
+.player .menu [data-comp*=icon] {
+  font-size: 2rem;
+  margin: 0;
+}
+.player [id=toggle] [data-comp*=close],
+.player .menu [data-comp*=close] {
+  display: none;
+}
+.player [id=toggle] [data-comp*=menu],
+.player .menu [data-comp*=menu] {
+  display: block;
 }
 .player-aside-open .player [id=toggle],
 .player-aside-open .player .menu {
@@ -502,6 +534,14 @@ html[lang=ru] .player .menu {
   opacity: 0;
   transform: translateX(100%);
 }
+.player-aside-open .player [id=toggle] [data-comp*=menu],
+.player-aside-open .player .menu [data-comp*=menu] {
+  display: none;
+}
+.player-aside-open .player [id=toggle] [data-comp*=close],
+.player-aside-open .player .menu [data-comp*=close] {
+  display: block;
+}
 .player-aside-hide .player [id=toggle],
 .player-aside-hide .player .menu {
   display: none;
@@ -518,6 +558,10 @@ button {
   outline: 0;
   cursor: pointer;
 }
+button#reload {
+  font-weight: 300;
+  font-size: 12px;
+}
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -527,4 +571,64 @@ button {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+:is([data-comp=icon], [data-comp^="icon "]) {
+  display: block;
+  width: 1em;
+  height: 1em;
+  margin: auto;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+:where(:is([data-comp=icon], [data-comp^="icon "])) {
+  font: inherit;
+}
+
+[data-comp~=sm][data-comp^="icon "] {
+  width: 1em;
+  height: 1em;
+}
+
+[data-comp~=md][data-comp^="icon "] {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+[data-comp~=lg][data-comp^="icon "] {
+  width: 2em;
+  height: 2em;
+}
+
+[data-comp~=white][data-comp^="icon "] {
+  filter: invert(1);
+}
+
+[data-comp~=red][data-comp^="icon "] {
+  filter: invert(25%) sepia(69%) saturate(2400%) hue-rotate(348deg) brightness(83%) contrast(119%);
+}
+
+[data-comp~=arrow-up][data-comp^="icon "] {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M38 27.0993L35.3191 30L20.9215 14.4055L19.0786 14.4055L4.66558 30L2 27.0993L17.8038 10L22.1809 10L38 27.0993Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+
+[data-comp~=arrow-down][data-comp^="icon "] {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 12.9007L4.68086 10L19.0785 25.5945L20.9214 25.5945L35.3344 10L38 12.9007L22.1962 30L17.8191 30L2 12.9007Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+
+[data-comp~=arrow-left][data-comp^="icon "] {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.0993 2L30 4.68086L14.4055 19.0785V20.9214L30 35.3344L27.0993 38L10 22.1962V17.8191L27.0993 2Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+
+[data-comp~=arrow-right][data-comp^="icon "] {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.9007 2L10 4.68086L25.5945 19.0785V20.9214L10 35.3344L12.9007 38L30 22.1962V17.8191L12.9007 2Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+
+[data-comp~=close][data-comp^="icon "] {
+  background-image: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32.5388 0L34.5441 2.0053L21.5 15.4787V19.4205L35 32.5388L32.9946 34.5441L19.5594 21.5H15.5415L2.46121 34.9999L0.455868 32.9946L13.5 19.5321V15.5066L0 2.46113L2.00534 0.455836L15.5195 13.5H19.4689L32.5388 0Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+
+[data-comp~=menu][data-comp^="icon "] {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 10V12.5H37.5V10H2.5Z' fill='black'/%3E%3Cpath d='M2.5 10V12.5H37.5V10H2.5Z' fill='black'/%3E%3Cpath d='M2.5 18.5V21H37.5V18.5H2.5Z' fill='black'/%3E%3Cpath d='M2.5 18.5V21H37.5V18.5H2.5Z' fill='black'/%3E%3Cpath d='M37.5 27V29.5H2.5V27H37.5Z' fill='black'/%3E%3Cpath d='M37.5 27V29.5H2.5V27H37.5Z' fill='black'/%3E%3C/svg%3E%0A");
 }

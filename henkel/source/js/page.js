@@ -25,6 +25,15 @@ var isSafari = -1 != ua.indexOf('safari') && -1 == ua.indexOf('chrome')
 if(isSafari) document.documentElement.classList.add('safari');
 
 
+//	––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Load datajs files 
+//	––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+if (document.querySelector("[data-js]")) {
+    var jsfile = document.querySelector("[data-js]").getAttribute('data-js')
+    import (`./datajs-components/${jsfile}.js`);
+}
+
+
 
 //	––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //	video 
