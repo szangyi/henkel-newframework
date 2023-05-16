@@ -17,28 +17,6 @@
       "oAP" : "\/.gitignore",
       "oF" : 0
     },
-    "\/henkel\/__config-min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 1,
-      "oAP" : "\/henkel\/__config-min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/__config.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/__config-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/henkel\/_courses" : {
       "ft" : 65536,
       "oA" : 1,
@@ -67,17 +45,6 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/copy-min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/copy-min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/henkel\/copy.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -89,57 +56,20 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/config.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/config copy-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/index.html" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/01-card-flip\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/index.html",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/01-card-flip\/index.html",
       "oF" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page001\/index.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page001\/index.html",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page001\/Loc_thumb_up.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page001\/Loc_thumb_up-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page001\/stroke.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page001\/stroke.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page001\/thumb.jpg" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/01-card-flip\/thumb.jpg" : {
       "ft" : 16384,
       "iS" : 31741,
       "jF" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page001\/thumb.jpg",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/01-card-flip\/thumb.jpg",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -147,38 +77,20 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page002\/index.html" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/02-card-swipe\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page002\/index.html",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/02-card-swipe\/index.html",
       "oF" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page002\/Loc_thumb_up.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page002\/Loc_thumb_up-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page002\/stroke.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page002\/stroke.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page002\/thumb.jpg" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/02-card-swipe\/thumb.jpg" : {
       "ft" : 16384,
       "iS" : 31741,
       "jF" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/page002\/thumb.jpg",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/02-card-swipe\/thumb.jpg",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -186,221 +98,20 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/card-flip.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/card-flip-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/card-swipe.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/card-swipe-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/components.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/components-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/quiz-regular.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/quiz-regular-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/quiz-swipe.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/quiz-swipe-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/video.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-components\/video-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/datajs-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-300.woff2" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/03-quiz-regular\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-300.woff2",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/03-quiz-regular\/index.html",
       "oF" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-300i.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-300i.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-400.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-400.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-500.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-500.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-700.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-700.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-700i.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-700i.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-800.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-800.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-800i.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/HenkelGTFlexa-800i.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/page.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/page-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/page.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/page-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/player.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/player-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/player.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/player-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/scormdriver-min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/scormdriver-min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/scormdriver.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/scormdriver-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/thumb-default.jpg" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/03-quiz-regular\/thumb.jpg" : {
       "ft" : 16384,
-      "iS" : 19138,
+      "iS" : 31741,
       "jF" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-001-the-big-recap-quiz\/shared\/thumb-default.jpg",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/03-quiz-regular\/thumb.jpg",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -408,146 +119,301 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/index.html" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/04-quiz-swipe\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/index.html",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/04-quiz-swipe\/index.html",
       "oF" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/card-flip.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/04-quiz-swipe\/thumb.jpg" : {
+      "ft" : 16384,
+      "iS" : 31741,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/04-quiz-swipe\/thumb.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/05-modal\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/05-modal\/index.html",
+      "oF" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/05-modal\/thumb.jpg" : {
+      "ft" : 16384,
+      "iS" : 31741,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/05-modal\/thumb.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/06-video\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/06-video\/index.html",
+      "oF" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/06-video\/myth-1.mp4" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/06-video\/myth-1.mp4",
+      "oF" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/06-video\/myth-2.mp4" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/06-video\/myth-2.mp4",
+      "oF" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/06-video\/thumb.jpg" : {
+      "ft" : 16384,
+      "iS" : 31741,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/06-video\/thumb.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/config-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/config-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/config.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/config-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/index.html",
+      "oF" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/card-flip.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/card-flip-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/card-flip-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/card-swipe.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/card-swipe.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/card-swipe-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/card-swipe-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/components-min.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/components-min.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/components-min-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/components-min-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/components.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/components.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/components-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/components-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/quiz-regular.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/modal-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/modal-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/modal.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/modal-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/quiz-regular.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/quiz-regular-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/quiz-regular-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/quiz-swipe.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/quiz-swipe.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/quiz-swipe-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/quiz-swipe-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/video.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/splitting-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/splitting-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/splitting.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/splitting-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/video.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-components\/video-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/datajs-components\/video-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/datajs-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Gotham-Black-Italic-900.woff" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-300.woff2" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Gotham-Black-Italic-900.woff",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-300.woff2",
       "oF" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Gotham-Black-Italic-900.woff2" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-300i.woff2" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Gotham-Black-Italic-900.woff2",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-300i.woff2",
       "oF" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Industry-600.woff" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-400.woff2" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Industry-600.woff",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-400.woff2",
       "oF" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Industry-600.woff2" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-500.woff2" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Industry-600.woff2",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-500.woff2",
       "oF" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/page-min.css" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-700.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-700.woff2",
+      "oF" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-700i.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-700i.woff2",
+      "oF" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-800.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-800.woff2",
+      "oF" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-800i.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/HenkelGTFlexa-800i.woff2",
+      "oF" : 0
+    },
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/page.css" : {
       "aP" : 1,
       "bl" : 0,
       "ci" : 0,
@@ -555,22 +421,22 @@
       "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/page-min-min.css",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/page-min.css",
       "oF" : 0,
       "pg" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/page-min.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/page.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/page-min-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/page-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/page.css" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/player.css" : {
       "aP" : 1,
       "bl" : 0,
       "ci" : 0,
@@ -578,146 +444,52 @@
       "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/page-min.css",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/player-min.css",
       "oF" : 0,
       "pg" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/page.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/player.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/page-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/player-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/player-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/player-min-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/player-min.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/scormdriver-min.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/player-min-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/scormdriver-min-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/player.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/player-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/player.js" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/scormdriver.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/player-min.js",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/scormdriver-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-400.woff" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-400.woff",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-400.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-400.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-500.woff" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-500.woff",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-500.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-500.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-900.woff" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-900.woff",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-900.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/Roboto-900.woff2",
-      "oF" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/scormdriver-min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/scormdriver-min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/scormdriver.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/scormdriver-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/thumb-default.jpg" : {
+    "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/thumb-default.jpg" : {
       "ft" : 16384,
       "iS" : 19138,
       "jF" : 0,
       "oA" : 0,
-      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-intro-to-seam-sealing\/shared\/thumb-default.jpg",
+      "oAP" : "\/henkel\/courses\/en\/course-6.3-oem-seams-as-a-system\/module-002-test-pages\/shared\/thumb-default.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 1,
+      "opt" : 0,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -741,6 +513,980 @@
       "oAP" : "\/henkel\/index.html",
       "oF" : 0
     },
+    "\/henkel\/kitchensink\/buttons.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/buttons.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/_cards-quiz.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/cards\/_cards-quiz.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/_cards-swipe.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/cards\/_cards-swipe.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-container-2.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-container-2.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-container-3-flex-flipcards.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-container-3-flex-flipcards.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-container-3-flex-regularcards.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-container-3-flex-regularcards.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-container-3-grid-flipcards.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-container-3-grid-flipcards.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-container-3-grid-regularcards.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-container-3-grid-regularcards.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-flip-new.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-flip-new.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-flip.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-flip.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-new.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-new.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-quiz-swipe.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-quiz-swipe.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-quiz.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-quiz.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards-swipe.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards-swipe.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/cards.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/cards.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/cards\/kalle.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/cards\/kalle.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/color.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/color.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/font.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/font.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/grid.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/grid.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/index.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/modal-2.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/modal-2.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/modal-working-but-wo-overlay.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/modal-working-but-wo-overlay.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/modal.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/modal.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page-trial-1.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page-trial-1.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page2.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page2.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/_index_grid_works.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/_index_grid_works.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/_index_one_overlay.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/_index_one_overlay.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/_index_wo_swipe.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/_index_wo_swipe.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/_indexoldish.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/_indexoldish.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/24graf.png" : {
+      "ft" : 32768,
+      "iS" : 45802,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/24graf.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-1.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-1-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-1.png" : {
+      "ft" : 32768,
+      "iS" : 18210,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-1.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-2.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-2-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-2.png" : {
+      "ft" : 32768,
+      "iS" : 46965,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-2.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-3.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-3-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-3.png" : {
+      "ft" : 32768,
+      "iS" : 45649,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-3.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-4.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-4-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-4.png" : {
+      "ft" : 32768,
+      "iS" : 54525,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-4.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-5.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-5-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-5.png" : {
+      "ft" : 32768,
+      "iS" : 50415,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-5.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-6-general.png" : {
+      "ft" : 32768,
+      "iS" : 39175,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-6-general.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-6.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-6-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-6.png" : {
+      "ft" : 32768,
+      "iS" : 42230,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-6.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-7.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-7-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-7.png" : {
+      "ft" : 32768,
+      "iS" : 52017,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-7.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-8.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-8-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-8.png" : {
+      "ft" : 32768,
+      "iS" : 42251,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-8.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-12.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-12-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-12.png" : {
+      "ft" : 32768,
+      "iS" : 49718,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-12.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-13.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-13-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/henkel\/kitchensink\/page003\/assets\/loc-13.png" : {
+      "ft" : 32768,
+      "iS" : 48587,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/assets\/loc-13.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/index_grid_works.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/index_grid_works.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/index_wo_swipe.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/index_wo_swipe.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/index.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/loc_1_uvblocking.png" : {
+      "ft" : 32768,
+      "iS" : 246254,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc_1_uvblocking.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc_2_teflon.png" : {
+      "ft" : 32768,
+      "iS" : 118205,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc_2_teflon.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc_3_steel.png" : {
+      "ft" : 32768,
+      "iS" : 91505,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc_3_steel.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc_4_glass.png" : {
+      "ft" : 32768,
+      "iS" : 178500,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc_4_glass.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc_5_aluminium.png" : {
+      "ft" : 32768,
+      "iS" : 101219,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc_5_aluminium.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc_6_magnets.png" : {
+      "ft" : 32768,
+      "iS" : 138623,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc_6_magnets.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc_7_collection.png" : {
+      "ft" : 32768,
+      "iS" : 44310,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc_7_collection.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-1.png" : {
+      "ft" : 32768,
+      "iS" : 18210,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-1.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-2.png" : {
+      "ft" : 32768,
+      "iS" : 46965,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-2.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-3.png" : {
+      "ft" : 32768,
+      "iS" : 45649,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-3.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-4.png" : {
+      "ft" : 32768,
+      "iS" : 54525,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-4.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-5.png" : {
+      "ft" : 32768,
+      "iS" : 50415,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-5.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-6-general.png" : {
+      "ft" : 32768,
+      "iS" : 39175,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-6-general.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-6.png" : {
+      "ft" : 32768,
+      "iS" : 42230,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-6.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-7.png" : {
+      "ft" : 32768,
+      "iS" : 52017,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-7.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-8.png" : {
+      "ft" : 32768,
+      "iS" : 42251,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-8.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-12.png" : {
+      "ft" : 32768,
+      "iS" : 49718,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-12.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc-13.png" : {
+      "ft" : 32768,
+      "iS" : 48587,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc-13.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/loc.png" : {
+      "ft" : 32768,
+      "iS" : 80856,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/loc.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/lottie.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/lottie.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/s6-1.jpg" : {
+      "ft" : 16384,
+      "iS" : 184538,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/s6-1.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/s6-2.jpg" : {
+      "ft" : 16384,
+      "iS" : 187812,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/s6-2.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/s6-3.jpg" : {
+      "ft" : 16384,
+      "iS" : 156072,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/s6-3.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/s6-4.jpg" : {
+      "ft" : 16384,
+      "iS" : 104927,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/s6-4.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/s6-5.jpg" : {
+      "ft" : 16384,
+      "iS" : 83881,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/s6-5.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/s6-6.jpg" : {
+      "ft" : 16384,
+      "iS" : 89934,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/s6-6.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/s6-7.jpg" : {
+      "ft" : 16384,
+      "iS" : 104822,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/s6-7.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/slider.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/slider.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/stack.png" : {
+      "ft" : 32768,
+      "iS" : 48978,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/stack.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/stroke-2.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/henkel\/kitchensink\/page003\/stroke-2.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/stroke-mobile.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/henkel\/kitchensink\/page003\/stroke-mobile.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/stroke.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/henkel\/kitchensink\/page003\/stroke.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/thumb.jpg" : {
+      "ft" : 16384,
+      "iS" : 99812,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/thumb.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/page003\/unminified.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/unminified-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/henkel\/kitchensink\/page003\/wallpaper.jpg" : {
+      "ft" : 16384,
+      "iS" : 919599,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/page003\/wallpaper.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/henkel\/kitchensink\/slider.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/slider.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/speechbubble-page.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/speechbubble-page.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/speechbubble.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/speechbubble.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/video-embed.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/video-embed.html",
+      "oF" : 0
+    },
+    "\/henkel\/kitchensink\/video.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/kitchensink\/video.html",
+      "oF" : 0
+    },
     "\/henkel\/source\/design\/c-3.1-m1-LOCTITE-story.sketch" : {
       "cB" : 0,
       "ft" : 8192,
@@ -756,17 +1502,6 @@
       "oA" : 0,
       "oAP" : "\/henkel\/source\/design\/Layout.sketch",
       "oF" : 0
-    },
-    "\/henkel\/source\/js\/_page.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 1,
-      "oAP" : "\/henkel\/source\/js\/_page-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
     },
     "\/henkel\/source\/js\/jakob_player.js" : {
       "bF" : 0,
@@ -1807,6 +2542,18 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/henkel\/source\/scss\/v3\/assemble\/page.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/henkel\/source\/scss\/v3\/assemble\/page-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/henkel\/source\/scss\/v3\/assemble\/page.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -1817,7 +2564,7 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/henkel\/source\/shared\/v3\/page.css",
-      "oF" : 3,
+      "oF" : 2,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
@@ -2625,13 +3372,13 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/henkel\/source\/shared\/base\/datajs-components\/components.js" : {
+    "\/henkel\/source\/shared\/base\/datajs-components\/modal.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/henkel\/source\/shared\/base\/datajs-components\/components-min.js",
+      "oAP" : "\/henkel\/source\/shared\/base\/datajs-components\/modal-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -2658,6 +3405,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/henkel\/source\/shared\/base\/datajs-components\/splitting.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/henkel\/source\/shared\/base\/datajs-components\/splitting-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/henkel\/source\/shared\/base\/datajs-components\/video.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -2665,17 +3423,6 @@
       "mi" : 1,
       "oA" : 1,
       "oAP" : "\/henkel\/source\/shared\/base\/datajs-components\/video-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/henkel\/source\/shared\/base\/datajs.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/source\/shared\/base\/datajs-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -3451,17 +4198,6 @@
       "oAP" : "\/henkel\/source\/shared\/v3\/player-min.css",
       "oF" : 0,
       "pg" : 0
-    },
-    "\/henkel\/source\/shared\/v3\/scormdriver-min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/henkel\/source\/shared\/v3\/scormdriver-min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
     },
     "\/henkel\/source\/shared\/v3\/scormdriver.js" : {
       "bF" : 0,
