@@ -44,6 +44,7 @@
 @include comp.card--rounded;
 @include comp.card--quiz;
 @include comp.card--flip;
+@include comp.card--swipe;
 @include comp.card-container;
 @include comp.card-container--flex;
 @include comp.card-container--grid;
@@ -77,6 +78,7 @@
 @include comp.modal-container;
 
 @include comp.overlay;
+@include comp.overlay--dark;
 
 @include comp.speech-bubble;
 

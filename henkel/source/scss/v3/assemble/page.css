@@ -4211,7 +4211,6 @@ html {
   pointer-events: none !important;
 }
 [data-quiz=swipe] + .swipe-answer {
-  overflow: visible;
   transition: 0.4s;
   opacity: 1;
 }
@@ -4221,13 +4220,6 @@ html {
 [data-quiz=swipe] + .swipe-answer.discarded {
   opacity: 0;
   display: none;
-}
-[data-quiz=swipe] + .swipe-answer .inner {
-  z-index: 100;
-}
-[data-quiz=swipe] + .swipe-answer.active [data-comp*=overlay] {
-  visibility: visible;
-  opacity: 1;
 }
 [data-quiz=swipe][data-correct*=e] + .swipe-answer {
   background-color: transparent;
@@ -4358,6 +4350,7 @@ html {
 }
 
 [data-comp~=stack][data-comp^="card-container "] [data-comp*=card] {
+  display: none !important;
   grid-area: 1/1;
   z-index: var(--z, 0);
   block-size: 100%;

@@ -109,9 +109,115 @@
         }
     }
 
-    [data-quiz="multiple"] {}
+    // [data-quiz="multiple"] {}
 
     [data-quiz="swipe"] {
+        overflow: hidden;
+
+        // State
+        &:not(.active),
+        &+.swipe-answer:not(.active) {
+            pointer-events: none !important;
+        }
+
+
+        // Swipe answer
+
+        &+.swipe-answer {
+
+            overflow: visible; //because of overlay
+            transition: .4s;
+            opacity: 1;
+
+            * {
+                color: var(--color-white);
+            }
+
+            &.discarded {
+                opacity: 0;
+                display: none; // to prevent swipe answer to translate out of the view
+            }
+
+            .inner {
+                z-index: 100;
+            }
+
+            &.active {
+                [data-comp*="overlay"] {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+        }
+
+        &[data-correct*="e"]+.swipe-answer {
+            background-color: transparent;
+        }
+
+        &+.swipe-answer div[data-correct="true"],
+        &+.swipe-answer div[data-correct="false"],
+        &+.swipe-answer [data-comp*='button'] {
+            display: none;
+        }
+
+        &[data-correct="true"]+.swipe-answer div[data-correct="true"],
+        &[data-correct="false"]+.swipe-answer div[data-correct="false"],
+        &[data-correct*="e"]+.swipe-answer div [data-comp*='button'] {
+            display: block;
+        }
+
+        &[data-correct="true"]+.swipe-answer div[data-correct="false"],
+        &[data-correct="false"]+.swipe-answer div[data-correct="true"] {
+            pointer-events: none;
+        }
+
+
+        // Bubble
+
+        .bubble {
+            position: absolute;
+            inline-size: 4em;
+            block-size: 4em;
+
+            background-color: var(--color-brand);
+            color: var(--color-white);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 1em;
+            line-height: 2em;
+            /* --opacity: calc(var(--swipe-pct) * 2); */
+            opacity: var(--opacity, 0);
+            z-index: 99;
+        }
+
+        &[data-direction="left"] .bubble {
+            background-color: var(--color-black);
+        }
+
+        &[data-direction="left"] .bubble::before {
+            content: "NO";
+        }
+
+        &[data-direction="right"] .bubble {
+            background-color: var(--color-brand);
+        }
+
+        &[data-direction="right"] .bubble::before {
+            content: "YES";
+        }
+    }
+
+}
+
+// -----------------------------------------------------------------------------
+// Swipe Card Component
+// -----------------------------------------------------------------------------
+@mixin card--swipe {
+    @include comp.create('card', 'swipe') {
+
         // Transition
 
         transition: transform;
@@ -127,13 +233,31 @@
         -ms-user-select: none;
         user-select: none;
 
-        &[data-correct="true"]+.swipe-answer div[data-correct="false"],
-        &[data-correct="false"]+.swipe-answer div[data-correct="true"] {
-            display: none;
-            pointer-events: none;
+        .front {
+            opacity: calc(1 - var(--opacity));
         }
-    }
 
+        .inner {
+            block-size: 100%;
+            inline-size: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            box-shadow: 0 0 1rem rgba(black, 0.25);
+            border-radius: inherit;
+        }
+
+        .front {
+            position: absolute;
+            inset: 0;
+            block-size: inherit;
+            backface-visibility: hidden;
+            overflow: hidden auto;
+            border-radius: inherit;
+
+            background-color: white; // test
+        }
+
+    }
 }
 
 // -----------------------------------------------------------------------------
@@ -159,8 +283,9 @@
 
 
         // Front and back
-        .front, &.flipped .back {
-            z-index:1; // to allow the card to be scrollable
+        .front,
+        &.flipped .back {
+            z-index: 1; // to allow the card to be scrollable
         }
 
         .front,
@@ -249,13 +374,17 @@
         [data-comp*="card"] {
             grid-area: 1/1;
             z-index: var(--z, 0); // To stack the cards
+            block-size: 100%;
+
+            --tx: calc(var(--swipe-pct) * 220%); // To rotate the cards
+            --rotate: calc(var(--swipe-pct) * 0.2turn); // To rotate the cards
         }
 
-        [data-comp*="card"]:not(.discarded)+[data-comp*="card"] {
+        [data-comp*="card"]:not(.discarded)~[data-comp*="card"] {
             transform: translateY(4%) scale(0.96);
         }
 
-        [data-comp*="card"]:not(.discarded)+[data-comp*="card"]+[data-comp*="card"] {
+        [data-comp*="card"]:not(.discarded)~[data-comp*="card"]~[data-comp*="card"] {
             transform: translateY(8%) scale(0.92);
         }
     }
@@ -301,7 +430,7 @@
             &:nth-of-type(5),
             &:nth-of-type(8),
             &:nth-of-type(11) {
-                --rotate:2.7deg;
+                --rotate: 2.7deg;
             }
         }
 

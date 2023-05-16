@@ -13,10 +13,18 @@
 	@include comp.create(overlay) {
 		background-color: rgba(0, 0, 0, 0.633);
 		visibility: hidden;
-		_position: fixed;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		inline-size: 300vw;
+		block-size: 300vh !important;
+		margin-left: -100vw;
+		margin-top: -100vh;
 
 		// Animation
-		transition: transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 300ms;
+		transition: .4s;
 		opacity: 0;
 
 		// State
@@ -28,5 +36,13 @@
 		>* {
 			display: grid;
 		}
+
+		z-index: var(--z, 0);
+	}
+}
+
+@mixin overlay--dark {
+	@include comp.create(overlay, dark) {
+		background-color: rgba(0, 0, 0, 0.9);
 	}
 }
