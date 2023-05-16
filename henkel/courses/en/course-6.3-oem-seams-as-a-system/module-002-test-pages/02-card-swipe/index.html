@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#fff" />
+
+    <link rel="stylesheet" href="../shared/page.css" />
+    <script defer src="../shared/scormdriver.js"></script>
+    <script defer src="../shared/page.js"></script>
+
+</head>
+
+<body data-debug data-color="back-white" data-js="card-swipe">
+
+    <main data-grid>
+
+        <div data-grid="A1:C6" data-grid-mobile="A1:F2">
+            <div data-grid="content">
+                <h1>This is a swipe cards example</h1>
+                <p>You can either swipe on mobile and tablet - or click on the button on desktop</p>
+            </div>
+        </div>
+
+        <div data-grid="D1:F6" data-grid-mobile="A3:F6">
+            <div data-grid="content" data-flex="col inline-center">
+
+                <div data-comp="card-container stack-rotate">
+
+                    <!-- CARD 1  -->
+
+                    <div class="card-box">
+                        <div data-comp="card rounded swipe" data-color="back-soft-blue" data-box="pad"
+                            data-flex="col block-center inline-center">
+
+                            <div class="content">
+                                <div class="text-container">
+                                    <h2 data-color="text-red">Humidity horrors</h4>
+                                    <p>Adhesives can be adversely affected by moisture during the curing process, causing bubbles,
+                                        dilution or unwanted films.
+                                    </p>
+                                    <p>Water vapour can penetrate some substrates and deteriorate the bond strength.</p>
+                                                               </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2  -->
+
+                    <div class="card-box">
+                        <div data-comp="card rounded swipe" data-color="back-soft-blue"data-box="pad"
+                        data-flex="col block-center inline-center">
+
+                            <div class="content">
+                                <div class="text-container">
+                                    <h2 data-color="text-red">Water worries</h4>
+                                        <p>Water can swell certain adhesives and affect the strength.</p>
+                                        <p>Water/moisture can react with some adhesives, changing their properties.</p>
+                                                               </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3  -->
+
+                    <div class="card-box">
+                        <div data-comp="card rounded swipe" data-color="back-soft-blue" data-box="pad"
+                        data-flex="col block-center inline-center">
+
+                            <div class="content">
+                                <div class="text-container">
+                                    <h2 data-color="text-red">So what's the solution?</h4>
+                                        <p>The use of primers and surface preparation can help prevent degradation.</p>
+                                        <p> Ensure you use the right adhesive for the specific requirements of the application.
+                                            <br />Epoxies and silicones: GOOD
+                                            <br />Cyanoacrylates: BAD
+                                        </p>                 
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button data-hidden="mobile" data-comp="button pill" data-color="back-red" data-box="marg-top" onclick="swipeclick()">
+                    Next
+                </button>
+            </div>
+
+
+        </div>
+
+        <ul data-grid="guide" data-color="text-white">
+            <li data-grid="A1"></li>
+            <li data-grid="A2"></li>
+            <li data-grid="A3"></li>
+            <li data-grid="A4"></li>
+            <li data-grid="A5"></li>
+            <li data-grid="A6"></li>
+            <li data-grid="B1"></li>
+            <li data-grid="B2"></li>
+            <li data-grid="B3"></li>
+            <li data-grid="B4"></li>
+            <li data-grid="B5"></li>
+            <li data-grid="B6"></li>
+            <li data-grid="C1"></li>
+            <li data-grid="C2"></li>
+            <li data-grid="C3"></li>
+            <li data-grid="C4"></li>
+            <li data-grid="C5"></li>
+            <li data-grid="C6"></li>
+            <li data-grid="D1"></li>
+            <li data-grid="D2"></li>
+            <li data-grid="D3"></li>
+            <li data-grid="D4"></li>
+            <li data-grid="D5"></li>
+            <li data-grid="D6"></li>
+            <li data-grid="E1"></li>
+            <li data-grid="E2"></li>
+            <li data-grid="E3"></li>
+            <li data-grid="E4"></li>
+            <li data-grid="E5"></li>
+            <li data-grid="E6"></li>
+            <li data-grid="F1"></li>
+            <li data-grid="F2"></li>
+            <li data-grid="F3"></li>
+            <li data-grid="F4"></li>
+            <li data-grid="F5"></li>
+            <li data-grid="F6"></li>
+            <li data-grid="A1:F6">
+                <div data-grid="content"></div>
+            </li>
+        </ul>
+
+    </main>
+
+</body>
+
+</html>

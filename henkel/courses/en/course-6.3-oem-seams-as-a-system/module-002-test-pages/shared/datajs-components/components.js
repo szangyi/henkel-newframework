@@ -1,0 +1,5 @@
+if(flipCards) import ("./card-flip.js")
+if(swipes) import ("./card-swipe.js")
+if(cards) import ("./quiz-regular.js")
+if(video-open) import ("./video.js")
+if("[data-comp*='card']:not([data-comp*='-']") import ("./quiz-swipe.js")

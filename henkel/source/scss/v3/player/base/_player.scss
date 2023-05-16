@@ -515,6 +515,8 @@ body {
 
 
 
+
+
 		ol {
 			width: size(player-aside-width);
 			margin: 0 0 size(player-nav-height);
@@ -584,7 +586,11 @@ body {
 			// webkit  		
 		}
 
+		pointer-events: none;
+
 		.player-aside-open & {
+
+			pointer-events: all;
 
 			transition: z-index 1ms 600ms;
 			@include z(main);

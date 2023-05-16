@@ -75,27 +75,27 @@ exports.config = [
   //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
   //	1. The Big Recap Quiz
   //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-  {
-    build: true,
-    scorm: "1.2",
+  // {
+  //   build: true,
+  //   scorm: "1.2",
 
-    version: "1.0.0",
-    lang: "en",
-    brand: "v3-loctite",
-    title: "The Big Recap Quiz",
+  //   version: "1.0.0",
+  //   lang: "en",
+  //   brand: "v3-loctite",
+  //   title: "The Big Recap Quiz",
 
-    no: 1,
-    course: "OEM Seams as a System",
-    module: "The Big Recap Quiz",
-    source: "course-6.3-oem-seams-as-a-system/module-001-the-big-recap-quiz",
+  //   no: 1,
+  //   course: "OEM Seams as a System",
+  //   module: "The Big Recap Quiz",
+  //   source: "course-6.3-oem-seams-as-a-system/module-001-the-big-recap-quiz",
 
-    navigation: true,
-    sidebar: true,
-    css: 2,
-  },
+  //   navigation: true,
+  //   sidebar: true,
+  //   css: 2,
+  // },
 
   //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-  //	2. Intro To Seam Sealing
+  //	2. Test Pages
   //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
   {
     build: false,
@@ -103,13 +103,13 @@ exports.config = [
 
     version: "1.0.0",
     lang: "en",
-    brand: "teroson-collision",
-    title: "Intro To Seam Sealing",
+    brand: "v3-loctite",
+    title: "Test pages",
 
     no: 2,
     course: "OEM Seams as a System",
-    module: "Intro To Seam Sealing",
-    source: "course-6.3-oem-seams-as-a-system/module-002-intro-to-seam-sealing",
+    module: "Test pages",
+    source: "course-6.3-oem-seams-as-a-system/module-002-test-pages",
 
     navigation: true,
     sidebar: true,

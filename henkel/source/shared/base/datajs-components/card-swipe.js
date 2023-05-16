@@ -10,7 +10,8 @@ function _one(q, e = document) {
 /* Swipe cards */
 /* ----------- */
 
-const swipes = _all("[data-quiz='swipe']");
+const swipes = _all("[data-comp*='swipe']");
+// const swipes = _all("[data-quiz='swipe']");
 const cardBox = _all(".card-box");
 const lastCardBox = cardBox[cardBox.length - 1];
 
@@ -25,18 +26,22 @@ swipes.forEach((card) => {
     if (window.innerWidth < 880) {
         // only add swipe function on mobile
         card.addEventListener("pointerdown", swipeStart);
+    } else {
+        card.addEventListener('click', swipeclick)
     }
-    // card.addEventListener('click', swipeclick())
+
 });
 
-addEventListener("pointermove", swipeMove);
-addEventListener("pointerup", swipeEnd);
+if (window.innerWidth < 880) {
+    // only add swipe function on mobile
+    addEventListener("pointermove", swipeMove);
+    addEventListener("pointerup", swipeEnd);
+}
 
 function swipeStart(e) {
-    cardNr++;
+    // cardNr++;
 
-
-    // console.log("swipestart");
+    console.log("swipestart");
 
     swipe = e.currentTarget;
     startX = e.clientX;
@@ -46,7 +51,9 @@ function swipeStart(e) {
 }
 
 function swipeMove(e) {
-    // console.log("swipemove");
+
+    console.log("swipemove");
+
     if (!swipe) return;
 
     let deltaX = e.clientX - startX;
@@ -54,6 +61,7 @@ function swipeMove(e) {
     let width = rect.width;
     pct = deltaX / width;
 
+    console.log({ pct })
     swipe.style.setProperty("--swipe-pct", pct);
     swipe.style.setProperty("--opacity", Math.abs(pct) * 3);
     swipe.dataset.direction = pct > 0 ? "right" : "left";
@@ -62,12 +70,9 @@ function swipeMove(e) {
 function swipeEnd(e) {
     if (!swipe) return;
 
-
     if (Math.abs(pct) === 1) return; // solves bug with swipe on later cards
 
     swipe.style.removeProperty("--transition");
-
-
 
     /* incomplete swipe */
     // if (Math.abs(pct) < .2) {
@@ -82,42 +87,56 @@ function swipeEnd(e) {
         swipe.closest('.card-box').style.pointerEvents = "none"
         swipeAnswerCheck(e);
 
-        // if (cardNr == swipes.length) {
-            // SHOULD BE PAGE NEXT OR SOMETHING
-        //     _one('[data-comp*="button"]').classList.add("fadeout");
-        //     _one('[data-comp*="button"]').style.pointerEvents = "none";
-        //     _one('[data-comp*="button"]').style.cursor = "none";
-        //     _one('[data-comp*="button"]').style.cursor = "none";
-        //     // card.removeEventListener("pointerdown", swipeStart);
-        //     removeEventListener("pointermove", swipeMove);
-        //     removeEventListener("pointerup", swipeEnd);
-        //     lastCardBox.classList.add("reveal");
-        // }
-
     }
 
-
-
     swipe = false;
+
+    // swipeAnswerCheck();
+
 }
 
 function swipeAnswerCheck(e) {
-    clicked++
+    cardNr++;
 
+    console.log('check')
     // console.log("checking answer", swipe, pct);
-    if (
-        (swipe.dataset.correct == "left" && pct < 0) ||
-        (swipe.dataset.correct == "right" && pct > 0)
-    ) {
-        swipe.dataset.correct = true;
-    } else {
-        swipe.dataset.correct = false;
+    // if (
+    //     (swipe.dataset.correct == "left" && pct < 0) ||
+    //     (swipe.dataset.correct == "right" && pct > 0)
+    // ) {
+    //     swipe.dataset.correct = true;
+    // } else {
+    //     swipe.dataset.correct = false;
+    // }
+
+    console.log({ cardNr })
+    console.log(swipes.length)
+
+
+    swipes.forEach((card) => {
+        // console.log({ card });
+        // if (window.innerWidth < 880) {
+        // only add swipe function on mobile
+        card.addEventListener("pointerdown", swipeStart);
+        // }
+
+        // card.addEventListener('click', swipeclick())
+    });
+
+
+
+    if (cardNr == swipes.length) {
+        _one('[data-comp*="button"]').classList.add('fadeout');
+        _one('[data-comp*="button"]').style.pointerEvents = "none";
+        console.log("go to next page");
+        parent.pageNext();
     }
+
+
 }
 
 function swipeclick() {
     console.log('workbitch')
-    clicked++
 
     const card = swipes[cardNr];
     console.log(card)
@@ -130,22 +149,14 @@ function swipeclick() {
     swipe = card;
 
     // update percentage variable for css
-    swipe.style.setProperty("--swipe-pct", (Math.abs(pct) / pct) * 2);
+    card.style.setProperty("--swipe-pct", (Math.abs(pct) / pct) * 2);
 
     // disable swipe to avoid swipe move
     swipe = false;
-    cardNr++;
+    // cardNr++;
 
-    if (cardNr == swipes.length) {
-        _one('[data-comp*="button"]').classList.add("fadeout");
-        _one('[data-comp*="button"]').style.pointerEvents = "none";
-        _one('[data-comp*="button"]').style.cursor = "none";
-        _one('[data-comp*="button"]').style.cursor = "none";
-        card.removeEventListener("pointerdown", swipeStart);
-        removeEventListener("pointermove", swipeMove);
-        removeEventListener("pointerup", swipeEnd);
-        lastCardBox.classList.add("reveal");
-    }
+    swipeAnswerCheck();
+
 }
 
 /* ------------- */

@@ -1,1 +1,0 @@
-if(console.log("tadaaa"),document.querySelector("[data-js]")){var jsfile=document.querySelector("[data-js]").getAttribute("data-js");import(`./datajs-components/${jsfile}.js`)}

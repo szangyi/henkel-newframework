@@ -386,6 +386,7 @@ html {
   overflow-y: auto;
   color: var(--color-grey-lighter);
   font-size: 0.75rem;
+  pointer-events: none;
 }
 @media (min-width: 50rem) {
   .player > aside {
@@ -440,6 +441,7 @@ html {
   display: none;
 }
 .player-aside-open .player > aside {
+  pointer-events: all;
   transition: z-index 1ms 600ms;
   z-index: 2;
 }

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#fff" />
+
+    <link rel="stylesheet" href="../shared/page.css" />
+    <script defer src="../shared/scormdriver.js"></script>
+    <script defer src="../shared/page.js"></script>
+
+</head>
+
+<body data-debug data-color="back-red" data-js="quiz-swipe">
+
+    <main data-grid>
+
+        <div data-grid="A1:F6" data-grid-desktop="B2:E6">
+
+            <div data-grid="content" data-flex="col inline-center">
+
+                <div data-comp="card-container stack" data-box="pad-bottom">
+
+                    <!-- 1 SWIPE  -->
+                    <div data-comp="card rounded swipe" data-quiz="swipe" data-flex="col block-center inline-center"
+                        data-correct="right">
+
+                        <div class="inner">
+
+                            <div class="bubble">
+                            </div>
+
+                            <div class="front" data-box="pad" data-flex="col inline-center block-center">
+
+                                <p data-color="text-red" data-font="heading-5 uppercase text-md" data-box="marg-bottom">
+                                    Quiz</p>
+
+                                <h4 data-font-mobile="text-md" data-box="marg-bottom">
+                                    First question </h4>
+
+                                <div data-flex="inline gap">
+                                    <button data-comp="button pill" data-box="marg-top" data-color="back-black" true
+                                        data-direction="left">No</button>
+
+                                    <button data-comp="button pill" data-box="marg-top" data-color="back-red" false
+                                        data-direction="right">Yes</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- 1 SWIPE ANSWER -->
+                    <div data-comp="card rounded" class="swipe-answer" data-flex="col block-center inline-center">
+
+                        <!-- 1 OVERLAY -->
+                        <div data-comp="overlay dark" class=""></div>
+
+                        <div class="inner">
+
+                            <div class="front" data-box="pad" data-flex="col inline-center block-center">
+
+                                <div data-correct="true">
+                                    <h3>That's right!</h3>
+                                    <p class="text-lg">
+                                        Bonding is not only faster, safer, and aesthetically superior – it is also
+                                        highly reliable and can be cost-effective. </p>
+                                </div>
+                                <div data-correct="false">
+                                    <h3>False!</h3>
+                                    <p class="text-lg">
+                                        Bonding is not only faster, safer, and aesthetically superior – it is also
+                                        highly reliable and can be cost-effective.
+                                    </p>
+
+                                </div>
+
+                                <button class="next" data-comp="button pill" data-box="marg-top"
+                                    data-color="back-red">Next</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- 2 SWIPE  -->
+                    <div data-comp="card rounded swipe" data-quiz="swipe" data-flex="col block-center inline-center"
+                        data-correct="right">
+
+                        <div class="inner">
+
+                            <div class="bubble">
+                            </div>
+
+                            <div class="front" data-box="pad" data-flex="col inline-center block-center">
+
+                                <p data-color="text-red" data-font="heading-5 uppercase text-md" data-box="marg-bottom">
+                                    Quiz</p>
+
+                                <h4 data-font-mobile="text-md" data-box="marg-bottom">
+                                    SECOND </h4>
+
+                                <div data-flex="inline gap">
+                                    <button data-comp="button pill" data-box="marg-top" data-color="back-black" true
+                                        data-direction="left">No</button>
+
+                                    <button data-comp="button pill" data-box="marg-top" data-color="back-red" false
+                                        data-direction="right">Yes</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- 2 SWIPE ANSWER -->
+                    <div data-comp="card rounded" class="swipe-answer" data-flex="col block-center inline-center">
+
+                        <!-- 2 OVERLAY -->
+                        <div data-comp="overlay dark" class=""></div>
+
+                        <div class="inner">
+
+                            <div class="front" data-box="pad" data-flex="col inline-center block-center">
+
+                                <div data-correct="true">
+                                    <h3>That's right!</h3>
+                                    <p class="text-lg">
+                                        Bonding is not only faster, safer, and aesthetically superior – it is also
+                                        highly reliable and can be cost-effective. </p>
+                                </div>
+                                <div data-correct="false">
+                                    <h3>False!</h3>
+                                    <p class="text-lg">
+                                        Bonding is not only faster, safer, and aesthetically superior – it is also
+                                        highly reliable and can be cost-effective.
+                                    </p>
+
+                                </div>
+
+                                <button class="next" data-comp="button pill" data-box="marg-top"
+                                    data-color="back-red">Next</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- 3 SWIPE  -->
+                    <div data-comp="card rounded swipe" data-quiz="swipe" data-flex="col block-center inline-center"
+                        data-correct="right">
+
+                        <div class="inner">
+
+                            <div class="bubble">
+                            </div>
+
+                            <div class="front" data-box="pad" data-flex="col inline-center block-center">
+
+                                <p data-color="text-red" data-font="heading-5 uppercase text-md" data-box="marg-bottom">
+                                    Quiz</p>
+
+                                <h4 data-font-mobile="text-md" data-box="marg-bottom">
+                                    3 </h4>
+
+                                <div data-flex="inline gap">
+                                    <button data-comp="button pill" data-box="marg-top" data-color="back-black" true
+                                        data-direction="left">No</button>
+
+                                    <button data-comp="button pill" data-box="marg-top" data-color="back-red" false
+                                        data-direction="right">Yes</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- 3 SWIPE ANSWER -->
+                    <div data-comp="card rounded" class="swipe-answer" data-flex="col block-center inline-center">
+
+                        <!-- 3 OVERLAY -->
+                        <div data-comp="overlay dark" class=""></div>
+
+                        <div class="inner">
+
+                            <div class="front" data-box="pad" data-flex="col inline-center block-center">
+
+                                <div data-correct="true">
+                                    <h3>That's right!</h3>
+                                    <p class="text-lg">
+                                        Bonding is not only faster, safer, and aesthetically superior – it is also
+                                        highly reliable and can be cost-effective. </p>
+                                </div>
+                                <div data-correct="false">
+                                    <h3>False!</h3>
+                                    <p class="text-lg">
+                                        Bonding is not only faster, safer, and aesthetically superior – it is also
+                                        highly reliable and can be cost-effective.
+                                    </p>
+
+                                </div>
+
+                                <button data-comp="button pill" data-box="marg-top" onclick="parent.pageNext()"
+                                    data-color="back-red">Done</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p class="pagination" data-box="pad-top" data-font="text-xs center">0/0</p>
+
+            </div>
+
+        </div>
+
+        </div>
+
+        <ul data-grid="guide" data-color="text-white">
+            <li data-grid="A1"></li>
+            <li data-grid="A2"></li>
+            <li data-grid="A3"></li>
+            <li data-grid="A4"></li>
+            <li data-grid="A5"></li>
+            <li data-grid="A6"></li>
+            <li data-grid="B1"></li>
+            <li data-grid="B2"></li>
+            <li data-grid="B3"></li>
+            <li data-grid="B4"></li>
+            <li data-grid="B5"></li>
+            <li data-grid="B6"></li>
+            <li data-grid="C1"></li>
+            <li data-grid="C2"></li>
+            <li data-grid="C3"></li>
+            <li data-grid="C4"></li>
+            <li data-grid="C5"></li>
+            <li data-grid="C6"></li>
+            <li data-grid="D1"></li>
+            <li data-grid="D2"></li>
+            <li data-grid="D3"></li>
+            <li data-grid="D4"></li>
+            <li data-grid="D5"></li>
+            <li data-grid="D6"></li>
+            <li data-grid="E1"></li>
+            <li data-grid="E2"></li>
+            <li data-grid="E3"></li>
+            <li data-grid="E4"></li>
+            <li data-grid="E5"></li>
+            <li data-grid="E6"></li>
+            <li data-grid="F1"></li>
+            <li data-grid="F2"></li>
+            <li data-grid="F3"></li>
+            <li data-grid="F4"></li>
+            <li data-grid="F5"></li>
+            <li data-grid="F6"></li>
+            <li data-grid="A1:F6">
+                <div data-grid="content"></div>
+            </li>
+        </ul>
+    </main>
+
+</body>
+
+</html>

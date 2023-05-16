@@ -17,7 +17,7 @@
 // 2 MINOR version when you add functionality in a backwards compatible manner
 // 3 PATCH version when you make backwards compatible bug fixes
 // -----------------------------------------------------------------------------
-@version(1.11.1);
+@version(1.11.2);
 
 @include base.anim;
 
@@ -94,6 +94,7 @@
 // -----------------------------------------------------------------------------
 // Change log (add to top)
 // -----------------------------------------------------------------------------
+// 1.11.2	icons are changed to the new Henkel icons
 // 1.11.1	modal and overlay comp added
 // 1.10.2	card comp added z-index 1 on flipped back
 // 1.10.1	button page close variation added
