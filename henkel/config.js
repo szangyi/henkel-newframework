@@ -98,7 +98,7 @@ exports.config = [
   //	2. Test Pages
   //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
   {
-    build: false,
+    build: true,
     scorm: "1.2",
 
     version: "1.0.0",
@@ -115,4 +115,35 @@ exports.config = [
     sidebar: true,
     css: 2,
   },
+
+
+  //  ==========================================================
+  //
+  //				6.1 Introduction to Collision Repair
+  //
+  //  ==========================================================
+
+  //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+  //	1. Collision Repair from A to Z -en
+  //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+  {
+    build: true,
+    scorm: "1.2",
+
+    version: "1.0.0",
+    lang: "en",
+    brand: "teroson-collision",
+    title: "Collision Repair from A to Z",
+
+    no: 1,
+    course: "Introduction to Collision Repair",
+    module: "Collision Repair from A to Z",
+    source: "course-6.1-introduction-to-collision-repair/module-001-collision-repair-from-a-to-z",
+
+    navigation: true,
+    sidebar: true,
+    css: 2,
+  },
+
+
 ];

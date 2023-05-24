@@ -32,20 +32,34 @@ const { config, playerTranslations } = require('./config.js');
 //	Dependencies
 //  ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 const folder = require('./source/node/folder.js');
-const player = require('./source/node/player.js');
 
+// if (course.brand.includes('v3')) {
+// 	const player = require('./source/node/v3-player.js');
+// } else {
+// 	const player = require('./source/node/player.js');
+// }
 
 
 
 
 config.forEach(course => {
 	// if(!course.build) return;
+
+	let player;
+
+	if (course.brand.includes('v3')) {
+		player = require('./source/node/v3-player.js');
+	} else {
+		player = require('./source/node/player.js');
+	}
+
 	const sourcePath = `./courses/${course.lang.toLocaleLowerCase()}/${course.source}`;
 	const sharedPath = `${sourcePath}/shared`;
 
-	//	copy shared base files 
-	folder.copy(`./source/shared/base`, `${sharedPath}`, '_');
-
+	if (!course.brand.includes('v3')) {
+		//	copy shared base files 
+		folder.copy(`./source/shared/base`, `${sharedPath}`, '_');
+	}
 
 	//	copy shared 
 	//	changed (15.05.2023)
@@ -57,22 +71,22 @@ config.forEach(course => {
 		folder.copy(`./source/shared/${course.brand}`, `${sharedPath}`, '_');
 	}
 
-	
+
 	//
 	//	add properties to build
 	//
 	//	create source scorm player
 	let country = course.lang.split('-')[1];
-	
+
 	course.lang = country ? course.lang.split('-')[0] + '-' + course.lang.split('-')[1].toUpperCase() : course.lang;
-	course.title = course.title || `${course.course} - ${course.module}`;
+	course.title = course.title || `${course.course} - ${course.module}`;
 	course.pages = []	// course players uses the config to create sidebar navigation
-	course.playerTranslations = playerTranslations[course.lang || 'en'];
+	course.playerTranslations = playerTranslations[course.lang || 'en'];
 	course.path = sourcePath;
 
 	//	write player
 	player.write(course)
 	console.log(`Copy complete: ${sourcePath}`)
 
- })
+})
 
